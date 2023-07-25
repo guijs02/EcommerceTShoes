@@ -1,0 +1,51 @@
+﻿@page "/Cadastrar"
+@using EcommerceTShoes.Services;
+@using EcommerceTShoes.Services.Interfaces;
+@using LoginAPI.Dto;
+
+@inject IUsuarioService _service;
+
+@if (OnInitialized)
+{
+    <div class="container d-flex align-items-center justify-content-center vh-100">
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">Sign-In</h1>
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" @bind-value="usuario.Username" class="form-control form-control-sm" id="nome" placeholder="Digite seu nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control form-control-sm" @bind-value="usuario.Password" id="senha" placeholder="Digite sua senha">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmar_senha" class="form-label">Confirmar Senha</label>
+                        <input type="password" class="form-control form-control-sm" id="confirmar_senha" @bind-value="usuario.PasswordConfirmation" placeholder="Confirme sua senha">
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-block" @onclick="CadastrarUsuario">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@code {
+    CreateUsuarioDto usuario;
+    public bool OnInitializedCompleted { get; set; }
+
+    protected override void OnInitialized()
+    {
+        usuario = new();
+        OnInitializedCompleted = true;
+    }
+    public async Task CadastrarUsuario()
+    {
+        await _service.Cadastro(usuario);
+    }
+
+}

@@ -1,0 +1,43 @@
+﻿@page "/Login"
+@using EcommerceTShoes.Services.Interfaces;
+@using LoginAPI.Dto;
+
+@inject IUsuarioService _service
+
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="col-md-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <h1 class="card-title text-center mb-4">Login</h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Usuario</label>
+                        <input type="text" @bind-value="loginUsuario.Username" class="form-control form-control-sm" placeholder="Digite seu nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" @bind-value="loginUsuario.Password" class="form-control form-control-sm" id="senha" placeholder="Digite sua senha">
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" @onclick="LoginUsuario" class="btn btn-primary btn-block">Entrar</button>
+                    </div>
+                </form>
+                <p class="text-center mt-3">Ainda não possui uma conta? <a href="/Cadastrar">Cadastre-se</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    LoginUsuarioDto loginUsuario;
+
+    protected override Task OnInitializedAsync()
+    {
+        loginUsuario = new();
+        return base.OnInitializedAsync();
+    }
+    public async Task LoginUsuario()
+    {
+        await _service.Login(loginUsuario);
+    }
+}

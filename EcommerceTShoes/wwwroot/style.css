@@ -1,0 +1,110 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    max-height: 200vh;
+    background-color:blue;
+}
+
+.coluna-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coluna-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coluna-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0 rgba(50, 50, 50, 0.22);
+    padding: 20px;
+    margin: 20px;
+    margin-left: 40px;
+    width: 400px;
+    height: 520px;
+    transition: all 0.3s ease-out;
+}
+
+    .cards:hover {
+        transform: translateY(-5px);
+        cursor: pointer;
+    }
+
+.botao {
+    height: 35px;
+    width: 150px;
+    border-radius: 4px;
+    background-color: #198754;
+    color: #fff;
+    border-color: #198754;
+    margin-left: 110px;
+}
+
+    .botao:hover {
+        background-color: #157347;
+    }
+
+.preco {
+    display: flex;
+    margin-left: 150px;
+    transform: translate(-20px,-60px);
+}
+
+.image {
+    height: 360px;
+    width: none;
+}
+
+.info {
+    margin-top: -50px;
+    margin-left: 80px;
+}
+
+nav {
+    height: 120px;
+    background-color: rgb(255, 152, 8);
+    text-decoration: none;
+}
+
+.textnav {
+    margin-inline-end: 70px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-bar {
+    margin-top: -70px;
+    margin-left: 40%;
+}
+
+.titulo {
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+    padding-right: 90%;
+}
+
+.logoTenis {
+    margin-top: -90px;
+    /* margin-left: 52.9%; */
+    /* padding-left: -60%; */
+    margin-left: 8%;
+    height: 110px;
+}

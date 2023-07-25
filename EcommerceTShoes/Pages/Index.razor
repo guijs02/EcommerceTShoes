@@ -1,0 +1,96 @@
+﻿@page "/"
+@using EcommerceAPI.Services.Interfaces;
+@using EcommerceTShoes.Model;
+
+@inject ITShoesService _service
+@inject NavigationManager _navigation
+
+@if (OnInitializeCompleted)
+{
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning navbar-compact">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/fotoLogo_preview_rev_1.png" height="70">
+        </a>
+
+        <button @onclick="OpenSideBar" id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white mr-3" href="/Masculino">Masculino</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white mr-3" href="/Feminino">Feminino</a>
+                </li>
+            </ul>
+            <a class="nav-link" href="/Carrinho">
+                <img src="/assets/shopping-cart.png" style="height:20px;" />
+            </a>
+        </div>
+    </nav>
+
+    <div class="d-flex justify-content-center">
+
+        <div class="container row align-content-center">
+            @foreach (var item in Produtos)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="p-0 my-3 border">
+                        <div class="card">
+                            <img src="@item.ImagemUrl" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="cardcard-title test-success">@item.Nome</h3>
+                                <span class="badge badge-light mb-2">@item.Descricao</span>
+                                <p class="card-text"></p>
+
+                                <div class="row">
+                                    <div class="col-6 pt-1">
+                                        <span style="font-size:23px;">@item.Preco.ToString("c")</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <a class="btn btn-success form-control" @onclick="(() =>  GetProduto(item.Id))">Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+    </div>
+}
+<style>
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 7px 7px 13px 0 rgba(50, 50, 50, 0.22);
+        cursor: pointer;
+    }
+</style>
+@code {
+    List<Produto> Produtos { get; set; }
+
+    public bool OnInitializeCompleted { get; set; } = false;
+    public bool InicializarComponent { get; set; } = false;
+    public bool openSideBar { get; set; } = false;
+    protected override async Task OnInitializedAsync()
+    {
+        Produtos = await _service.GetAllProdutos();
+
+        OnInitializeCompleted = true;
+    }
+    public void GetProduto(int id)
+    {
+        _navigation.NavigateTo($"{_navigation.Uri}details/{id}/{false}");
+        InicializarComponent = true;
+    }
+    public void OpenSideBar()
+    {
+        string open = openSideBar ? "display: block;" : "display: none;";
+        openSideBar = !openSideBar;
+    }
+}

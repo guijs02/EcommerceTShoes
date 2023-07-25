@@ -1,0 +1,162 @@
+﻿@page "/details/{CurrentId:int}/{IsUpdate:bool}"
+
+@using EcommerceAPI.Services.Interfaces;
+@using EcommerceTShoes.Model;
+@using EcommerceTShoes.Pages
+@using EcommerceTShoes.Modals;
+
+@inject ITShoesService _service
+@inject ICarrinhoService _Carrinhoservice
+@inject NavigationManager _navigation
+
+@if (OnInitializeCompleted)
+{
+
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Tênis</title>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="@produto.ImagemUrl" class="img-fluid" alt="Tênis">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="mb-4">@produto.Nome</h1>
+                    <p class="lead mb-4">Indicado para: todos que querem andar estilosos pela rua</p>
+                    <h4 class="mb-3">Descrição:</h4>
+                    <p>@produto.Descricao</p>
+                    <h4 class="mb-3">Marca:</h4>
+                    <p>@produto.Nome</p>
+                    <h4 class="mb-3">Garantia do fabricante:</h4>
+                    <p>2 anos de garantia</p>
+                    <h4 class="mb-3">Origem:</h4>
+                    <p>Nacional</p>
+                    <h4 class="mb-3">Altura do Cano:</h4>
+                    <p>Cano Baixo</p>
+                </div>
+            </div>
+            <EditForm EditContext="@editContext" Model="produto">
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <p class="h3">@produto.Preco.ToString("C")</p>
+                        <p class="text-muted">ou 10x de R$ @(Math.Round(produto.Preco / 10, 2).ToString("C")) sem juros</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="tamanho">Tamanho:</label>
+                        <InputSelect @bind-Value="@produto.Tamanho">
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                        </InputSelect>
+                        <p style="color:@color[0];">Não é possivel salvar no carrinho sem colocar o tamanho</p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" @onclick="@(async () => await AddCart())">@TextButton</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+
+    </body>
+
+    @if (VisualizarModalAddCart)
+    {
+        <ModalSucess color="@color"
+                     Mensagem="@Mensagem"
+                     Visible="@VisualizarModalAddCart"
+                     VisibleModalCallback="@(() => VisualizarModalAddCart = false)">
+        </ModalSucess>
+
+    }
+    </html>
+}
+<style>
+
+    .html {
+        height: 100vh;
+    }
+</style>
+@code {
+    private EditContext? editContext;
+    [Parameter]
+    public int CurrentId { get; set; }
+    [Parameter]
+    public bool IsUpdate { get; set; }
+    public bool VisualizarModalAddCart { get; set; } = false;
+    public Produto produto { get; set; }
+    public string[] color = new string[2];
+
+    public bool OnInitializeCompleted { get; set; }
+    public string Mensagem { get; set; }
+    public string TextButton { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        color[0] = "white";
+
+        if (IsUpdate)
+        {
+            produto = await _Carrinhoservice.GetByIdProdutoCarrinho(CurrentId);
+            TextButton = "Alterar Produto do Carrinho";
+        }
+        else
+        {
+            produto = await _service.GetProduto(CurrentId);
+            TextButton = "Adicionar ao Carrinho";
+        }
+
+        OnInitializeCompleted = true;
+    }
+    public async Task AddCart()
+    {
+        if (string.IsNullOrEmpty(produto.Tamanho))
+        {
+            color[0] = "red";
+            await Task.Delay(5000).ContinueWith(_ => color[0] = "white");
+            return;
+        }
+        if (IsUpdate)
+        {
+            var produtoAtual = await _Carrinhoservice.EditCarrinho(produto);
+            ViewContentModal(produtoAtual);
+            return;
+        }
+
+        var produtoCarrinho = await _Carrinhoservice.AddCart(produto);
+        ViewContentModal(produtoCarrinho);
+
+    }
+
+    void ViewContentModal(object obj)
+    {
+        var content = SetCorrectWordInModal();
+        if (obj is not null)
+        {
+            Mensagem = $"O produto foi {content.Item1} no carrinho com sucesso!";
+            color[1] = "green";
+        }
+        else
+        {
+            Mensagem = $"Ocorreu um erro inesperado ao {content.Item2} no carrinho";
+            color[1] = "red";
+        }
+        VisualizarModalAddCart = true;
+    }
+    dynamic SetCorrectWordInModal() => IsUpdate ? ("alterado", "editar") : "adicionado";
+}
