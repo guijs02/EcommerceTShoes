@@ -129,6 +129,12 @@
         }
       },
       "Microsoft.AspNetCore.Components.Analyzers/6.0.16": {},
+      "Microsoft.AspNetCore.Components.Authorization/6.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authorization": "6.0.16",
+          "Microsoft.AspNetCore.Components": "6.0.16"
+        }
+      },
       "Microsoft.AspNetCore.Components.Forms/6.0.16": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "6.0.16"
@@ -1023,6 +1029,7 @@
       "EcommerceTShoes/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
+          "Microsoft.AspNetCore.Components.Authorization": "6.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.16"
         },
         "runtime": {
@@ -1099,6 +1106,13 @@
       "sha512": "sha512-p4imFdqu/RFa3sX5H579SdfnkKizdZ+Jg14psxgJ9Oaa2Mo1VM/RbcatZrf/PEP32ofi3WBWXgvzdNxF6FPyeg==",
       "path": "microsoft.aspnetcore.components.analyzers/6.0.16",
       "hashPath": "microsoft.aspnetcore.components.analyzers.6.0.16.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.Authorization/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AdrLj0S71GgcGUm7MMzwjzpkmAO044nFhzmvT+x/acB0HNyolWo6jMZBXxEm93iQDSeFlfRQGsw+bD+6mdMhYg==",
+      "path": "microsoft.aspnetcore.components.authorization/6.0.0",
+      "hashPath": "microsoft.aspnetcore.components.authorization.6.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.Forms/6.0.16": {
       "type": "package",

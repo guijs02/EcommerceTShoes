@@ -1,0 +1,70 @@
+﻿@using EcommerceTShoes.Model;
+@inherits ComponentBase
+
+@inject NavigationManager _navigation
+
+<div class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Carrinho</h5>
+                <button type="button" class="close" @onclick="@(async () => await VisibleModalCallback.InvokeAsync())">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="color: @SetColorMessage">@Mensagem</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" @onclick="@VisualizarCarrinho" class="btn btn-primary">Visualizar o carrinho</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public bool Visible { get; set; }
+
+    public string Mensagem { get; set; } 
+
+    [Parameter]
+    public CarrinhoDeCompra carrinhoDeCompra { get; set; } 
+    
+    [Parameter]
+    public bool IsUpdate { get; set; }
+
+    public string SetColorMessage { get; set; }
+
+    [Parameter]
+    public EventCallback VisibleModalCallback { get; set; }
+
+    protected override void OnInitialized()
+    {
+        ViewContentModal(carrinhoDeCompra);
+    }
+    public void VisualizarCarrinho()
+    {
+        _navigation.NavigateTo("https://localhost:44380/Carrinho");
+    }
+    void ViewContentModal(CarrinhoDeCompra obj)
+    {
+        var content = SetCorrectWordInModal();
+        if (obj is not null)
+        {
+            Mensagem = $"O produto foi {content.Item1} no carrinho com sucesso!";
+            SetColorMessage = GlobalConstants.GREEN;
+        }
+        else
+        {
+            Mensagem = $"Ocorreu um erro inesperado ao {content.Item2} no carrinho";
+            SetColorMessage = GlobalConstants.RED;
+        }
+        
+    }
+    (string, string) SetCorrectWordInModal() => IsUpdate ? ("alterado", "editar") : ("adicionado", string.Empty);
+}
+
+
+

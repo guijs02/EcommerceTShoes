@@ -8,19 +8,19 @@ using System.Text;
 
 namespace EcommerceAPI.Token
 {
-    public  class TokenService
+    public class TokenService
     {
-        public string GenerateToken(Usuario usuario)
+        public string GenerateToken(Usuario usuario, IConfiguration configuration)
         {
 
             Claim[] claims = new Claim[]
             {
-             new Claim("username", usuario.UserName),
+                new Claim(ClaimTypes.Name, usuario.UserName),
                 new Claim("id", usuario.Id),
-                new Claim("loginTimeStmp", DateTime.UtcNow.ToString())
+                new Claim("loginTimeStmp", DateTime.Now.ToString())
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("fdfd34294329849381hfdhajfh@43488*,,|4|&#8/*!nndn"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TShoesSettings:SecretKey"]));
             var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(

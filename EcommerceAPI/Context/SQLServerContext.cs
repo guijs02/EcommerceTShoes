@@ -12,13 +12,14 @@ namespace GeekShopping.ProductAPI.Context
         public DbSet<Produto> Products { get; set; }
         public DbSet<CarrinhoDeCompra> Carrinho { get; set; }
 
-        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.
+            base.OnConfiguring(optionsBuilder);
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Ignore<IdentityUserLogin<string>>();
-            modelBuilder.Ignore<IdentityUserRole<string>>();
-            modelBuilder.Ignore<IdentityUserToken<string>>();
-            
+
             modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 1,
@@ -104,6 +105,7 @@ namespace GeekShopping.ProductAPI.Context
 
             });
 
+            base.OnModelCreating(modelBuilder);
         }
 
     }

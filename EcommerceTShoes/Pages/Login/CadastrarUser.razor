@@ -1,11 +1,12 @@
 ﻿@page "/Cadastrar"
 @using EcommerceTShoes.Services;
 @using EcommerceTShoes.Services.Interfaces;
+
 @using LoginAPI.Dto;
 
 @inject IUsuarioService _service;
 
-@if (OnInitialized)
+@if (OnInitializedCompleted)
 {
     <div class="container d-flex align-items-center justify-content-center vh-100">
         <div class="col-md-4">
@@ -15,6 +16,10 @@
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" @bind-value="usuario.Username" class="form-control form-control-sm" id="nome" placeholder="Digite seu nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="senha" class="form-label">Email</label>
+                        <input type="email" class="form-control form-control-sm" @bind-value="usuario.Email" id="senha" placeholder="Digite seu email">
                     </div>
                     <div class="mb-3">
                         <label for="senha" class="form-label">Senha</label>
@@ -27,7 +32,17 @@
                     <div class="d-grid">
                         <button class="btn btn-primary btn-block" @onclick="CadastrarUsuario">Cadastrar</button>
                     </div>
+                    <br>
+                   <a href="/Login">Ja possui uma conta? Login</a>
                 </div>
+
+                @if (!string.IsNullOrEmpty(Mensagem))
+                {
+                    <div class="@SetColorMessage">
+                        @Mensagem
+                    </div>
+                }
+
             </div>
         </div>
     </div>
@@ -35,8 +50,11 @@
 
 
 @code {
-    CreateUsuarioDto usuario;
+    CreateUsuarioDto usuario { get; set; }
     public bool OnInitializedCompleted { get; set; }
+    public string Mensagem { get; set; } = string.Empty;
+    public bool IsAcessedService { get; set; } = false;
+    public string SetColorMessage { get; set; }
 
     protected override void OnInitialized()
     {
@@ -45,7 +63,18 @@
     }
     public async Task CadastrarUsuario()
     {
-        await _service.Cadastro(usuario);
+        try
+        {
+            await _service.Cadastro(usuario);
+            Mensagem = "Cadastrado com Sucesso";
+            SetColorMessage = GlobalConstants.ALERT_SUCCESS;
+        }
+        catch (Exception ex)
+        {
+            Mensagem = ex.Message;
+            SetColorMessage = GlobalConstants.ALERT_DANGER;
+        }
+
     }
 
 }

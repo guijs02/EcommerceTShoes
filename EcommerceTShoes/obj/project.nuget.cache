@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C1HKQT+CPvSFkvebqc3QqbXmkHuCcUA54B8ZuAPhBU9utWyOQYlegBDBWrJ5SEk4H3h1E9XLFzaVVcBLqLGmzg==",
+  "dgSpecHash": "y3HiIG9pc0fbMG3KlHEmKEZZ5dLYLNw/kuUtmkeRhF7a5lLR+Ss1D5M1XU+J+UDmfjoEyuDGmY6XaGcrdH4nGA==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\EcommerceTShoes.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\microsoft.aspnetcore.authorization.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.16\\microsoft.aspnetcore.components.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.16\\microsoft.aspnetcore.components.analyzers.6.0.16.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\6.0.0\\microsoft.aspnetcore.components.authorization.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.16\\microsoft.aspnetcore.components.forms.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.16\\microsoft.aspnetcore.components.web.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.16\\microsoft.aspnetcore.components.webassembly.6.0.16.nupkg.sha512",
@@ -35,7 +36,7 @@
     "C:\\Users\\user\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.18\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.18.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.20\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.20.nupkg.sha512"
   ],
   "logs": []
 }

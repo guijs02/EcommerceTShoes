@@ -34,7 +34,7 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllPrdutos(int idgenero)
+        public async Task<IActionResult> GetAllPrdutos()
         {
             try
             {

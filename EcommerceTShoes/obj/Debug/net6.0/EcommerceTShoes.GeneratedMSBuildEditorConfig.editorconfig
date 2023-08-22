@@ -20,12 +20,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/EcommerceTShoes/EcommerceTShoes/Modals/ModalSucess.razor]
-build_metadata.AdditionalFiles.TargetPath = TW9kYWxzXE1vZGFsU3VjZXNzLnJhem9y
+[C:/Users/user/source/repos/EcommerceTShoes/EcommerceTShoes/Modals/ModalNotify.razor]
+build_metadata.AdditionalFiles.TargetPath = TW9kYWxzXE1vZGFsTm90aWZ5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/repos/EcommerceTShoes/EcommerceTShoes/Pages/Carrinho/CarrinhoDeCompra.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FycmluaG9cQ2FycmluaG9EZUNvbXByYS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/EcommerceTShoes/EcommerceTShoes/Pages/Checkout/ComponenteAdress.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXRcQ29tcG9uZW50ZUFkcmVzcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/EcommerceTShoes/EcommerceTShoes/Pages/Checkout/ComponentPayment.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXRcQ29tcG9uZW50UGF5bWVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/repos/EcommerceTShoes/EcommerceTShoes/Pages/FemininoPage.razor]
@@ -42,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/user/source/repos/EcommerceTShoes/EcommerceTShoes/Pages/Login/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/user/source/repos/EcommerceTShoes/EcommerceTShoes/Pages/Login/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9nb3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/source/repos/EcommerceTShoes/EcommerceTShoes/Pages/MasculinoPage.razor]

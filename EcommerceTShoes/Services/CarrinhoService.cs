@@ -1,5 +1,6 @@
 ﻿using EcommerceAPI.Services.Interfaces;
 using EcommerceTShoes.Model;
+using EcommerceTShoes.Services.Serialize;
 using System.Net.Http.Json;
 using System.Text.Json;
 
@@ -9,16 +10,10 @@ namespace EcommerceAPI.Services
     {
         private readonly HttpClient _http;
         private const string API = "https://localhost:7064/api/Carrinho";
-        private readonly JsonSerializerOptions options;
         private const string ERROR_API = "Erro ao realizar a requisição API";
         public CarrinhoService(HttpClient http)
         {
             _http = http;
-            options = new JsonSerializerOptions()
-            {
-                PropertyNameCaseInsensitive = true,
-                WriteIndented = true,
-            };
         }
         public async Task<CarrinhoDeCompra> AddCart(Produto produto)
         {
@@ -28,7 +23,7 @@ namespace EcommerceAPI.Services
             {
                 throw new Exception(ERROR_API);
             }
-            return await Serializador<CarrinhoDeCompra>(response);
+            return await SerializadorDeObjetos.Serializador<CarrinhoDeCompra>(response);
         }
         public async Task<List<CarrinhoDeCompra>> GetAllCarrinho()
         {
@@ -39,7 +34,7 @@ namespace EcommerceAPI.Services
                 throw new Exception(ERROR_API);
             }
 
-            return await Serializador<List<CarrinhoDeCompra>>(response);
+            return await SerializadorDeObjetos.Serializador<List<CarrinhoDeCompra>>(response);
         }   
         public async Task<CarrinhoDeCompra> EditCarrinho(Produto produto)
         {
@@ -50,7 +45,7 @@ namespace EcommerceAPI.Services
                 throw new Exception(ERROR_API);
             }
 
-            return await Serializador<CarrinhoDeCompra>(response);
+            return await SerializadorDeObjetos.Serializador<CarrinhoDeCompra>(response);
         }  
         public async Task<Produto> GetByIdProdutoCarrinho(int id)
         {
@@ -61,7 +56,7 @@ namespace EcommerceAPI.Services
                 throw new Exception(ERROR_API);
             }
 
-            return await Serializador<Produto>(response);
+            return await SerializadorDeObjetos.Serializador<Produto>(response);
         }
         public async Task<bool> DeleteItemCarrinho(int id)
         {
@@ -72,18 +67,8 @@ namespace EcommerceAPI.Services
                 throw new Exception(ERROR_API);
             }
 
-            return await Serializador<bool>(response);
+            return await SerializadorDeObjetos.Serializador<bool>(response);
         }
-        public async Task<T> Serializador<T>(HttpResponseMessage response)
-        {
-            var json = await response.Content.ReadAsStringAsync();
-            if(string.IsNullOrEmpty(json))
-                throw new Exception("O conteudo em string está nulo");
-
-            return JsonSerializer.Deserialize<T>(json, options);
-
-        }
-    
 
     }
 }

@@ -18,22 +18,22 @@ namespace EcommerceAPI.Config
                  options.Password.RequiredLength = 3;
              });
         }
-        public static AuthenticationBuilder ConfigJwtAuthentication(this IServiceCollection service)
+        public static AuthenticationBuilder ConfigJwtAuthentication(this WebApplicationBuilder builder)
         {
             return
-                 service
+                 builder.Services
                 .AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
+                {
+                     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
                 .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters =
-                        new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                        new TokenValidationParameters
                         {
                             ValidateIssuerSigningKey = true,
                             IssuerSigningKey = new SymmetricSecurityKey(
-                                Encoding.UTF8.GetBytes("fdfd34294329849381hfdhajfh@43488*,,|4|&#8/*!nndn")
+                                Encoding.UTF8.GetBytes(builder.Configuration["TShoesSettings:SecretKey"])
                             ),
                             ValidateAudience = false,
                             ValidateIssuer = false,

@@ -3,9 +3,13 @@
 @using EcommerceAPI.Services.Interfaces;
 @using EcommerceTShoes.Model;
 @using EcommerceTShoes.Modals;
+@using EcommerceTShoes.Pages.Login;
+@using EcommerceTShoes.Services.Interfaces;
 
-@inject ICarrinhoService _service
+@inject ICarrinhoService _CarrinhoService
+@inject IPagamentoService _PagamentoService
 @inject ITShoesService _TshoesService
+
 @inject NavigationManager _navigation
 
 <!DOCTYPE html>
@@ -74,7 +78,7 @@
                                                 </div>
 
                                                 <button class="btn btn-primary px-3 ms-2" style="height:40px;"
-                                                        @onclick="@(() => Quantidade++)">
+                                                @onclick="@(() => Quantidade++)">
                                                     <i class="fas fa-plus"></i>
                                                 </button>
                                             </div>
@@ -142,7 +146,7 @@
                                     </li>
                                 </ul>
 
-                                <button type="button" class="btn btn-primary btn-lg btn-block">
+                                <button type="button" @onclick="GoCheckout" class="btn btn-primary btn-lg btn-block">
                                     Go to checkout
                                 </button>
                             </div>
@@ -161,7 +165,6 @@
     public bool OnInitializeCompleted { get; set; } = false;
     public bool IsUpdate { get; set; } = false;
     public int Quantidade { get; set; } = 1;
-    //public bool VisibleErrorModal { get; set; } = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -170,7 +173,7 @@
     }
     public async Task GetAllCarrinho()
     {
-        ListCarrinho = await _service.GetAllCarrinho();
+        ListCarrinho = await _CarrinhoService.GetAllCarrinho();
 
     }
     public void EditCartProduct(Model.CarrinhoDeCompra carrinho)
@@ -181,7 +184,7 @@
     }
     public async Task RemoveItem(int id)
     {
-        await _service.DeleteItemCarrinho(id);
+        await _CarrinhoService.DeleteItemCarrinho(id);
 
         await GetAllCarrinho();
 
@@ -191,5 +194,9 @@
     {
         Quantidade++;
 
+    }
+    void GoCheckout()
+    {
+        _navigation.NavigateTo("https://localhost:44380/pagamento");
     }
 }

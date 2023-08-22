@@ -1,6 +1,9 @@
 ﻿using EcommerceAPI.Repository.Interfaces;
+using EcommerceTShoes.Auth;
 using EcommerceTShoes.Model;
 using GeekShopping.ProductAPI.Context;
+using LoginAPI.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace EcommerceAPI.Repository
@@ -11,11 +14,12 @@ namespace EcommerceAPI.Repository
         public CarrinhoRepository(SQLServerContext db)
         {
             _db = db;
+            
         }
         public async Task<CarrinhoDeCompra> AddCart(Produto produto)
         {
 
-            CarrinhoDeCompra carrinho = new CarrinhoDeCompra()
+            CarrinhoDeCompra carrinho = new()
             {
                 Descricao = produto.Descricao,
                 ImagemUrl = produto.ImagemUrl,
@@ -23,6 +27,7 @@ namespace EcommerceAPI.Repository
                 Preco = produto.Preco,
                 ProdutoId = produto.Id,
                 Tamanho = produto.Tamanho,
+
             };
 
             await _db.Carrinho.AddAsync(carrinho);
@@ -33,8 +38,14 @@ namespace EcommerceAPI.Repository
         }
         public async Task<List<CarrinhoDeCompra>> GetAllCarrinho()
         {
-            return await _db.Carrinho.ToListAsync();
 
+            //var query = await (from c in _db.Carrinho
+            //                   from u in _db.Users
+            //                   where u.Id == id
+            //                   select c).ToListAsync();
+            
+            return await _db.Carrinho.ToListAsync();
+            //return query;
         }
         public async Task<bool> DeleteItemCarrinho(int id)
         {
@@ -55,12 +66,12 @@ namespace EcommerceAPI.Repository
             {
                 throw new Exception("carrinho é nulo");
             }
-
             carrinho.Nome = produto.Nome;
             carrinho.Tamanho = produto.Tamanho;
             carrinho.ImagemUrl = produto.ImagemUrl;
             carrinho.Preco = produto.Preco;
             carrinho.Descricao = produto.Descricao;
+            
 
             _db.Carrinho.Update(carrinho);
             await _db.SaveChangesAsync();
@@ -93,6 +104,25 @@ namespace EcommerceAPI.Repository
             };
 
             return Produto;
+        }
+
+        public async Task GetUserById()
+        {
+            try
+            {
+                //var claims = await _tokenAuthenticationProvider.GetAuthenticationStateAsync();
+                var a = JwtExtension.Token;
+
+                //var id = claims.User.FindFirst(f => f.Type == "id");
+
+           
+
+             
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
     }
 }

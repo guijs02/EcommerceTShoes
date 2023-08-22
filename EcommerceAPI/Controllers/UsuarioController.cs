@@ -1,7 +1,9 @@
 ﻿using EcommerceAPI.Repository.Interfaces;
 using LoginAPI.Dto;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using System.Net;
+using System.Text.Json;
 
 namespace EcommerceAPI.Controllers
 {
@@ -20,8 +22,8 @@ namespace EcommerceAPI.Controllers
         {
             try
             {
-                await _repo.Cadastro(dto);
-                return Ok();
+                var result = await _repo.Cadastro(dto);
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -35,11 +37,13 @@ namespace EcommerceAPI.Controllers
             try
             {
                var token =  await _repo.Login(dto);
+                
                 return Ok(token);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, ex.Message); 
+                //throw ex;
             }
         }
     }

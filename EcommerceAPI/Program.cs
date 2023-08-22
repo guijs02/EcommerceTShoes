@@ -6,8 +6,11 @@ using EcommerceAPI.Token;
 using GeekShopping.ProductAPI.Context;
 using LoginAPI.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Stripe;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,24 +26,27 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 
+builder.Services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.GetTempPath()));
+
 builder.Services.AddScoped<ITShoesRepository, TShoesRepository>();
 builder.Services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<EcommerceAPI.Token.TokenService>();
 
 builder.Services.AddIdentity<Usuario, IdentityRole>()
-                .AddEntityFrameworkStores<SQLServerContext>();
+                .AddEntityFrameworkStores<SQLServerContext>()
+                .AddDefaultTokenProviders();
 
 IdentityJwtConfig.ConfigIdentityOptions(builder.Services);
 
-IdentityJwtConfig.ConfigJwtAuthentication(builder.Services);
+IdentityJwtConfig.ConfigJwtAuthentication(builder);
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddStripeInfrastructure(builder.Configuration);
 
 builder.Services.AddCors();
-
+//builder.Services.AddDataProtection();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -59,8 +65,8 @@ app.UseCors(c =>
     c.AllowAnyOrigin();
 });
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

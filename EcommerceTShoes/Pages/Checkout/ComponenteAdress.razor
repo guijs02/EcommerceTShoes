@@ -1,0 +1,63 @@
+﻿@page "/adress"
+@using EcommerceTShoes.Model;
+
+<div class="d-flex justify-content-center">
+    <div class="col-md-6 mb-4">
+        <div class="card mb-4">
+            <div class="card-header py-3">
+                <h5 class="mb-0">Biling details</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form7Example1" @bind-value="userAdress.FirstName" class="form-control" />
+                                <label class="form-label" for="form7Example1">First name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-outline">
+                                <input type="text" id="form7Example2" @bind-value="userAdress.LastName" class="form-control" />
+                                <label class="form-label" for="form7Example2">Last name</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form7Example4" class="form-control" @bind-value="userAdress.Adress" />
+                        <label class="form-label" for="form7Example4">Address</label>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="form7Example5" class="form-control" @bind-value="userAdress.Email" />
+                        <label class="form-label" for="form7Example5">Email</label>
+                    </div>
+
+                    <!-- Number input -->
+                    <div class="form-outline mb-4">
+                        <input type="number" id="form7Example6" class="form-control" @bind-value="userAdress.Phone" />
+                        <label class="form-label" for="form7Example6">Phone</label>
+                    </div>
+
+                    <!-- Message input -->
+                    <div class="form-outline mb-4">
+                        <textarea class="form-control" id="form7Example7" rows="4" @bind="userAdress.AdicionalInfo"></textarea>
+                        <label class="form-label" for="form7Example7">Additional information</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private UserAdress userAdress { get; set; } = new();
+}
