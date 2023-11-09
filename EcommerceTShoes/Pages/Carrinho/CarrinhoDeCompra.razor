@@ -8,7 +8,7 @@
 
 @inject ICarrinhoService _CarrinhoService
 @inject IPagamentoService _PagamentoService
-@inject ITShoesService _TshoesService
+@inject IProdutoService _TshoesService
 
 @inject NavigationManager _navigation
 
@@ -162,7 +162,7 @@
 </html>
 
 @code {
-    public List<EcommerceWeb.Model.CarrinhoDeCompra> ListCarrinho { get; set; }
+    public List<EcommerceWeb.Model.CarrinhoDeCompraViewModel> ListCarrinho { get; set; }
 
     public bool OnInitializeCompleted { get; set; } = false;
     public bool IsUpdate { get; set; } = false;
@@ -178,10 +178,10 @@
         ListCarrinho = await _CarrinhoService.GetAllCarrinho();
         
     }
-    public void EditCartProduct(Model.CarrinhoDeCompra carrinho)
+    public void EditCartProduct(Model.CarrinhoDeCompraViewModel carrinho)
     {
         IsUpdate = true;
-        _navigation.NavigateTo($"https://localhost:44380/details/{carrinho.ProdutoId}/{IsUpdate}");
+        _navigation.NavigateTo($"/details/productCart/{carrinho.ProdutoId}");
 
     }
     public async Task RemoveItem(int id)

@@ -1,27 +1,21 @@
-﻿using Azure;
-using EcommerceCartAPI.Context;
+﻿using EcommerceCartAPI.Context;
 using EcommerceCartAPI.Interfaces;
 using EcommerceCartAPI.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using System.Text.Json;
 
 namespace EcommerceCartAPI.Repository
 {
     public class CarrinhoRepository : ICarrinhoRepository
     {
         private readonly SQLServerContext _db;
-        private readonly HttpClient _client;
-        private const string API_PRODUTO = "https://localhost:7064/api/TShoes";
 
-        public CarrinhoRepository(SQLServerContext db, HttpClient client)
+        public CarrinhoRepository(SQLServerContext db)
         {
             _db = db;
-            _client = client;
         }
         public async Task<CarrinhoDeCompra> AddCart(Produto produto, string userId)
         {
-            
+
             CarrinhoDeCompra carrinho = new()
             {
                 Descricao = produto.Descricao,
@@ -31,7 +25,7 @@ namespace EcommerceCartAPI.Repository
                 ProdutoId = produto.Id,
                 Tamanho = produto.Tamanho,
                 UserId = userId
-                
+
             };
 
             await _db.Carrinho.AddAsync(carrinho);
@@ -46,8 +40,8 @@ namespace EcommerceCartAPI.Repository
         }
         public async Task<bool> DeleteItemCarrinho(int id)
         {
-            var produto = await _db.Carrinho.FirstOrDefaultAsync(x => x.Id == id) ?? throw new Exception("O obj é nulo"); 
-            
+            var produto = await _db.Carrinho.FirstOrDefaultAsync(x => x.Id == id) ?? throw new Exception("O obj é nulo");
+
             _db.Carrinho.Remove(produto);
             _db.SaveChanges();
             return true;
@@ -55,51 +49,41 @@ namespace EcommerceCartAPI.Repository
 
         public async Task<CarrinhoDeCompra> EditCarrinho(Produto produto)
         {
-            var carrinho = _db.Carrinho.Where(w => w.ProdutoId == produto.Id).FirstOrDefault() ?? throw new Exception("carrinho é nulo"); 
-     
+            var carrinho = _db.Carrinho.Where(w => w.ProdutoId == produto.Id).FirstOrDefault() ?? throw new Exception("carrinho é nulo");
+
             carrinho.Nome = produto.Nome;
             carrinho.Tamanho = produto.Tamanho;
             carrinho.ImagemUrl = produto.ImagemUrl;
             carrinho.Preco = produto.Preco;
             carrinho.Descricao = produto.Descricao;
-            
+
 
             _db.Carrinho.Update(carrinho);
             await _db.SaveChangesAsync();
             return carrinho;
         }
 
-        public async Task<Produto> GetByIdProdutoCarrinho(int id)
+        public async Task<ProdutoCarrinhoDto> GetByIdProdutoCarrinho(int id)
         {
-            var response = await _client.GetAsync(API_PRODUTO);
-            var json = await response.Content.ReadAsStringAsync();
-            //var produtos = JsonSerializer.Deserialize<List<ProdutoDto>>(json, new JsonSerializerOptions() { WriteIndented = true, PropertyNameCaseInsensitive = true }) ;
 
-            var query = (from carrinho in _db.Carrinho
-                         from produto in _db.Products
-                         where carrinho.ProdutoId == id && produto.Id == id
-                         select new
-                         {
-                             produto,
-                             carrinho.Tamanho,
-                         }).AsNoTracking() ?? 
-                         throw new NullReferenceException("O query é nulo"); 
+            var produtoCarrinho = await (from carrinho in _db.Carrinho
+                               where carrinho.ProdutoId == id
+                               select carrinho
+                               ).FirstOrDefaultAsync();
 
-            var result = query.First();
-
-            var Produto = new Produto
+            var ProdutoCarrinho = new ProdutoCarrinhoDto
             {
-                Id = result.produto.Id,
-                Descricao = result.produto.Descricao,
-                Genero = result.produto.Genero,
-                ImagemUrl = result.produto.ImagemUrl,
-                Nome = result.produto.Nome,
-                Preco = result.produto.Preco,
-                Tamanho = result.Tamanho
+                Id = produtoCarrinho.ProdutoId,
+                Descricao = produtoCarrinho.Descricao,
+                ImagemUrl = produtoCarrinho.ImagemUrl,
+                Nome = produtoCarrinho.Nome,    
+                Preco = produtoCarrinho.Preco,
+                Tamanho = produtoCarrinho.Tamanho,
+                
             };
 
-            return Produto;
+            return ProdutoCarrinho;
         }
-     
+
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace EcommerceCartAPI.Models
+﻿namespace EcommerceProductAPI.Models
 {
     public class ProdutoDto
     {

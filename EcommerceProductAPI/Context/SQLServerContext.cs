@@ -1,16 +1,12 @@
-﻿using EcommerceWeb.Model;
-using LoginAPI.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using EcommerceProductAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace GeekShopping.ProductAPI.Context
+namespace EcommerceProductAPI.Context
 {
     public class SQLServerContext : DbContext
     {
         public SQLServerContext(DbContextOptions<SQLServerContext> options) : base(options) { }
-        public DbSet<ProdutoViewModel> Products { get; set; }
-        public DbSet<CarrinhoDeCompraViewModel> Carrinho { get; set; }
+        public DbSet<Produto> Products { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,7 +15,7 @@ namespace GeekShopping.ProductAPI.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<ProdutoViewModel>().HasData(new ProdutoViewModel
+            modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 1,
                 Nome = "VANS Preto",
@@ -29,7 +25,7 @@ namespace GeekShopping.ProductAPI.Context
                 Genero = EGenero.Feminino,
                 Tamanho= string.Empty
             });
-            modelBuilder.Entity<ProdutoViewModel>().HasData(new ProdutoViewModel
+            modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 2,
                 Nome = "Adidas Gold",
@@ -39,7 +35,7 @@ namespace GeekShopping.ProductAPI.Context
                 Genero = EGenero.Feminino,
                Tamanho = string.Empty
             });
-            modelBuilder.Entity<ProdutoViewModel>().HasData(new ProdutoViewModel
+            modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 3,
                 Nome = "Air max rosa",
@@ -50,7 +46,7 @@ namespace GeekShopping.ProductAPI.Context
                 Tamanho= string.Empty
 
             });
-            modelBuilder.Entity<ProdutoViewModel>().HasData(new ProdutoViewModel
+            modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 4,
                 Nome = "Nike Purple Run",
@@ -61,7 +57,7 @@ namespace GeekShopping.ProductAPI.Context
                 Tamanho= string.Empty
 
             });
-            modelBuilder.Entity<ProdutoViewModel>().HasData(new ProdutoViewModel
+            modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 5,
                 Nome = "Puma Branco",
@@ -72,7 +68,7 @@ namespace GeekShopping.ProductAPI.Context
                 Tamanho= string.Empty
 
             });
-            modelBuilder.Entity<ProdutoViewModel>().HasData(new ProdutoViewModel
+            modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 6,
                 Nome = "Nike Air Jordan",
@@ -82,7 +78,7 @@ namespace GeekShopping.ProductAPI.Context
                 Genero = EGenero.Masculino,
                 Tamanho= string.Empty
 
-            }); modelBuilder.Entity<ProdutoViewModel>().HasData(new ProdutoViewModel
+            }); modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 7,
                 Nome = " Asics Verde",
@@ -92,7 +88,7 @@ namespace GeekShopping.ProductAPI.Context
                 Genero = EGenero.Masculino,
                 Tamanho= string.Empty
 
-            }); modelBuilder.Entity<ProdutoViewModel>().HasData(new ProdutoViewModel
+            }); modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 9,
                 Nome = "Air Max Colorido",

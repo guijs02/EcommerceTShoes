@@ -16,7 +16,7 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCart(Produto produtoObj)
+        public async Task<IActionResult> AddCart(ProdutoViewModel produtoObj)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace EcommerceAPI.Controllers
             }
         }
         [HttpPut]
-        public async Task<IActionResult> EditCarrinho(Produto produto)
+        public async Task<IActionResult> EditCarrinho(ProdutoViewModel produto)
         {
             try
             {

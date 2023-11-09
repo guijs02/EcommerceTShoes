@@ -1,6 +1,6 @@
 ﻿namespace EcommerceWeb.Model
 {
-    public class CarrinhoDeCompra
+    public class CarrinhoDeCompraViewModel
     {
         public int Id { get; set; }
         //public string UserId { get; set; }

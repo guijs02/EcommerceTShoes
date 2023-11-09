@@ -67,11 +67,11 @@ namespace EcommerceAPI.Controllers
             }
         }
         [HttpGet("{id:int}")]
-        public IActionResult GetByIdProdutoCarrinho(int id)
+        public async Task<IActionResult> GetByIdProdutoCarrinho(int id)
         {
             try
             {
-                var produtos = _repo.GetByIdProdutoCarrinho(id);
+                var produtos = await _repo.GetByIdProdutoCarrinho(id);
                 if (produtos is null)
                     return NotFound();
 

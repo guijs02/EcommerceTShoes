@@ -13,7 +13,7 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 #region Services
-builder.Services.AddScoped<ITShoesService, TShoesService>();
+builder.Services.AddScoped<IProdutoService, ProdutoService>();
 builder.Services.AddScoped<ICarrinhoService, CarrinhoService>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IPagamentoService, PagamentoService>();

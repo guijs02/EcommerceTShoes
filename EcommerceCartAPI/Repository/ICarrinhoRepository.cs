@@ -8,6 +8,6 @@ namespace EcommerceCartAPI.Interfaces
         Task<List<CarrinhoDeCompra>> GetAllCarrinho(string userId);
         Task<CarrinhoDeCompra> EditCarrinho(Produto produto);
         Task<bool> DeleteItemCarrinho(int id);
-        Task<Produto> GetByIdProdutoCarrinho(int id);
+        Task<ProdutoCarrinhoDto> GetByIdProdutoCarrinho(int id);
     }
 }

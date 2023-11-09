@@ -4,7 +4,7 @@
 @using EcommerceWeb.Model;
 
 
-@inject ITShoesService _service
+@inject IProdutoService _service
 @inject NavigationManager _navigation
 
 @if (OnInitializeCompleted)
@@ -73,7 +73,7 @@
     }
     public void GetProduto(int id)
     {
-        _navigation.NavigateTo($"{_navigation.Uri}details/{id}/{false}");
+        _navigation.NavigateTo($"{_navigation.Uri}details/{id}");
         
     }
     public void OpenSideBar()

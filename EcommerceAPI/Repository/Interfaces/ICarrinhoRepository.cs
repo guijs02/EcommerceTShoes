@@ -4,10 +4,10 @@ namespace EcommerceAPI.Repository.Interfaces
 {
     public interface ICarrinhoRepository
     {
-        Task<CarrinhoDeCompra> AddCart(Produto produto,string userId);
-        Task<List<CarrinhoDeCompra>> GetAllCarrinho(string userId);
-        Task<CarrinhoDeCompra> EditCarrinho(Produto produto);
+        Task<CarrinhoDeCompraViewModel> AddCart(ProdutoViewModel produto,string userId);
+        Task<List<CarrinhoDeCompraViewModel>> GetAllCarrinho(string userId);
+        Task<CarrinhoDeCompraViewModel> EditCarrinho(ProdutoViewModel produto);
         Task<bool> DeleteItemCarrinho(int id);
-        Produto GetByIdProdutoCarrinho(int id);
+        ProdutoViewModel GetByIdProdutoCarrinho(int id);
     }
 }

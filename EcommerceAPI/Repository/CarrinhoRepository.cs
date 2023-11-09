@@ -17,10 +17,10 @@ namespace EcommerceAPI.Repository
             _db = db;
             
         }
-        public async Task<CarrinhoDeCompra> AddCart(Produto produto, string userId)
+        public async Task<CarrinhoDeCompraViewModel> AddCart(ProdutoViewModel produto, string userId)
         {
             
-            CarrinhoDeCompra carrinho = new()
+            CarrinhoDeCompraViewModel carrinho = new()
             {
                 Descricao = produto.Descricao,
                 ImagemUrl = produto.ImagemUrl,
@@ -38,7 +38,7 @@ namespace EcommerceAPI.Repository
             return carrinho;
 
         }
-        public async Task<List<CarrinhoDeCompra>> GetAllCarrinho(string userId)
+        public async Task<List<CarrinhoDeCompraViewModel>> GetAllCarrinho(string userId)
         {
             return await _db.Carrinho.Where(c => c.UserId == userId).ToListAsync();
         }
@@ -51,7 +51,7 @@ namespace EcommerceAPI.Repository
             return true;
         }
 
-        public async Task<CarrinhoDeCompra> EditCarrinho(Produto produto)
+        public async Task<CarrinhoDeCompraViewModel> EditCarrinho(ProdutoViewModel produto)
         {
             var carrinho = _db.Carrinho.Where(w => w.ProdutoId == produto.Id).FirstOrDefault() ?? throw new Exception("carrinho é nulo"); 
      
@@ -67,7 +67,7 @@ namespace EcommerceAPI.Repository
             return carrinho;
         }
 
-        public Produto GetByIdProdutoCarrinho(int id)
+        public ProdutoViewModel GetByIdProdutoCarrinho(int id)
         {
             var query = (from carrinho in _db.Carrinho
                          from produto in _db.Products
@@ -78,10 +78,9 @@ namespace EcommerceAPI.Repository
                              carrinho.Tamanho,
                          }).AsNoTracking() ?? 
                          throw new NullReferenceException("O query é nulo"); 
-
             var result = query.First();
-
-            var Produto = new Produto
+            //result.produto.
+            var Produto = new ProdutoViewModel
             {
                 Id = result.produto.Id,
                 Descricao = result.produto.Descricao,

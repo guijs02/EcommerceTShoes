@@ -3,11 +3,11 @@ using EcommerceWeb.Model;
 
 namespace EcommerceAPI.Services.Interfaces
 {
-    public interface ITShoesService
+    public interface IProdutoService
     {
         Task<List<ProdutoDto>> GetAllProdutos();
         Task<List<ProdutoDto>> GetProdutosByGenero(int idgenero);
-        Task<Produto> GetProduto(int id);
+        Task<ProdutoViewModel> GetProduto(int id);
         //Task<List<Produto>> GetAllProdutosMasculino();
     }
 }

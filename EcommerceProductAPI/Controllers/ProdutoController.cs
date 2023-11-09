@@ -1,16 +1,14 @@
-using EcommerceAPI.Repository;
-using EcommerceAPI.Repository.Interfaces;
-using EcommerceWeb.Model;
+using EcommerceProductAPI.Repository;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EcommerceAPI.Controllers
+namespace EcommerceProductAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TShoesController : ControllerBase
+    public class ProdutoController : ControllerBase
     {
-        private readonly ITShoesRepository _repo;
-        public TShoesController(ITShoesRepository repo)
+        private readonly IProdutoRepository _repo;
+        public ProdutoController(IProdutoRepository repo)
         {
             _repo = repo;
         }
@@ -66,6 +64,5 @@ namespace EcommerceAPI.Controllers
                 throw;
             }
         }
-        
     }
 }

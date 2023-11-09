@@ -30,7 +30,7 @@
     public string Mensagem { get; set; } 
 
     [Parameter]
-    public CarrinhoDeCompra carrinhoDeCompra { get; set; } 
+    public CarrinhoDeCompraViewModel carrinhoDeCompra { get; set; } 
     
     [Parameter]
     public bool IsUpdate { get; set; }
@@ -48,7 +48,7 @@
     {
         _navigation.NavigateTo("https://localhost:44380/Carrinho");
     }
-    void ViewContentModal(CarrinhoDeCompra obj)
+    void ViewContentModal(CarrinhoDeCompraViewModel obj)
     {
         var content = SetCorrectWordInModal();
         if (obj is not null)

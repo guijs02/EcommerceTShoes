@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EcommerceWeb.Model
 {
-    public class Payment
+    public class PaymentViewModel
     {
         [Required]
         public string Nome { get; set; }

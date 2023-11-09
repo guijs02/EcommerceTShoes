@@ -1,4 +1,4 @@
-﻿@page "/details/{CurrentId:int}"
+﻿@page "/details/productCart/{CurrentId:int}"
 
 @using EcommerceAPI.Services.Interfaces;
 @using EcommerceWeb.Dto;
@@ -46,7 +46,7 @@
                     <p>Cano Baixo</p>
                 </div>
             </div>
-            <EditForm EditContext="@editContext" Model="Produto" OnSubmit="AddCart">
+            <EditForm EditContext="@editContext" Model="Produto">
                 <DataAnnotationsValidator/>
                 <div class="row mt-4">
                     <div class="col-md-6">
@@ -65,13 +65,13 @@
                             <option value="44">44</option>
                         </InputSelect>
                         <ValidationMessage For="() => Produto.Tamanho"/>
-                        @* <p style="color:@SetColorMessage">@Mensagem</p> *@
+                        <p style="color:@SetColorMessage">@Mensagem</p>
                     </div>
                 </div>
 
                 <div class="row mt-4">
                     <div class="col-md-12">
-                        <button class="btn btn-primary" type="submit">@TextButtonAddCarrinho</button>
+                        <button class="btn btn-primary" @onclick="@(async () => await EditProductCart())">@TextButtonAddCarrinho</button>
                     </div>
                 </div>
             </EditForm>
@@ -82,7 +82,7 @@
     @if (VisualizarModalAddCart)
     {
         <ModalNotify carrinhoDeCompra="CarrinhoDeCompra"
-                     IsUpdate="false"
+                     IsUpdate="true"
                      Visible="@VisualizarModalAddCart"
                      VisibleModalCallback="@(() => VisualizarModalAddCart = false)">
         </ModalNotify>
@@ -96,12 +96,14 @@
         height: 100vh;
     }
 </style>
+
 @code {
     private EditContext? editContext;
     [Parameter]
     public int CurrentId { get; set; }
     public bool VisualizarModalAddCart { get; set; }
-    public ProdutoViewModel Produto { get; set; }
+    public ProdutoViewModel ProdutoViewModel { get; set; }
+    public ProdutoCarrinhoDto Produto { get; set; }
     public string SetColorMessage { get; set; }
     public bool OnInitializeCompleted { get; set; }
     public string Mensagem { get; set; } = string.Empty;
@@ -111,17 +113,14 @@
     protected override async Task OnInitializedAsync()
     {
 
-        Produto = await _service.GetProduto(CurrentId);
-        TextButtonAddCarrinho = "Adicionar ao Carrinho";
+        Produto = await _Carrinhoservice.GetByIdProdutoCarrinho(CurrentId);
+        TextButtonAddCarrinho = "Alterar Produto do Carrinho";
 
         OnInitializeCompleted = true;
     }
-    public async Task AddCart(EditContext editContext)
+    public async Task EditProductCart()
     {
-        // if (!editContext.Validate())
-        // {
-        //     return;
-        // }
+
         if (string.IsNullOrEmpty(Produto.Tamanho))
         {
             SetColorMessage = GlobalConstants.RED;
@@ -132,10 +131,9 @@
                 });
             return;
         }
-
-        CarrinhoDeCompra = await _Carrinhoservice.AddCart(Produto);
+        
+        CarrinhoDeCompra = await _Carrinhoservice.EditCarrinho(Produto);
         VisualizarModalAddCart = true;
 
     }
-
 }

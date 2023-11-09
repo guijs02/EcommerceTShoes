@@ -1,16 +1,14 @@
-﻿using EcommerceAPI.Repository.Interfaces;
-using EcommerceWeb.Dto;
-using EcommerceWeb.Model;
-using GeekShopping.ProductAPI.Context;
+﻿using EcommerceProductAPI.Context;
+using EcommerceProductAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 
-namespace EcommerceAPI.Repository
+namespace EcommerceProductAPI.Repository
 {
-    public class TShoesRepository : ITShoesRepository
+    public class ProdutoRepository : IProdutoRepository
     {
         private readonly SQLServerContext _db;
-        public TShoesRepository(SQLServerContext db)
+        public ProdutoRepository(SQLServerContext db)
         {
             _db = db;
         }

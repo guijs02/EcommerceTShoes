@@ -13,6 +13,7 @@ builder.Services.AddScoped<ICarrinhoRepository, CarrinhoRepository>().AddHttpCli
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

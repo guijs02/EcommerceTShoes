@@ -7,12 +7,12 @@ using System.Text.Json;
 
 namespace EcommerceAPI.Services
 {
-    public class TShoesService : ITShoesService
+    public class ProdutoService : IProdutoService
     {
         private readonly HttpClient _http;
-        private const string API = "https://localhost:7064/api/TShoes";
+        private const string API = "https://localhost:7055/api/Produto";
         private const string ERROR_API = "Erro ao realizar a requisição API";
-        public TShoesService(HttpClient http)
+        public ProdutoService(HttpClient http)
         {
             _http = http;
         }
@@ -38,7 +38,7 @@ namespace EcommerceAPI.Services
             return await SerializadorDeObjetos.Serializador<List<ProdutoDto>>(response);
 
         }     
-        public async Task<Produto> GetProduto(int id)
+        public async Task<ProdutoViewModel> GetProduto(int id)
         {
             var response = await _http.GetAsync($"{API}/{id}");
 
@@ -46,7 +46,7 @@ namespace EcommerceAPI.Services
             {
                 throw new Exception(ERROR_API);
             }
-            return await SerializadorDeObjetos.Serializador<Produto>(response);
+            return await SerializadorDeObjetos.Serializador<ProdutoViewModel>(response);
 
         }
   
