@@ -1,85 +1,53 @@
 ﻿@page "/pagamento"
-@using EcommerceTShoes.Pages.Login
+@using EcommerceWeb.Pages.Login
+
+@inject NavigationManager _navigation
 
 <AuthorizeView>
     <Authorized>
+        <link href="stylePayment.css" rel="stylesheet" />
 
-        <section class="p-4 p-md-5" style="
-            background-image: url(https://mdbcdn.b-cdn.net/img/Photos/Others/background3.webp);">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-5">
-                    <div class="card rounded-3">
-                        <div class="card-body p-4">
-                            <div class="text-center mb-4">
-                                <h3>Settings</h3>
-                                <h6>Payment</h6>
-                            </div>
-                            <form action="">
-                                <p class="fw-bold mb-4 pb-2">Saved cards:</p>
-
-                                <div class="d-flex flex-row align-items-center mb-4 pb-1">
-                                    <img class="img-fluid" src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
-                                    <div class="flex-fill mx-3">
-                                        <div class="form-outline">
-                                            <input type="text" id="formControlLgXc" class="form-control form-control-lg"
-                                                   value="**** **** **** 3193" />
-                                            <label class="form-label" for="formControlLgXc">Card Number</label>
-                                        </div>
-                                    </div>
-                                    <a href="#!">Remove card</a>
-                                </div>
-
-                                <div class="d-flex flex-row align-items-center mb-4 pb-1">
-                                    <img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" />
-                                    <div class="flex-fill mx-3">
-                                        <div class="form-outline">
-                                            <input type="text" id="formControlLgXs" class="form-control form-control-lg"
-                                                   value="**** **** **** 4296" />
-                                            <label class="form-label" for="formControlLgXs">Card Number</label>
-                                        </div>
-                                    </div>
-                                    <a href="#!">Remove card</a>
-                                </div>
-
-                                <p class="fw-bold mb-4">Add new card:</p>
-
-                                <div class="form-outline mb-4">
-                                    <input type="text" id="formControlLgXsd" class="form-control form-control-lg"
-                                           value="Anna Doe" />
-                                    <label class="form-label" for="formControlLgXsd">Cardholder's Name</label>
-                                </div>
-
-                                <div class="row mb-4">
-                                    <div class="col-7">
-                                        <div class="form-outline">
-                                            <input type="text" id="formControlLgXM" class="form-control form-control-lg"
-                                                   value="1234 5678 1234 5678" />
-                                            <label class="form-label" for="formControlLgXM">Card Number</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="form-outline">
-                                            <input type="password" id="formControlLgExpk" class="form-control form-control-lg"
-                                                   placeholder="MM/YYYY" />
-                                            <label class="form-label" for="formControlLgExpk">Expire</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-2">
-                                        <div class="form-outline">
-                                            <input type="password" id="formControlLgcvv" class="form-control form-control-lg"
-                                                   placeholder="Cvv" />
-                                            <label class="form-label" for="formControlLgcvv">Cvv</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-success btn-lg btn-block">Add card</button>
-                            </form>
+        <div class="container p-0">
+            <div class="card px-4">
+                <p class="h8 py-3">Payment Details</p>
+                <div class="row gx-3">
+                    <div class="col-12">
+                        <div class="d-flex flex-column">
+                            <p class="text mb-1">Person Name</p>
+                            <input class="form-control mb-3" type="text" placeholder="Name" @bind-value="payment.Nome">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex flex-column">
+                            <p class="text mb-1">Card Number</p>
+                            <input class="form-control mb-3" type="text" placeholder="1234 5678 435678" @bind-value="payment.Numero">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex flex-column">
+                            <p class="text mb-1">Expiry</p>
+                            <input class="form-control mb-3" type="text" placeholder="MM/YYYY" @bind-value="payment.Validade">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex flex-column">
+                            <p class="text mb-1">CVV/CVC</p>
+                            <input class="form-control mb-3 pt-2 " type="password" placeholder="***" @bind-value="payment.Cvv">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="btn btn-primary mb-3">
+                            <span @onclick="TesteConfirmacao" class="ps-3">Pay </span>
+                            <span class="fas fa-arrow-right"></span>
+                            @if (Loading)
+                            {
+                                <Spinner />
+                            }
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </Authorized>
     <NotAuthorized>
 
@@ -93,10 +61,19 @@
 
 
 @code {
-
+    Payment payment { get; set; } = new();
+    public bool Loading { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
+    }
+    public async void TesteConfirmacao()
+    {
+        Loading = true;
+        await Task.Delay(4000).ContinueWith(_ => Loading = false);
+        _navigation.NavigateTo("/paymentSucess");
+        StateHasChanged();
+
     }
 }

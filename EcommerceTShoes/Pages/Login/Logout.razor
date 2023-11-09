@@ -1,25 +1,22 @@
 ﻿@page "/logout"
-@using EcommerceTShoes.Services.Interfaces;
+@using EcommerceWeb.Services.Interfaces;
 
 @inject IUsuarioService _service
-<h1>deslogado</h1>
-
-<span>@msg</span>
+@inject NavigationManager _navigation
 
 
 @code {
-    public string msg { get; set; } = "";
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
             await _service.Logout();
-            msg = "deu certo";
+            _navigation.NavigateTo("Login");
         }
         catch (Exception e)
         {
-            msg = "Deu errado";
+            throw;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace EcommerceTShoes.Services.Interfaces
+﻿namespace EcommerceWeb.Services.Interfaces
 {
     public interface IPagamentoService
     {

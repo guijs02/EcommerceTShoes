@@ -1,9 +1,9 @@
 ﻿@page "/details/{CurrentId:int}/{IsUpdate:bool}"
 
 @using EcommerceAPI.Services.Interfaces;
-@using EcommerceTShoes.Model;
-@using EcommerceTShoes.Pages
-@using EcommerceTShoes.Modals;
+@using EcommerceWeb.Model;
+@using EcommerceWeb.Pages
+@using EcommerceWeb.Modals;
 
 @inject ITShoesService _service
 @inject ICarrinhoService _Carrinhoservice
@@ -21,7 +21,9 @@
         <title>Tênis</title>
 
     </head>
-
+    <NavTShoes></NavTShoes>
+    <br>
+    <br>
     <body>
         <div class="container">
             <div class="row">
@@ -100,9 +102,7 @@
     public bool IsUpdate { get; set; }
     public bool VisualizarModalAddCart { get; set; }
     public Produto Produto { get; set; }
-
     public string SetColorMessage { get; set; }
-
     public bool OnInitializeCompleted { get; set; }
     public string Mensagem { get; set; } = string.Empty;
     public string TextButtonAddCarrinho { get; set; }
@@ -143,7 +143,8 @@
             VisualizarModalAddCart = true;
             return;
         }
-
+ 
+        
         CarrinhoDeCompra = await _Carrinhoservice.AddCart(Produto);
         VisualizarModalAddCart = true;
 

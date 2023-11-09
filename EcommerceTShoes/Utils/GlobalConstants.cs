@@ -1,4 +1,4 @@
-﻿namespace EcommerceTShoes.Utils
+﻿namespace EcommerceWeb.Utils
 {
     public static class GlobalConstants
     {

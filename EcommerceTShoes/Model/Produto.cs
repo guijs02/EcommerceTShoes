@@ -1,4 +1,4 @@
-﻿namespace EcommerceTShoes.Model
+﻿namespace EcommerceWeb.Model
 {
     public class Produto
     {

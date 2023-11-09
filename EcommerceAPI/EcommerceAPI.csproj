@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EcommerceTShoes\EcommerceTShoes.csproj" />
+    <ProjectReference Include="..\EcommerceTShoes\EcommerceWeb.csproj" />
   </ItemGroup>
 
   <ItemGroup>

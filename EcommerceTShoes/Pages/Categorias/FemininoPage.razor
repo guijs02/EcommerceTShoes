@@ -1,0 +1,28 @@
+﻿@page "/Feminino"
+@using EcommerceAPI.Services.Interfaces;
+@using EcommerceWeb.Dto;
+@using EcommerceWeb.Model;
+
+@inject ITShoesService _service
+
+@if (OnInitializeCompleted)
+{
+    <NavTShoes />
+
+    <ViewShoes Produtos="@Produtos">
+
+    </ViewShoes>
+}
+
+@code {
+    List<ProdutoDto> Produtos { get; set; }
+
+    public bool OnInitializeCompleted { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Produtos = await _service.GetProdutosByGenero((int)EGenero.Feminino);
+
+        OnInitializeCompleted = true;
+    }
+}

@@ -1,17 +1,17 @@
-﻿using EcommerceTShoes.Services.Interfaces;
-using EcommerceTShoes.Services.Serialize;
+﻿using EcommerceWeb.Services.Interfaces;
+using EcommerceWeb.Services.Serialize;
 using LoginAPI.Dto;
 using System.Net.Http.Json;
 using System.Net;
-using EcommerceTShoes.Auth;
+using EcommerceWeb.Auth;
 
-namespace EcommerceTShoes.Services
+namespace EcommerceWeb.Services
 {
     public class UsuarioService : IUsuarioService
     {
         private readonly HttpClient _http;
         private readonly TokenAuthenticationProvider _tokenProvider;
-        private const string BASE_ADRESS = "https://localhost:7064";
+        private const string BASE_ADRESS = "https://localhost:5056";
         private const string API = $"{BASE_ADRESS}/api/Usuario";
         private const string ERROR_API = "Erro ao realizar a requisição API";
 

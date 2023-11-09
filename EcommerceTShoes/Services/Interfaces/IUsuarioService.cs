@@ -1,6 +1,6 @@
 ﻿using LoginAPI.Dto;
 
-namespace EcommerceTShoes.Services.Interfaces
+namespace EcommerceWeb.Services.Interfaces
 {
     public interface IUsuarioService
     {

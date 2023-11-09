@@ -1,4 +1,4 @@
-﻿using EcommerceTShoes.Model;
+﻿using EcommerceWeb.Model;
 using LoginAPI.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GeekShopping.ProductAPI.Context
 {
-    public class SQLServerContext : IdentityDbContext<Usuario>
+    public class SQLServerContext : DbContext
     {
         public SQLServerContext(DbContextOptions<SQLServerContext> options) : base(options) { }
         public DbSet<Produto> Products { get; set; }
@@ -14,7 +14,6 @@ namespace GeekShopping.ProductAPI.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,7 +22,7 @@ namespace GeekShopping.ProductAPI.Context
             modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 1,
-                Nome = "Tenis VANS Preto",
+                Nome = "VANS Preto",
                 Descricao = "tenis",
                 Preco = 199.99m,
                 ImagemUrl = "/assets/VANS.webp",
@@ -33,7 +32,7 @@ namespace GeekShopping.ProductAPI.Context
             modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 2,
-                Nome = "Tenis adidas",
+                Nome = "Adidas Gold",
                 Descricao = "tenis",
                 Preco = 199.99m,
                 ImagemUrl = "/assets/aaaaa.jpg",
@@ -65,7 +64,7 @@ namespace GeekShopping.ProductAPI.Context
             modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 5,
-                Nome = "Tenis Puma Branco",
+                Nome = "Puma Branco",
                 Descricao = "tenis",
                 Preco = 289.99m,
                 ImagemUrl = "/assets/tenisPuma.webp",
@@ -76,7 +75,7 @@ namespace GeekShopping.ProductAPI.Context
             modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 6,
-                Nome = "Tenis Nike Air Jordan",
+                Nome = "Nike Air Jordan",
                 Descricao = "tenis",
                 Preco = 289.99m,
                 ImagemUrl = "/assets/ct0978-060_4.jpg",
@@ -86,7 +85,7 @@ namespace GeekShopping.ProductAPI.Context
             }); modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 7,
-                Nome = "Tenis Asics Verde",
+                Nome = " Asics Verde",
                 Descricao = "tenis",
                 Preco = 249.99m,
                 ImagemUrl = "/assets/1011B004_300_SR_RT_GLB_PNG_1280x1280-JPG.webp",
@@ -96,7 +95,7 @@ namespace GeekShopping.ProductAPI.Context
             }); modelBuilder.Entity<Produto>().HasData(new Produto
             {
                 Id = 9,
-                Nome = "Tenis Air Max Colorido",
+                Nome = "Air Max Colorido",
                 Descricao = "tenis",
                 Preco = 349.99m,
                 ImagemUrl = "/assets/MaxColorido.webp",

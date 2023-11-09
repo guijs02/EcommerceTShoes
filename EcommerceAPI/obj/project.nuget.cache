@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Nd3zYSK1etWy0re6uptsoWQ1TKne7MfdCmF1cmJazVBaVLhqGOwm4mGMn/g6weJdnyiPtqpqBs0uaJCV8BO4iQ==",
+  "dgSpecHash": "G8F+NvrB2Q2aDAjVlbbwPxUsJnKuhrY/UqAz5bJqLol4nwLS4o77OKERGVCDloMPLizk2DZr7AYxBjk0KgW9/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceAPI\\EcommerceAPI.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.20\\microsoft.aspnetcore.authentication.jwtbearer.6.0.20.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\microsoft.aspnetcore.authorization.6.0.16.nupkg.sha512",

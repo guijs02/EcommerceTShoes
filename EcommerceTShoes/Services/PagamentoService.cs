@@ -1,9 +1,9 @@
-﻿using EcommerceTShoes.Model;
-using EcommerceTShoes.Services.Interfaces;
-using EcommerceTShoes.Services.Serialize;
+﻿using EcommerceWeb.Model;
+using EcommerceWeb.Services.Interfaces;
+using EcommerceWeb.Services.Serialize;
 using System.Net.Http.Json;
 
-namespace EcommerceTShoes.Services
+namespace EcommerceWeb.Services
 {
     public class PagamentoService : IPagamentoService
     {

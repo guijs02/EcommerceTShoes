@@ -1,6 +1,6 @@
 using EcommerceAPI.Repository;
 using EcommerceAPI.Repository.Interfaces;
-using EcommerceTShoes.Model;
+using EcommerceWeb.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers
@@ -66,6 +66,6 @@ namespace EcommerceAPI.Controllers
                 throw;
             }
         }
-
+        
     }
 }

@@ -1,6 +1,8 @@
 ﻿@page "/"
 @using EcommerceAPI.Services.Interfaces;
-@using EcommerceTShoes.Model;
+@using EcommerceWeb.Dto;
+@using EcommerceWeb.Model;
+
 
 @inject ITShoesService _service
 @inject NavigationManager _navigation
@@ -8,51 +10,7 @@
 @if (OnInitializeCompleted)
 {
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning navbar-compact">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item" href="/">
-                <img src="/assets/fotoLogo_preview_rev_1.png" height="80">
-            </li>
-        </ul>
-
-        <ul class="nav justify-contentstart">
-            <li class="nav-item">
-                <a>TShoes</a>
-            </li>
-        </ul>
-
-        <button @onclick="OpenSideBar" id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse nav justify-content-center" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-black mr-3" href="/Masculino">Masculino</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-black mr-3" href="/Feminino">Feminino</a>
-                </li>
-            </ul>
-
-
-
-            <a class="nav-link" href="/Carrinho">
-                <img src="/assets/shopping-cart.png" style="height:20px;" />
-            </a>
-        </div>
-
-        <strong>@Message</strong>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link text-black mr-3" href="/Logout">Logout</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-black mr-3" href="/Login">Login</a>
-            </li>
-        </ul>
-
-    </nav>
+   <NavTShoes/>
 
     <div class="d-flex justify-content-center">
 
@@ -62,10 +20,9 @@
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="p-0 my-3 border">
                         <div class="card">
-                            <img src="@item.ImagemUrl" class="card-img-top">
+                            <img src="@item.ImageUrl" class="card-img-top">
                             <div class="card-body">
                                 <h3 class="cardcard-title test-success">@item.Nome</h3>
-                                <span class="badge badge-light mb-2">@item.Descricao</span>
                                 <p class="card-text"></p>
 
                                 <div class="row">
@@ -85,6 +42,12 @@
         </div>
 
     </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - GeekShopping.Web - <a>Product</a>
+        </div>
+    </footer>
 }
 
 <style>
@@ -94,39 +57,24 @@
         cursor: pointer;
     }
 </style>
-@code {
-    List<Produto> Produtos { get; set; }
-    private ElementReference toastRef;
-    public bool OnInitializeCompleted { get; set; } = false;
-    public bool InicializarComponent { get; set; } = false;
-    public bool openSideBar { get; set; } = false;
-    public string User { get; set; }
-    public string Message { get; set; }
 
-    [CascadingParameter]
-    private Task<AuthenticationState> authenticationState { get; set; }
+@code {
+    List<ProdutoDto> Produtos { get; set; }
+    
+    public bool OnInitializeCompleted { get; set; } = false;
+    public bool openSideBar { get; set; } = false;
+   
 
     protected override async Task OnInitializedAsync()
     {
         Produtos = await _service.GetAllProdutos();
-        var authState = await authenticationState;
-
-        if (string.IsNullOrEmpty(authState.User.Identity?.Name))
-        {
-            Message = string.Empty;
-        }
-        else
-        {
-            User = authState.User.Identity?.Name;
-            Message = $"Olá, {User}";
-
-        }
+   
         OnInitializeCompleted = true;
     }
     public void GetProduto(int id)
     {
         _navigation.NavigateTo($"{_navigation.Uri}details/{id}/{false}");
-        InicializarComponent = true;
+        
     }
     public void OpenSideBar()
     {

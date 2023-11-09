@@ -1,11 +1,11 @@
 using EcommerceAPI.Services.Interfaces;
 using EcommerceAPI.Services;
-using EcommerceTShoes;
+using EcommerceWeb;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using EcommerceTShoes.Services;
-using EcommerceTShoes.Services.Interfaces;
-using EcommerceTShoes.Auth;
+using EcommerceWeb.Services;
+using EcommerceWeb.Services.Interfaces;
+using EcommerceWeb.Auth;
 using Microsoft.AspNetCore.Components.Authorization;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);

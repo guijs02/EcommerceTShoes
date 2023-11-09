@@ -1,6 +1,7 @@
 ﻿using EcommerceAPI.Services.Interfaces;
-using EcommerceTShoes.Model;
-using EcommerceTShoes.Services.Serialize;
+using EcommerceWeb.Dto;
+using EcommerceWeb.Model;
+using EcommerceWeb.Services.Serialize;
 using System.Net.Http.Json;
 using System.Text.Json;
 
@@ -15,7 +16,7 @@ namespace EcommerceAPI.Services
         {
             _http = http;
         }
-        public async Task<List<Produto>> GetAllProdutos()
+        public async Task<List<ProdutoDto>> GetAllProdutos()
         {
             var response = await _http.GetAsync(API);
 
@@ -23,10 +24,10 @@ namespace EcommerceAPI.Services
             {
                 throw new Exception(ERROR_API);
             }
-            return await SerializadorDeObjetos.Serializador<List<Produto>>(response);
+            return await SerializadorDeObjetos.Serializador<List<ProdutoDto>>(response);
 
         }    
-        public async Task<List<Produto>> GetProdutosByGenero(int idgenero)
+        public async Task<List<ProdutoDto>> GetProdutosByGenero(int idgenero)
         {
             var response = await _http.GetAsync($"{API}/GetByGenero/{idgenero}");
             
@@ -34,7 +35,7 @@ namespace EcommerceAPI.Services
             {
                 throw new Exception(ERROR_API);
             }
-            return await SerializadorDeObjetos.Serializador<List<Produto>>(response);
+            return await SerializadorDeObjetos.Serializador<List<ProdutoDto>>(response);
 
         }     
         public async Task<Produto> GetProduto(int id)

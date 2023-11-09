@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "y3HiIG9pc0fbMG3KlHEmKEZZ5dLYLNw/kuUtmkeRhF7a5lLR+Ss1D5M1XU+J+UDmfjoEyuDGmY6XaGcrdH4nGA==",
+  "dgSpecHash": "vcNOLQyQf9VMxt9k7cM9nfL7rGcfEMwOy+MV7h2cgmLzBiXIAD9wrOT+nVO2WBWKcNUoDRNlQNxf0sPr/cy/qQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\EcommerceTShoes.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\EcommerceWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.16\\microsoft.aspnetcore.authorization.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.16\\microsoft.aspnetcore.components.6.0.16.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.16\\microsoft.aspnetcore.components.analyzers.6.0.16.nupkg.sha512",
@@ -36,7 +37,7 @@
     "C:\\Users\\user\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.20\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.20.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.24\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.24.nupkg.sha512"
   ],
   "logs": []
 }

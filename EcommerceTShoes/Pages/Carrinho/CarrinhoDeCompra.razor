@@ -1,10 +1,10 @@
 ﻿@page "/Carrinho"
 
 @using EcommerceAPI.Services.Interfaces;
-@using EcommerceTShoes.Model;
-@using EcommerceTShoes.Modals;
-@using EcommerceTShoes.Pages.Login;
-@using EcommerceTShoes.Services.Interfaces;
+@using EcommerceWeb.Model;
+@using EcommerceWeb.Modals;
+@using EcommerceWeb.Pages.Login;
+@using EcommerceWeb.Services.Interfaces;
 
 @inject ICarrinhoService _CarrinhoService
 @inject IPagamentoService _PagamentoService
@@ -15,12 +15,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
 </head>
+<NavTShoes>
+
+</NavTShoes>
+
 <body>
     @if (OnInitializeCompleted)
     {
@@ -160,7 +162,7 @@
 </html>
 
 @code {
-    public List<EcommerceTShoes.Model.CarrinhoDeCompra> ListCarrinho { get; set; }
+    public List<EcommerceWeb.Model.CarrinhoDeCompra> ListCarrinho { get; set; }
 
     public bool OnInitializeCompleted { get; set; } = false;
     public bool IsUpdate { get; set; } = false;
@@ -174,7 +176,7 @@
     public async Task GetAllCarrinho()
     {
         ListCarrinho = await _CarrinhoService.GetAllCarrinho();
-
+        
     }
     public void EditCartProduct(Model.CarrinhoDeCompra carrinho)
     {

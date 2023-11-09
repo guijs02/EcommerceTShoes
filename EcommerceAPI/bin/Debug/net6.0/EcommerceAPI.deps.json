@@ -10,7 +10,7 @@
         "dependencies": {
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "EcommerceTShoes": "1.0.0",
+          "EcommerceWeb": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.20",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.20",
           "Microsoft.EntityFrameworkCore.Design": "7.0.9",
@@ -81,6 +81,14 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.6.0.0",
             "fileVersion": "1.600.22.20503"
+          }
+        }
+      },
+      "FluentValidation/11.8.0": {
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.8.0.0"
           }
         }
       },
@@ -1026,14 +1034,15 @@
           }
         }
       },
-      "EcommerceTShoes/1.0.0": {
+      "EcommerceWeb/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
+          "FluentValidation": "11.8.0",
           "Microsoft.AspNetCore.Components.Authorization": "6.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.16"
         },
         "runtime": {
-          "EcommerceTShoes.dll": {}
+          "EcommerceWeb.dll": {}
         }
       }
     }
@@ -1071,6 +1080,13 @@
       "sha512": "sha512-EycyMsb6rD2PK9P0SyibFfEhvWWttdrYhyPF4f41uzdB/44yQlV+2Wehxyg489Rj6gbPvSPgbKq0xsHJBhipZA==",
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
+    },
+    "FluentValidation/11.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TiEaaYqSIAS+wXQv46LRm8Mca092XYNePD0n231Hqlkmm5FuToZoWnjI1ef/vJUxBzqR7/k2vaVQXxijNgVKRQ==",
+      "path": "fluentvalidation/11.8.0",
+      "hashPath": "fluentvalidation.11.8.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -1772,7 +1788,7 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "EcommerceTShoes/1.0.0": {
+    "EcommerceWeb/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

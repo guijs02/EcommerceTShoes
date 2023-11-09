@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using System.Text.Json;
 
-namespace EcommerceTShoes.Services.Serialize
+namespace EcommerceWeb.Services.Serialize
 {
     public class SerializadorDeObjetos
     {

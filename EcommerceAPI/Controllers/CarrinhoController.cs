@@ -1,6 +1,7 @@
 ﻿using EcommerceAPI.Repository.Interfaces;
-using EcommerceTShoes.Model;
+using EcommerceWeb.Model;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace EcommerceAPI.Controllers
 {
@@ -9,7 +10,7 @@ namespace EcommerceAPI.Controllers
     public class CarrinhoController : ControllerBase
     {
         private readonly ICarrinhoRepository _repo;
-        public CarrinhoController(ICarrinhoRepository repo)
+        public CarrinhoController(ICarrinhoRepository repo, HttpClient http)
         {
             _repo = repo;
         }
@@ -19,7 +20,9 @@ namespace EcommerceAPI.Controllers
         {
             try
             {
-                var produto = await _repo.AddCart(produtoObj);
+                var UserId = GetUserId();
+
+                var produto = await _repo.AddCart(produtoObj, UserId);
                 if (produto is null)
                     return NotFound();
 
@@ -29,13 +32,15 @@ namespace EcommerceAPI.Controllers
             {
                 throw;
             }
-        }  
+        }
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             try
             {
-                var produtos = await _repo.GetAllCarrinho();
+                var UserId = GetUserId();
+                var produtos = await _repo.GetAllCarrinho(UserId);
+
                 if (produtos is null)
                     return NotFound();
 
@@ -94,6 +99,13 @@ namespace EcommerceAPI.Controllers
             {
                 throw;
             }
+        }
+        private string GetUserId()
+        {
+            var UserId = HttpContext.User.Claims.Where(c => c.Type.ToString() == "id")?.FirstOrDefault()?.Value;
+
+            return UserId;
+
         }
     }
 }

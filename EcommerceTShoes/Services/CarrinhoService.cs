@@ -1,6 +1,6 @@
 ﻿using EcommerceAPI.Services.Interfaces;
-using EcommerceTShoes.Model;
-using EcommerceTShoes.Services.Serialize;
+using EcommerceWeb.Model;
+using EcommerceWeb.Services.Serialize;
 using System.Net.Http.Json;
 using System.Text.Json;
 
@@ -15,7 +15,7 @@ namespace EcommerceAPI.Services
         {
             _http = http;
         }
-        public async Task<CarrinhoDeCompra> AddCart(Produto produto)
+        public async Task<CarrinhoDeCompra> AddCart(Produto produto, string UserId)
         {
             var response = await _http.PostAsJsonAsync(API, produto);
 
