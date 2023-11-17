@@ -55,6 +55,7 @@
                                             <!-- Data -->
                                             <p><strong>@item.Nome</strong></p>
                                             <p>@item.Descricao</p>
+                                            <p>Tamanho: @item.Tamanho</p>
                                             <button type="button" class="btn btn-danger btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
                                                     title="Remove item" @onclick="@(async () => await RemoveItem(item.Id))">
                                                 <i class="fas fa-trash"></i>
@@ -70,24 +71,24 @@
                                             <!-- Quantity -->
                                             <div class="d-flex mb-4" style="max-width: 300px">
                                                 <button class="btn btn-primary px-3 me-2" style="height:40px;"
-                                                @onclick="@(() => Quantidade--)">
+                                                @onclick="@(() => {item.Quantidade--; CalcularValorTotal();})">
                                                     <i class="fas fa-minus"></i>
                                                 </button>
 
                                                 <div class="form-outline">
-                                                    <input id="form1" min="0" name="quantity" type="number" @bind-value="Quantidade" class="form-control" />
+                                                    <input id="form1" min="1" name="quantity" type="number" @bind="item.Quantidade" class="form-control" />
                                                     <label class="form-label" for="form1">Quantity</label>
                                                 </div>
 
                                                 <button class="btn btn-primary px-3 ms-2" style="height:40px;"
-                                                @onclick="@(() => Quantidade++)">
+                                                @onclick="@(() => {item.Quantidade++; CalcularValorTotal();})">
                                                     <i class="fas fa-plus"></i>
                                                 </button>
                                             </div>
                                             <!-- Quantity -->
                                             <!-- Price -->
                                             <p class="text-start text-md-center">
-                                                <strong>@item.Preco.ToString("C")</strong>
+                                                <strong>@((item.Preco * item.Quantidade).ToString("C2")) </strong>
                                             </p>
                                             <!-- Price -->
                                         </div>
@@ -125,26 +126,19 @@
                     <div class="col-md-4">
                         <div class="card mb-4">
                             <div class="card-header py-3">
-                                <h5 class="mb-0">Summary</h5>
+                                <h5 class="mb-0">Súmario</h5>
                             </div>
                             <div class="card-body">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                        Products
-                                        <span>@ListCarrinho.Sum(s => s.Preco).ToString("C")</span>
-                                    </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                        Shipping
+                                        Frete
                                         <span>Gratis</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                         <div>
-                                            <strong>Total amount</strong>
-                                            <strong>
-                                                <p class="mb-0">(including VAT)</p>
-                                            </strong>
+                                            <strong>Total da compra</strong>
                                         </div>
-                                        <span><strong>@ListCarrinho.Sum(s => s.Preco).ToString("C")</strong></span>
+                                        <span><strong>@ValorTotal</strong></span>
                                     </li>
                                 </ul>
 
@@ -162,23 +156,26 @@
 </html>
 
 @code {
-    public List<EcommerceWeb.Model.CarrinhoDeCompraViewModel> ListCarrinho { get; set; }
+    public List<CarrinhoDeCompraViewModel> ListCarrinho { get; set; }
 
     public bool OnInitializeCompleted { get; set; } = false;
     public bool IsUpdate { get; set; } = false;
-    public int Quantidade { get; set; } = 1;
+    public string ValorTotal;
 
     protected override async Task OnInitializedAsync()
     {
         await GetAllCarrinho();
+
+        ValorTotal = ListCarrinho.Sum(s => s.Preco * s.Quantidade).ToString("C");
+
         OnInitializeCompleted = true;
     }
     public async Task GetAllCarrinho()
     {
         ListCarrinho = await _CarrinhoService.GetAllCarrinho();
-        
+
     }
-    public void EditCartProduct(Model.CarrinhoDeCompraViewModel carrinho)
+    public void EditCartProduct(CarrinhoDeCompraViewModel carrinho)
     {
         IsUpdate = true;
         _navigation.NavigateTo($"/details/productCart/{carrinho.ProdutoId}");
@@ -189,16 +186,16 @@
         await _CarrinhoService.DeleteItemCarrinho(id);
 
         await GetAllCarrinho();
+        CalcularValorTotal();
 
         StateHasChanged();
     }
-    void Increment()
+    void CalcularValorTotal()
     {
-        Quantidade++;
-
+        ValorTotal = ListCarrinho.Sum(s => s.Preco * s.Quantidade).ToString("C2");
     }
     void GoCheckout()
     {
-        _navigation.NavigateTo("https://localhost:44380/pagamento");
+        _navigation.NavigateTo("pagamento");
     }
 }

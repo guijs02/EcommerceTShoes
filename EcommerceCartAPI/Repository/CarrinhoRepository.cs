@@ -15,6 +15,21 @@ namespace EcommerceCartAPI.Repository
         }
         public async Task<CarrinhoDeCompra> AddCart(Produto produto, string userId)
         {
+            var produtosRepetidosNoCarrinho = _db.Carrinho.Where(c => c.UserId == userId && 
+                                                                c.ProdutoId == produto.Id &&
+                                                                c.Tamanho == produto.Tamanho)
+                                                               .AsNoTracking();
+            if (produtosRepetidosNoCarrinho.Any())
+            {
+                var produtoJaInserido = produtosRepetidosNoCarrinho.First();
+                produtoJaInserido.Quantidade = produtosRepetidosNoCarrinho.First().Quantidade + 1;
+
+                _db.Carrinho.Update(produtoJaInserido);
+                _db.SaveChanges();
+
+                return produtoJaInserido;
+            }
+
 
             CarrinhoDeCompra carrinho = new()
             {
@@ -30,13 +45,13 @@ namespace EcommerceCartAPI.Repository
 
             await _db.Carrinho.AddAsync(carrinho);
             await _db.SaveChangesAsync();
-
             return carrinho;
-
         }
+
         public async Task<List<CarrinhoDeCompra>> GetAllCarrinho(string userId)
         {
-            return await _db.Carrinho.Where(c => c.UserId == userId).ToListAsync();
+            var list = await _db.Carrinho.Where(c => c.UserId == userId).ToListAsync();
+            return list;
         }
         public async Task<bool> DeleteItemCarrinho(int id)
         {
@@ -67,23 +82,30 @@ namespace EcommerceCartAPI.Repository
         {
 
             var produtoCarrinho = await (from carrinho in _db.Carrinho
-                               where carrinho.ProdutoId == id
-                               select carrinho
-                               ).FirstOrDefaultAsync();
+                                         where carrinho.ProdutoId == id
+                                         select carrinho
+                                        ).FirstOrDefaultAsync();
 
             var ProdutoCarrinho = new ProdutoCarrinhoDto
             {
                 Id = produtoCarrinho.ProdutoId,
                 Descricao = produtoCarrinho.Descricao,
                 ImagemUrl = produtoCarrinho.ImagemUrl,
-                Nome = produtoCarrinho.Nome,    
+                Nome = produtoCarrinho.Nome,
                 Preco = produtoCarrinho.Preco,
                 Tamanho = produtoCarrinho.Tamanho,
-                
+
             };
 
             return ProdutoCarrinho;
         }
 
+        public async Task<bool> ClearCart()
+        {
+            var produtos = _db.Carrinho.Select(s => s);
+            _db.Carrinho.RemoveRange(produtos);
+            await _db.SaveChangesAsync();
+            return true;
+        }
     }
 }

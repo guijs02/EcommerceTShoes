@@ -13,7 +13,7 @@
 @if (OnInitializeCompleted)
 {
 
-    <html lang="en">
+ @*    <html lang="en">
 
     <head>
         <meta charset="UTF-8">
@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <title>Tênis</title>
 
-    </head>
+    </head> *@
     <NavTShoes></NavTShoes>
     <br>
     <br>
@@ -64,7 +64,7 @@
                             <option value="43">43</option>
                             <option value="44">44</option>
                         </InputSelect>
-                        <ValidationMessage For="() => Produto.Tamanho"/>
+                       @*  <ValidationMessage For="() => Produto.Tamanho"/> *@
                         <p style="color:@SetColorMessage">@Mensagem</p>
                     </div>
                 </div>
@@ -84,18 +84,12 @@
         <ModalNotify carrinhoDeCompra="CarrinhoDeCompra"
                      IsUpdate="true"
                      Visible="@VisualizarModalAddCart"
-                     VisibleModalCallback="@(() => VisualizarModalAddCart = false)">
+                     VisibleModalCallback="() => VisualizarModalAddCart = false">
         </ModalNotify>
 
     }
-    </html>
+    @* </html> *@
 }
-<style>
-
-    .html {
-        height: 100vh;
-    }
-</style>
 
 @code {
     private EditContext? editContext;
@@ -137,3 +131,10 @@
 
     }
 }
+
+<style>
+
+    .html {
+        height: 100vh;
+    }
+</style>

@@ -1,6 +1,8 @@
 using EcommerceCartAPI.Context;
 using EcommerceCartAPI.Interfaces;
+using EcommerceCartAPI.RabbitMQSender;
 using EcommerceCartAPI.Repository;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSqlServer<SQLServerContext>(builder.Configuration["ConnectionStrings:Database"]);
 builder.Services.AddScoped<ICarrinhoRepository, CarrinhoRepository>().AddHttpClient();
+builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

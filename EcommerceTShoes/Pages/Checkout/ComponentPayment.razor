@@ -1,53 +1,17 @@
 ﻿@page "/pagamento"
+@using EcommerceAPI.Services.Interfaces
 @using EcommerceWeb.Pages.Login
+@using EcommerceWeb.Services;
 
 @inject NavigationManager _navigation
+@inject ICarrinhoService _cartService
 
 <AuthorizeView>
     <Authorized>
-        <link href="stylePayment.css" rel="stylesheet" />
+        <FormPayment PaymentClick="async (payment) => await Checkout(payment)">
 
-        <div class="container p-0">
-            <div class="card px-4">
-                <p class="h8 py-3">Payment Details</p>
-                <div class="row gx-3">
-                    <div class="col-12">
-                        <div class="d-flex flex-column">
-                            <p class="text mb-1">Person Name</p>
-                            <input class="form-control mb-3" type="text" placeholder="Name" @bind-value="payment.Nome">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="d-flex flex-column">
-                            <p class="text mb-1">Card Number</p>
-                            <input class="form-control mb-3" type="text" placeholder="1234 5678 435678" @bind-value="payment.Numero">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="d-flex flex-column">
-                            <p class="text mb-1">Expiry</p>
-                            <input class="form-control mb-3" type="text" placeholder="MM/YYYY" @bind-value="payment.Validade">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="d-flex flex-column">
-                            <p class="text mb-1">CVV/CVC</p>
-                            <input class="form-control mb-3 pt-2 " type="password" placeholder="***" @bind-value="payment.Cvv">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="btn btn-primary mb-3">
-                            <span @onclick="TesteConfirmacao" class="ps-3">Pay </span>
-                            <span class="fas fa-arrow-right"></span>
-                            @if (Loading)
-                            {
-                                <Spinner />
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </FormPayment>
+      
     </Authorized>
     <NotAuthorized>
 
@@ -61,19 +25,39 @@
 
 
 @code {
-    PaymentViewModel payment { get; set; } = new();
     public bool Loading { get; set; }
+    OrderDetails orderDetails { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
+        orderDetails = new();
+        orderDetails.Cart = new();
+        orderDetails.Payment = new();
         await base.OnInitializedAsync();
     }
-    public async void TesteConfirmacao()
+    public async Task Checkout(PaymentViewModel payment)
+    {
+
+        try
+        {
+            orderDetails.Cart = await _cartService.GetAllCarrinho();
+            orderDetails.Payment = payment;
+            await _cartService.Checkout(orderDetails);
+            await ExibirSpinner();
+            _navigation.NavigateTo("/paymentSucess");
+            StateHasChanged();
+
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+
+    }
+    private async Task ExibirSpinner()
     {
         Loading = true;
         await Task.Delay(4000).ContinueWith(_ => Loading = false);
-        _navigation.NavigateTo("/paymentSucess");
-        StateHasChanged();
-
     }
 }

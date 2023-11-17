@@ -12,14 +12,14 @@ namespace EcommerceWeb.Auth
     {
         private readonly IJSRuntime _js;
         private readonly HttpClient _http;
-        private readonly string tokenKey;
+        private readonly string tokenKey = "tokenKey";
 
         private AuthenticationState notAuthenticate => new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
         public TokenAuthenticationProvider(IJSRuntime js, HttpClient http, IConfiguration configuration)
         {
             _js = js;
             _http = http;
-            tokenKey = configuration.GetSection("TShoesSettings:SecretKey").Value;
+            //tokenKey = configuration.GetSection("TShoesSettings:SecretKey").Value;
         }
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
@@ -51,7 +51,8 @@ namespace EcommerceWeb.Auth
         {
             _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
 
-            return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(JwtExtension.ParseClaimsFromJwt(token), "jwt")));
+            var userClaims = new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(JwtExtension.ParseClaimsFromJwt(token), "jwt")));
+            return userClaims;
         }
         
     }

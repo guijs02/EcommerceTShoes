@@ -10,5 +10,6 @@ namespace EcommerceAPI.Services.Interfaces
         Task<bool> DeleteItemCarrinho(int id);
         Task<CarrinhoDeCompraViewModel> EditCarrinho(ProdutoViewModel produto);
         Task<ProdutoCarrinhoDto> GetByIdProdutoCarrinho(int id);
+        Task<bool> Checkout(OrderDetails orderDetails);
     }
 }

@@ -76,5 +76,17 @@ namespace EcommerceWeb.Services
             return await SerializadorDeObjetos.Serializador<bool>(response);
         }
 
+        public async Task<bool> Checkout(OrderDetails orderDetails)
+        {
+            
+            var response = await _http.PostAsJsonAsync($"{API}/checkout",orderDetails);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(ERROR_API);
+            }
+
+            return await SerializadorDeObjetos.Serializador<bool>(response);
+        }
     }
 }

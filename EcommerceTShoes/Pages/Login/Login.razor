@@ -61,13 +61,12 @@
     }
     public async Task LoginUsuario()
     {
-        // VisualizarSpinner = true;
-        // await Task.Delay(4000).ContinueWith(_ => VisualizarSpinner = false);
         try
         {
             if (string.IsNullOrEmpty(loginUsuario.Username) || string.IsNullOrEmpty(loginUsuario.Password))
             {
                 Mensagem = "Os campos não podem ser nulos";
+                
                 return;
             }
 
@@ -82,7 +81,8 @@
         catch (Exception ex)
         {
             Mensagem = ex.Message;
-
+            // await Task.Delay(3000).ContinueWith(_ => Mensagem = string.Empty);
+            // StateHasChanged();
         }
 
     }

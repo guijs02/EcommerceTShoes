@@ -1,5 +1,7 @@
 ﻿using EcommerceCartAPI.Interfaces;
+using EcommerceCartAPI.Messages;
 using EcommerceCartAPI.Models;
+using EcommerceCartAPI.RabbitMQSender;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers
@@ -9,9 +11,11 @@ namespace EcommerceAPI.Controllers
     public class CarrinhoController : ControllerBase
     {
         private readonly ICarrinhoRepository _repo;
-        public CarrinhoController(ICarrinhoRepository repo)
+        private readonly IRabbitMQMessageSender _messageSender;
+        public CarrinhoController(ICarrinhoRepository repo, IRabbitMQMessageSender messageSender)
         {
             _repo = repo;
+            _messageSender = messageSender;
         }
 
         [HttpPost]
@@ -44,6 +48,26 @@ namespace EcommerceAPI.Controllers
                     return NotFound();
 
                 return Ok(produtos);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        [HttpPost]
+        [Route("checkout")]
+        public async Task<IActionResult> Checkout(CheckoutMessage checkoutMessage)
+        {
+            try
+            {
+                if (checkoutMessage is null)
+                    return NotFound();
+
+                _messageSender.SendMessage(checkoutMessage, "checkoutqueue");
+
+                await _repo.ClearCart();
+
+                return Ok(true);
             }
             catch (Exception ex)
             {
