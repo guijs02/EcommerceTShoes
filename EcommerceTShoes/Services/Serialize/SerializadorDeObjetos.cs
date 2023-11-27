@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace EcommerceWeb.Services.Serialize
 {

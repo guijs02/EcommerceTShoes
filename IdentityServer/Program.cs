@@ -1,12 +1,12 @@
-using Microsoft.AspNetCore.DataProtection;
-using Microsoft.AspNetCore.Identity;
 using AutoMapper;
-using IdentityServerAPI.Infraestructure.Repository;
-using IdentityServerAPI.Infraestructure.Repository.Interfaces;
-using IdentityServerAPI.Application.Config;
-using IdentityServerAPI.Application.Token;
 using IdentityServer.Context;
 using IdentityServer.Models;
+using IdentityServerAPI.Application.Config;
+using IdentityServerAPI.Application.Token;
+using IdentityServerAPI.Infraestructure.Repository;
+using IdentityServerAPI.Infraestructure.Repository.Interfaces;
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 

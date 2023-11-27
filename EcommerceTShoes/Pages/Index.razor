@@ -3,53 +3,49 @@
 @using EcommerceWeb.Dto;
 @using EcommerceWeb.Model;
 
-
 @inject IProdutoService _service
 @inject NavigationManager _navigation
 
-@if (OnInitializeCompleted)
-{
 
-   <NavTShoes/>
+    @if (OnInitializeCompleted)
+    {
+        <div class="d-flex justify-content-center">
 
-    <div class="d-flex justify-content-center">
+            <div class="container row align-content-center">
+                @foreach (var item in Produtos)
+                {
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="p-0 my-3 border">
+                            <div class="card">
+                                <img src="@item.ImageUrl" class="card-img-top">
+                                <div class="card-body">
+                                    <h3 class="cardcard-title test-success">@item.Nome</h3>
+                                    <p class="card-text"></p>
 
-        <div class="container row align-content-center">
-            @foreach (var item in Produtos)
-            {
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="p-0 my-3 border">
-                        <div class="card">
-                            <img src="@item.ImageUrl" class="card-img-top">
-                            <div class="card-body">
-                                <h3 class="cardcard-title test-success">@item.Nome</h3>
-                                <p class="card-text"></p>
-
-                                <div class="row">
-                                    <div class="col-6 pt-1">
-                                        <span style="font-size:23px;">@item.Preco.ToString("c")</span>
-                                    </div>
-                                    <div class="col-6">
-                                        <a class="btn btn-success form-control" @onclick="(() =>  GetProduto(item.Id))">Details</a>
+                                    <div class="row">
+                                        <div class="col-6 pt-1">
+                                            <span style="font-size:23px;">@item.Preco.ToString("c")</span>
+                                        </div>
+                                        <div class="col-6">
+                                            <a class="btn btn-success form-control" @onclick="(() =>  GetProduto(item.Id))">Details</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            }
+                }
+            </div>
+
         </div>
 
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - GeekShopping.Web - <a>Product</a>
-        </div>
-    </footer>
-}
-
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2023 - TShoes.Web 
+            </div>
+        </footer>
+    }
 <style>
     .card:hover {
         transform: translateY(-5px);
@@ -60,25 +56,19 @@
 
 @code {
     List<ProdutoDto> Produtos { get; set; }
-    
+
     public bool OnInitializeCompleted { get; set; } = false;
-    public bool openSideBar { get; set; } = false;
-   
 
     protected override async Task OnInitializedAsync()
     {
         Produtos = await _service.GetAllProdutos();
-   
+
         OnInitializeCompleted = true;
     }
     public void GetProduto(int id)
     {
         _navigation.NavigateTo($"{_navigation.Uri}details/{id}");
-        
+
     }
-    public void OpenSideBar()
-    {
-        string open = openSideBar ? "display: block;" : "display: none;";
-        openSideBar = !openSideBar;
-    }
+
 }

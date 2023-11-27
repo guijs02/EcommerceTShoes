@@ -2,7 +2,6 @@ using EcommerceCartAPI.Context;
 using EcommerceCartAPI.Interfaces;
 using EcommerceCartAPI.RabbitMQSender;
 using EcommerceCartAPI.Repository;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -135,6 +135,46 @@ namespace EcommerceProductAPI.Migrations
                             Nome = "Air Max Colorido",
                             Preco = 349.99m,
                             Tamanho = ""
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Descricao = "tenis",
+                            Genero = 1,
+                            ImagemUrl = "/assets/puma-suede-preto.png",
+                            Nome = "Puma Suede",
+                            Preco = 349.99m,
+                            Tamanho = ""
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Descricao = "tenis",
+                            Genero = 2,
+                            ImagemUrl = "/assets/Air-Max-preto-feminino.png",
+                            Nome = "Air Max preto",
+                            Preco = 489.99m,
+                            Tamanho = ""
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Descricao = "tenis",
+                            Genero = 1,
+                            ImagemUrl = "/assets/nike-preto24.png",
+                            Nome = "Nike preto 2k 24",
+                            Preco = 309.99m,
+                            Tamanho = ""
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Descricao = "tenis",
+                            Genero = 1,
+                            ImagemUrl = "/assets/new-balance-feminino.png",
+                            Nome = "Nike preto 2k 24",
+                            Preco = 248.99m,
+                            Tamanho = ""
                         });
                 });
 #pragma warning restore 612, 618

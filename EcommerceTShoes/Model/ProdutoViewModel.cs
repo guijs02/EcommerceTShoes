@@ -11,7 +11,7 @@ namespace EcommerceWeb.Model
         public string Descricao { get; set; }
         public string ImagemUrl { get; set; }
         [Required(ErrorMessage = "Não é possivel salvar no carrinho sem colocar o tamanho")]
-        public string Tamanho { get; set; }
+        public string? Tamanho { get; set; }
         public EGenero Genero { get; set; }
 
         public static implicit operator ProdutoViewModel(ProdutoCarrinhoDto produtoCarrinho)

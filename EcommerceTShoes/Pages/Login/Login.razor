@@ -7,49 +7,51 @@
 
 @if (OnInitializedCompleted)
 {
-
-    <div class="container d-flex align-items-center justify-content-center vh-100">
-        <div class="col-md-3">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h1 class="card-title text-center mb-4">Login</h1>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Usuario</label>
-                        <input type="text" @bind-value="loginUsuario.Username" class="form-control form-control-sm" placeholder="Digite seu nome">
+    <EditForm Model="@loginUsuario" OnValidSubmit="LoginUsuario">
+        <DataAnnotationsValidator />
+        <div class="container d-flex align-items-center justify-content-center vh-100">
+            <div class="col-md-3">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="card-title text-center mb-4">Login</h1>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Usuario</label>
+                            <InputText type="text" ValueExpression="() => loginUsuario.Username" @bind-value="loginUsuario.Username" class="form-control form-control-sm" placeholder="Digite seu nome" />
+                            <ValidationMessage For="() => loginUsuario.Username" class="validation-message" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <InputText type="password" ValueExpression="() => loginUsuario.Password" @bind-value="loginUsuario.Password" class="form-control form-control-sm" id="senha" placeholder="Digite sua senha" />
+                            <ValidationMessage For="() => loginUsuario.Password" class="validation-message" />
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Entrar
+                            </button>
+                        </div>
+                        <p class="text-center mt-3">Ainda não possui uma conta? <a href="/Cadastrar">Cadastre-se</a></p>
                     </div>
-                    <div class="mb-3">
-                        <label for="senha" class="form-label">Senha</label>
-                        <input type="password" @bind-value="loginUsuario.Password" class="form-control form-control-sm" id="senha" placeholder="Digite sua senha">
-                    </div>
-                    <div class="d-grid">
-                        <button @onclick="LoginUsuario" class="btn btn-primary btn-block">
-                            Entrar
-
-                        </button>
-
-
-                    </div>
-                    
-                    <p class="text-center mt-3">Ainda não possui uma conta? <a href="/Cadastrar">Cadastre-se</a></p>
+                    @if (!string.IsNullOrEmpty(Mensagem))
+                    {
+                        <div class="alert alert-danger">
+                            @Mensagem
+                        </div>
+                    }
                 </div>
-                @if (!string.IsNullOrEmpty(Mensagem))
-                {
-                    <div class="alert alert-danger">
-                        @Mensagem
-                    </div>
-                }
             </div>
         </div>
-    </div>
+    </EditForm>
 }
+<style>
+    .validation-message {
+        color: red;
+    }
+</style>
 
 @code {
     public LoginUsuarioDto loginUsuario { get; set; }
     public string Mensagem { get; set; } = string.Empty;
     public bool OnInitializedCompleted { get; set; } = false;
-    public EventCallback RedirectToAnyUrl { get; set; }
-    public string State { get; set; }
-    public bool VisualizarSpinner { get; set; }
     [Parameter]
     public bool IsRedirectToCheckout { get; set; } = false;
 
@@ -63,13 +65,6 @@
     {
         try
         {
-            if (string.IsNullOrEmpty(loginUsuario.Username) || string.IsNullOrEmpty(loginUsuario.Password))
-            {
-                Mensagem = "Os campos não podem ser nulos";
-                
-                return;
-            }
-
             await _service.Login(loginUsuario);
 
             if (IsRedirectToCheckout)
@@ -81,8 +76,6 @@
         catch (Exception ex)
         {
             Mensagem = ex.Message;
-            // await Task.Delay(3000).ContinueWith(_ => Mensagem = string.Empty);
-            // StateHasChanged();
         }
 
     }

@@ -4,10 +4,10 @@ namespace LoginAPI.Dto
 {
     public class LoginUsuarioDto
     {
-        [Required]
+        [Required(ErrorMessage = "Username é obrigatório")]
         public string Username { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Insira a senha")]
         public string Password { get; set; }
-        
+
     }
 }

@@ -2,8 +2,9 @@
 @inherits ComponentBase
 
 @inject NavigationManager _navigation
-
-<div class="modal fade show" tabindex="-1" role="dialog" style="display: block;">
+@* modal fade show *@
+<link href="animationModal.css" rel="stylesheet" />
+<div class="modal-overlay" tabindex="-1" role="dialog" style="display: block;">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -65,6 +66,5 @@
     }
     (string, string) SetCorrectWordInModal() => IsUpdate ? ("alterado", "editar") : ("adicionado", string.Empty);
 }
-
 
 

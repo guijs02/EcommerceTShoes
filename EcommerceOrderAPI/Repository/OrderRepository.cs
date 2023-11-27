@@ -1,6 +1,5 @@
 ﻿using EcommerceOrderAPI.Context;
 using EcommerceOrderAPI.Model;
-using Humanizer;
 using Microsoft.EntityFrameworkCore;
 
 namespace EcommerceOrderAPI.Repository

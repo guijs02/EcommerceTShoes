@@ -1,5 +1,4 @@
-﻿using EcommerceCartAPI.Models;
-using MessageBus;
+﻿using MessageBus;
 
 namespace EcommerceCartAPI.RabbitMQSender
 {

@@ -32,16 +32,16 @@ namespace IdentityServer.Controllers
         {
             try
             {
-               var token =  await _repo.Login(dto);
-                
+                var token = await _repo.Login(dto);
+
                 return Ok(token);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, ex.Message); 
+                return StatusCode(500, ex.Message);
                 //throw ex;
             }
         }
-   
+
     }
 }

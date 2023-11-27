@@ -1,10 +1,7 @@
-﻿using EcommerceWeb.Services.Serialize;
-using Microsoft.AspNetCore.Components.Authorization;
+﻿using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
 using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
 using System.Security.Claims;
-using System.Text.Json;
 
 namespace EcommerceWeb.Auth
 {
@@ -33,7 +30,7 @@ namespace EcommerceWeb.Auth
             return CreateAuthenticationState(token);
 
         }
-         
+
         public async Task LoginTokenAction(string token)
         {
             await _js.InvokeAsync<object>("localStorage.setItem", tokenKey, token);
@@ -54,6 +51,6 @@ namespace EcommerceWeb.Auth
             var userClaims = new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(JwtExtension.ParseClaimsFromJwt(token), "jwt")));
             return userClaims;
         }
-        
+
     }
 }

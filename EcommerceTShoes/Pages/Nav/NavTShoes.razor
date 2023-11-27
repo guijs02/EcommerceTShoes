@@ -13,11 +13,11 @@
         </li>
     </ul>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler @NavButtonCssClass"  type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="navbar-collapse collapse d-sm-inline-flex nav justify-content-center" id="navbarNav">
+    <div class="navbar-collapse collapse d-sm-inline-flex nav justify-content-center @NavBarCssClass" id="navbarNav" @onclick="ToggleNavMenu">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link text-black mr-3" href="/Masculino">Masculino</a>
@@ -48,6 +48,14 @@
 @code {
 
     public string Message { get; set; }
+    private bool collapseNavMenu = true;
+    private string? NavBarCssClass => collapseNavMenu ? null : "show";
+    private string? NavButtonCssClass => collapseNavMenu ? "collapsed" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
 
     [CascadingParameter]
     private Task<AuthenticationState> authenticationState { get; set; }

@@ -15,7 +15,7 @@ namespace EcommerceCartAPI.Repository
         }
         public async Task<CarrinhoDeCompra> AddCart(Produto produto, string userId)
         {
-            var produtosRepetidosNoCarrinho = _db.Carrinho.Where(c => c.UserId == userId && 
+            var produtosRepetidosNoCarrinho = _db.Carrinho.Where(c => c.UserId == userId &&
                                                                 c.ProdutoId == produto.Id &&
                                                                 c.Tamanho == produto.Tamanho)
                                                                .AsNoTracking();
@@ -77,7 +77,20 @@ namespace EcommerceCartAPI.Repository
             await _db.SaveChangesAsync();
             return carrinho;
         }
+        public async Task<bool> EditProdutoCarrinhoQuantidade(CarrinhoDeCompra carrinho, string userId)
+        {
+            if (carrinho.Quantidade == 0)
+            {
+                await DeleteItemCarrinho(carrinho.Id);
+                return false;
+            }
+            var carrinhoDb = await _db.Carrinho.FirstAsync(c => c.Id == carrinho.Id);
+            carrinhoDb.Quantidade = carrinho.Quantidade;
 
+            _db.Carrinho.Update(carrinhoDb);
+            await _db.SaveChangesAsync();
+            return true;
+        }
         public async Task<ProdutoCarrinhoDto> GetByIdProdutoCarrinho(int id)
         {
 

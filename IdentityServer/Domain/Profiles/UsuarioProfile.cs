@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using IdentityServer;
 using IdentityServer.Models;
 
 namespace IdentityServer.Profiles

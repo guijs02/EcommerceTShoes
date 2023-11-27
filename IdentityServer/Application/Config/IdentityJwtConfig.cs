@@ -25,6 +25,7 @@ namespace IdentityServerAPI.Application.Config
                 .AddAuthentication(options =>
                 {
                     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    
                 })
                 .AddJwtBearer(options =>
                 {

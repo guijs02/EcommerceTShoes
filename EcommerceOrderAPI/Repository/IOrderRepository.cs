@@ -1,5 +1,4 @@
 ﻿using EcommerceOrderAPI.Model;
-using Humanizer;
 
 namespace EcommerceOrderAPI.Repository
 {

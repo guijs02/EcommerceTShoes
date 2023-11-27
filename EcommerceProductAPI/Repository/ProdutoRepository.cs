@@ -19,8 +19,8 @@ namespace EcommerceProductAPI.Repository
                 1 => await GetListByGenero(idgenero),
                 2 => await GetListByGenero(idgenero),
                 _ => throw new Exception("Não há esse genero no banco de dados")
-            }; 
-        }    
+            };
+        }
         public async Task<Produto> GetProduto(int id)
         {
             return await _db.Products.FirstOrDefaultAsync(f => f.Id == id);
@@ -43,14 +43,14 @@ namespace EcommerceProductAPI.Repository
         private async Task<List<ProdutoDto>> GetListByGenero(int idgenero)
         {
             return await (from p in _db.Products
-                   where (int)p.Genero == idgenero
-                   select new ProdutoDto
-                   {
-                       Preco = p.Preco,
-                       Id = p.Id,
-                       ImageUrl = p.ImagemUrl,
-                       Nome = p.Nome,
-                   }).ToListAsync();
+                          where (int)p.Genero == idgenero
+                          select new ProdutoDto
+                          {
+                              Preco = p.Preco,
+                              Id = p.Id,
+                              ImageUrl = p.ImagemUrl,
+                              Nome = p.Nome,
+                          }).ToListAsync();
         }
     }
 }

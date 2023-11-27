@@ -3,7 +3,6 @@ using EcommerceOrderAPI.Model;
 using EcommerceOrderAPI.Repository;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
-using System.CodeDom;
 using System.Text;
 using System.Text.Json;
 
@@ -69,15 +68,15 @@ namespace EcommerceOrderAPI.RabbitMQConsumer
             {
                 var detail = new OrderDetail()
                 {
-                    Id = 0,
+                    Id = item.Id,
                     Descricao = item.Descricao,
                     ProdutoId = item.ProdutoId,
                     ImagemUrl = item.ImagemUrl,
                     Nome = item.Nome,
                     Preco = item.Preco,
                     Quantidade = item.Quantidade,
+                    ValorTotal = checkoutMessage.OrderSummary.ValorTotal,
                     Tamanho = item.Tamanho,
-                    ValorTotal = item.ValorTotal,
                     UserId = item.UserId,
                     OrderId = item.OrderId,
                 };
@@ -87,6 +86,7 @@ namespace EcommerceOrderAPI.RabbitMQConsumer
             try
             {
                 await _orderRepository.AddOrder(order);
+                //_rabbitMQMessageSender.SendMessage(order, "orderpaymentprocessqueue");
             }
             catch (Exception)
             {

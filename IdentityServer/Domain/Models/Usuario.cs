@@ -4,7 +4,7 @@ namespace IdentityServer.Models
 {
     public class Usuario : IdentityUser
     {
-        
+
         public Usuario() : base() { }
     }
 }

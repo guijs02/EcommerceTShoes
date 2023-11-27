@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBus", "MessageBus\MessageBus.csproj", "{E7CE4537-5FBD-4C88-8447-4CEDACD9CC3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcommercePaymentAPI", "EcommercePaymentAPI\EcommercePaymentAPI.csproj", "{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{E7CE4537-5FBD-4C88-8447-4CEDACD9CC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7CE4537-5FBD-4C88-8447-4CEDACD9CC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7CE4537-5FBD-4C88-8447-4CEDACD9CC3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9} = {92031A85-7772-4C16-B3D9-03D3304E8195}
 		{BC5140C2-4FD3-4A46-8D2D-21DB60441F67} = {92031A85-7772-4C16-B3D9-03D3304E8195}
 		{E7CE4537-5FBD-4C88-8447-4CEDACD9CC3E} = {F5520021-481E-4C2C-82B3-AC12002B2C82}
+		{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258} = {92031A85-7772-4C16-B3D9-03D3304E8195}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6494AD37-5923-4D15-9005-344DFE1032F0}

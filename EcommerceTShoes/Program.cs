@@ -1,12 +1,12 @@
-using EcommerceAPI.Services.Interfaces;
 using EcommerceAPI.Services;
+using EcommerceAPI.Services.Interfaces;
 using EcommerceWeb;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using EcommerceWeb.Auth;
 using EcommerceWeb.Services;
 using EcommerceWeb.Services.Interfaces;
-using EcommerceWeb.Auth;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -25,7 +25,7 @@ builder.Services.AddScoped<AuthenticationStateProvider, TokenAuthenticationProvi
     provider => provider.GetRequiredService<TokenAuthenticationProvider>()
 );
 builder.Services.AddAuthorizationCore();
-
+builder.Services.AddBlazorBootstrap();
 #endregion
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 

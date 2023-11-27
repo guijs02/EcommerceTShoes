@@ -11,7 +11,6 @@
         public string ImagemUrl { get; set; }
         public string Tamanho { get; set; }
         public int Quantidade { get; set; } = 1;
-        public decimal ValorTotal { get; set; }
         public string? UserId { get; set; }
     }
 }

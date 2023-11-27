@@ -2,8 +2,6 @@
 using EcommerceWeb.Dto;
 using EcommerceWeb.Model;
 using EcommerceWeb.Services.Serialize;
-using System.Net.Http.Json;
-using System.Text.Json;
 
 namespace EcommerceAPI.Services
 {
@@ -26,18 +24,18 @@ namespace EcommerceAPI.Services
             }
             return await SerializadorDeObjetos.Serializador<List<ProdutoDto>>(response);
 
-        }    
+        }
         public async Task<List<ProdutoDto>> GetProdutosByGenero(int idgenero)
         {
             var response = await _http.GetAsync($"{API}/GetByGenero/{idgenero}");
-            
+
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception(ERROR_API);
             }
             return await SerializadorDeObjetos.Serializador<List<ProdutoDto>>(response);
 
-        }     
+        }
         public async Task<ProdutoViewModel> GetProduto(int id)
         {
             var response = await _http.GetAsync($"{API}/{id}");
@@ -49,6 +47,6 @@ namespace EcommerceAPI.Services
             return await SerializadorDeObjetos.Serializador<ProdutoViewModel>(response);
 
         }
-  
+
     }
 }

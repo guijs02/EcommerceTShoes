@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Identity;
 using IdentityServer;
-using IdentityServerAPI.Infraestructure.Repository.Interfaces;
-using IdentityServerAPI.Application.Token;
 using IdentityServer.Models;
+using IdentityServerAPI.Application.Token;
+using IdentityServerAPI.Infraestructure.Repository.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace IdentityServerAPI.Infraestructure.Repository
 {

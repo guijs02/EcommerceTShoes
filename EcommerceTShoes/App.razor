@@ -2,7 +2,7 @@
     <Router AppAssembly="@typeof(App).Assembly">
         <Found Context="routeData">
            @* <FocusOnNavigate RouteData="@routeData" Selector="h1" />*@
-            <AuthorizeRouteView RouteData="@routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="typeof(MainLayout)">
                 <Authorizing>
                     <h1>Autorizando Usuario...</h1>
                 </Authorizing>
@@ -15,7 +15,7 @@
             <CascadingAuthenticationState>
                 <PageTitle>Not found</PageTitle>
                 <LayoutView>
-                    <p role="alert">Não foi encontrada essa URL.</p>
+                    <img src="/assets/imgError404.png" style="margin-left:18%;"/>
                 </LayoutView>
             </CascadingAuthenticationState>
         </NotFound>

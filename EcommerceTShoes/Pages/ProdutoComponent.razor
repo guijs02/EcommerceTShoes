@@ -1,5 +1,6 @@
 ﻿@page "/details/{CurrentId:int}"
 
+@using BlazorBootstrap
 @using EcommerceAPI.Services.Interfaces;
 @using EcommerceWeb.Dto;
 @using EcommerceWeb.Model;
@@ -13,16 +14,9 @@
 @if (OnInitializeCompleted)
 {
 
-    <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <title>Tênis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    </head>
-    <NavTShoes></NavTShoes>
     <br>
     <br>
     <body>
@@ -46,8 +40,8 @@
                     <p>Cano Baixo</p>
                 </div>
             </div>
-            <EditForm EditContext="@editContext" Model="Produto" OnSubmit="AddCart">
-                <DataAnnotationsValidator/>
+            <EditForm Model="Produto" OnValidSubmit="AddCart">
+                <DataAnnotationsValidator />
                 <div class="row mt-4">
                     <div class="col-md-6">
                         <p class="h3">@Produto.Preco.ToString("C")</p>
@@ -64,20 +58,21 @@
                             <option value="43">43</option>
                             <option value="44">44</option>
                         </InputSelect>
-                        <ValidationMessage For="() => Produto.Tamanho"/>
-                        @* <p style="color:@SetColorMessage">@Mensagem</p> *@
+                        <ValidationMessage For="() => Produto.Tamanho" class="validation-message" />
+
                     </div>
                 </div>
 
                 <div class="row mt-4">
                     <div class="col-md-12">
-                        <button class="btn btn-primary" type="submit">@TextButtonAddCarrinho</button>
+                        <Button Color="ButtonColor.Primary" Type="ButtonType.Submit">Adicionar ao Carrinho</Button>
                     </div>
                 </div>
             </EditForm>
         </div>
 
     </body>
+
 
     @if (VisualizarModalAddCart)
     {
@@ -86,56 +81,36 @@
                      Visible="@VisualizarModalAddCart"
                      VisibleModalCallback="@(() => VisualizarModalAddCart = false)">
         </ModalNotify>
-
     }
-    </html>
+
 }
 <style>
 
     .html {
         height: 100vh;
     }
+
+    .validation-message {
+        color: red;
+    }
 </style>
 @code {
-    private EditContext? editContext;
+
     [Parameter]
     public int CurrentId { get; set; }
     public bool VisualizarModalAddCart { get; set; }
     public ProdutoViewModel Produto { get; set; }
-    public string SetColorMessage { get; set; }
     public bool OnInitializeCompleted { get; set; }
-    public string Mensagem { get; set; } = string.Empty;
-    public string TextButtonAddCarrinho { get; set; }
     CarrinhoDeCompraViewModel? CarrinhoDeCompra { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-
         Produto = await _service.GetProduto(CurrentId);
-        TextButtonAddCarrinho = "Adicionar ao Carrinho";
-
         OnInitializeCompleted = true;
     }
-    public async Task AddCart(EditContext editContext)
+    public async Task AddCart()
     {
-        // if (!editContext.Validate())
-        // {
-        //     return;
-        // }
-        if (string.IsNullOrEmpty(Produto.Tamanho))
-        {
-            SetColorMessage = GlobalConstants.RED;
-            Mensagem = "Não é possivel salvar no carrinho sem colocar o tamanho";
-            await Task.Delay(5000).ContinueWith(_ =>
-                {
-                    SetColorMessage = GlobalConstants.WHITE;
-                });
-            return;
-        }
-
         CarrinhoDeCompra = await _Carrinhoservice.AddCart(Produto);
         VisualizarModalAddCart = true;
-
     }
-
 }

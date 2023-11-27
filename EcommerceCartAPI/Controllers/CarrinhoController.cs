@@ -3,6 +3,7 @@ using EcommerceCartAPI.Messages;
 using EcommerceCartAPI.Models;
 using EcommerceCartAPI.RabbitMQSender;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace EcommerceAPI.Controllers
 {
@@ -123,8 +124,27 @@ namespace EcommerceAPI.Controllers
                 throw;
             }
         }
+        [HttpPut]
+        [Route("editProductDetails")]
+        public async Task<IActionResult> EditQuantidade(CarrinhoDeCompra carrinho)
+        {
+            try
+            {
+                var userId = GetUserId();
+                var editou = await _repo.EditProdutoCarrinhoQuantidade(carrinho, userId);
+
+
+                return Ok(editou);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
         private string GetUserId()
         {
+            var id = HttpContext.User.FindFirst("id")?.Value;
+            //var isauth = HttpContext.User.Identity.
             var UserId = HttpContext.User.Claims.Where(c => c.Type.ToString() == "id")?.FirstOrDefault()?.Value;
 
             return UserId;

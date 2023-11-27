@@ -9,83 +9,77 @@
 
 @if (OnInitializedCompleted)
 {
-    <div class="container d-flex align-items-center justify-content-center vh-100">
-        <div class="col-md-4">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h1 class="card-title text-center mb-4">Sign-In</h1>
-                    <div class="mb-3">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" @bind-value="usuario.Username" class="form-control form-control-sm" id="nome" placeholder="Digite seu nome">
+    <EditForm Model="usuario" OnValidSubmit="CadastrarUsuario">
+
+        <DataAnnotationsValidator />
+        <div class="container d-flex align-items-center justify-content-center vh-100">
+            <div class="col-md-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="card-title text-center mb-4">Sign-In</h1>
+                        <div class="mb-3">
+                            <label class="form-label">Nome</label>
+                            <InputText type="text" ValueExpression="() => usuario.Username" @bind-value="usuario.Username" class="form-control form-control-sm" id="nome" placeholder="Digite seu nome" />
+                            <ValidationMessage For="() => usuario.Username"  class="validation-message"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <InputText type="email" ValueExpression="() => usuario.Email" class="form-control form-control-sm" @bind-value="usuario.Email" id="senha" placeholder="Digite seu email" />
+                            <ValidationMessage For="() => usuario.Email" class="validation-message" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Senha</label>
+                            <InputText type="password" ValueExpression="() => usuario.Password" class="form-control form-control-sm" @bind-value="usuario.Password" id="senha" placeholder="Digite sua senha" />
+                            <ValidationMessage For="() => usuario.Password"  class="validation-message"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirmar Senha</label>
+                            <InputText type="password" ValueExpression="() => usuario.PasswordConfirmation" class="form-control form-control-sm" id="confirmar_senha" @bind-value="usuario.PasswordConfirmation" placeholder="Confirme sua senha" />
+                            <ValidationMessage For="() => usuario.PasswordConfirmation"  class="validation-message"/>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-block" type="submit">Cadastrar</button>
+                        </div>
+                        <br>
+                        <a href="/Login">Ja possui uma conta? Login</a>
                     </div>
-                    <div class="mb-3">
-                        <label for="senha" class="form-label">Email</label>
-                        <input type="email" class="form-control form-control-sm" @bind-value="usuario.Email" id="senha" placeholder="Digite seu email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="senha" class="form-label">Senha</label>
-                        <input type="password" class="form-control form-control-sm" @bind-value="usuario.Password" id="senha" placeholder="Digite sua senha">
-                    </div>
-                    <div class="mb-3">
-                        <label for="confirmar_senha" class="form-label">Confirmar Senha</label>
-                        <input type="password" class="form-control form-control-sm" id="confirmar_senha" @bind-value="usuario.PasswordConfirmation" placeholder="Confirme sua senha">
-                    </div>
-                    <div class="d-grid">
-                        <button class="btn btn-primary btn-block" @onclick="CadastrarUsuario">Cadastrar</button>
-                    </div>
-                    <br>
-                    <a href="/Login">Ja possui uma conta? Login</a>
+
+                    @if (!string.IsNullOrEmpty(Mensagem))
+                    {
+                        <p class="text-danger text-center">@Mensagem</p>
+                    }
+
                 </div>
-
-                @if (!string.IsNullOrEmpty(Mensagem))
-                {
-                    <p style="color:@SetColorMessage; text-align:center">@Mensagem</p>
-                }
-
             </div>
         </div>
-    </div>
+    </EditForm>
 }
-
+<style>
+    .validation-message {
+        color: red;
+    }
+</style>
 
 @code {
     CreateUsuarioDto usuario { get; set; }
     public bool OnInitializedCompleted { get; set; }
     public string Mensagem { get; set; } = string.Empty;
-    public bool IsAcessedService { get; set; } = false;
-    public string SetColorMessage { get; set; }
 
     protected override void OnInitialized()
     {
         usuario = new();
         OnInitializedCompleted = true;
     }
-    bool ValidarPassword()
-    {
-        if (usuario.PasswordConfirmation == usuario.Password)
-            return true;
-
-        Mensagem = "As senhas estão diferentes!";
-        SetColorMessage = GlobalConstants.RED;
-        return false;
-    }
     public async Task CadastrarUsuario()
     {
         try
         {
-            if (!ValidarPassword())
-                return;
-
             await _service.Cadastro(usuario);
-            Mensagem = "Cadastrado com Sucesso";
-            SetColorMessage = GlobalConstants.GREEN;
-            await Task.Delay(5000).ContinueWith(s => navigation.NavigateTo("login"));
-
+            navigation.NavigateTo("login");
         }
         catch (Exception ex)
         {
             Mensagem = ex.Message;
-            SetColorMessage = GlobalConstants.RED;
         }
 
     }

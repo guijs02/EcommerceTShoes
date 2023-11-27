@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace EcommerceCartAPI.Value_Object
+﻿namespace EcommerceCartAPI.Value_Object
 {
     public class PaymentVO
     {

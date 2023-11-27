@@ -1,7 +1,4 @@
-﻿using EcommerceWeb.Model;
-using EcommerceWeb.Services.Interfaces;
-using EcommerceWeb.Services.Serialize;
-using System.Net.Http.Json;
+﻿using EcommerceWeb.Services.Interfaces;
 
 namespace EcommerceWeb.Services
 {

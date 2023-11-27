@@ -2,8 +2,9 @@
 using EcommerceWeb.Dto;
 using EcommerceWeb.Model;
 using EcommerceWeb.Services.Serialize;
+using System.Net.Http.Headers;
+using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text.Json;
 
 namespace EcommerceWeb.Services
 {
@@ -39,7 +40,7 @@ namespace EcommerceWeb.Services
             }
 
             return await SerializadorDeObjetos.Serializador<List<CarrinhoDeCompraViewModel>>(response);
-        }   
+        }
         public async Task<CarrinhoDeCompraViewModel> EditCarrinho(ProdutoViewModel produto)
         {
             var response = await _http.PutAsJsonAsync(API, produto);
@@ -50,7 +51,18 @@ namespace EcommerceWeb.Services
             }
 
             return await SerializadorDeObjetos.Serializador<CarrinhoDeCompraViewModel>(response);
-        }  
+        }
+        public async Task<bool> EditCarrinhoQuantidade(CarrinhoDeCompraViewModel carrinho)
+        {
+            var response = await _http.PutAsJsonAsync($"{API}/editProductDetails", carrinho);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(ERROR_API);
+            }
+
+            return await SerializadorDeObjetos.Serializador<bool>(response);
+        }
         public async Task<ProdutoCarrinhoDto> GetByIdProdutoCarrinho(int id)
         {
             var produto = await _produtoService.GetProduto(id);
@@ -78,8 +90,8 @@ namespace EcommerceWeb.Services
 
         public async Task<bool> Checkout(OrderDetails orderDetails)
         {
-            
-            var response = await _http.PostAsJsonAsync($"{API}/checkout",orderDetails);
+
+            var response = await _http.PostAsJsonAsync($"{API}/checkout", orderDetails);
 
             if (!response.IsSuccessStatusCode)
             {

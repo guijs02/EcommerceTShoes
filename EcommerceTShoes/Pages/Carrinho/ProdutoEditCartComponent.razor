@@ -13,16 +13,7 @@
 @if (OnInitializeCompleted)
 {
 
- @*    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <title>Tênis</title>
-
-    </head> *@
-    <NavTShoes></NavTShoes>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
     <br>
     <br>
     <body>
@@ -47,7 +38,7 @@
                 </div>
             </div>
             <EditForm EditContext="@editContext" Model="Produto">
-                <DataAnnotationsValidator/>
+                <DataAnnotationsValidator />
                 <div class="row mt-4">
                     <div class="col-md-6">
                         <p class="h3">@Produto.Preco.ToString("C")</p>
@@ -64,7 +55,7 @@
                             <option value="43">43</option>
                             <option value="44">44</option>
                         </InputSelect>
-                       @*  <ValidationMessage For="() => Produto.Tamanho"/> *@
+                        @*  <ValidationMessage For="() => Produto.Tamanho"/> *@
                         <p style="color:@SetColorMessage">@Mensagem</p>
                     </div>
                 </div>
@@ -88,7 +79,7 @@
         </ModalNotify>
 
     }
-    @* </html> *@
+       
 }
 
 @code {
@@ -125,7 +116,7 @@
                 });
             return;
         }
-        
+
         CarrinhoDeCompra = await _Carrinhoservice.EditCarrinho(Produto);
         VisualizarModalAddCart = true;
 

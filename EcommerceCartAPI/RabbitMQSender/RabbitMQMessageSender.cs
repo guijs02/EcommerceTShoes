@@ -1,6 +1,5 @@
 ﻿using EcommerceCartAPI.Messages;
 using MessageBus;
-using Microsoft.AspNetCore.Connections;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
@@ -28,7 +27,7 @@ namespace EcommerceCartAPI.RabbitMQSender
             using var _channel = _connection.CreateModel();
             _channel.QueueDeclare(queueName, false, false, false);
             var body = GetMessageAsByte(baseMessage);
-            _channel.BasicPublish(exchange:"", routingKey: queueName, basicProperties: null, body: body);   
+            _channel.BasicPublish(exchange: "", routingKey: queueName, basicProperties: null, body: body);
         }
         private byte[] GetMessageAsByte(object message)
         {
@@ -50,7 +49,7 @@ namespace EcommerceCartAPI.RabbitMQSender
                     HostName = _hostName,
                     Password = _password,
                     UserName = _username,
-                }; 
+                };
 
                 _connection = factory.CreateConnection();
             }

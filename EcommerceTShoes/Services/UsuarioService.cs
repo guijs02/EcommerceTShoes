@@ -1,9 +1,9 @@
-﻿using EcommerceWeb.Services.Interfaces;
+﻿using EcommerceWeb.Auth;
+using EcommerceWeb.Services.Interfaces;
 using EcommerceWeb.Services.Serialize;
 using LoginAPI.Dto;
-using System.Net.Http.Json;
 using System.Net;
-using EcommerceWeb.Auth;
+using System.Net.Http.Json;
 
 namespace EcommerceWeb.Services
 {
