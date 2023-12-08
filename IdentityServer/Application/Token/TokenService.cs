@@ -10,27 +10,28 @@ namespace IdentityServerAPI.Application.Token
     {
         public string GenerateToken(Usuario usuario, IConfiguration configuration)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
+            var claims = new Claim[]
+            {
+                new Claim(ClaimTypes.Name, usuario.UserName),
+                new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
+                new Claim("loginTimeStmp", DateTime.UtcNow.ToString()),
+            };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TShoesSettings:SecretKey"]));
 
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(
-                 new Claim[]
-                 {
-                        new Claim(ClaimTypes.Name, usuario.UserName),
-                        new Claim("id", usuario.Id),
-                        new Claim("loginTimeStmp", DateTime.UtcNow.ToString()),
-                 }
-             ),
-                Expires = DateTime.UtcNow.AddHours(2),
-                SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
-            };
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expiration = DateTime.UtcNow.AddHours(2);
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var token = new JwtSecurityToken(
+                issuer: null,
+                audience: null,
+                claims: claims,
+                expires: expiration,
+                signingCredentials: creds);
 
-            return tokenHandler.WriteToken(token);
+            var userToken = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return userToken;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace EcommerceWeb.Model
         [Required(ErrorMessage = "CVV obrigatório")]
         public string Cvv { get; set; }
         [Required(ErrorMessage ="O número do cartão é obrigatório")]
-        [CreditCard(ErrorMessage = "Cartão de crédito invalido")]
+        //[CreditCard(ErrorMessage = "Cartão de crédito invalido")]
         public string Numero { get; set; }
         [StringLength(6,ErrorMessage = "Maximo de 6 caracteres")]
         [Required(ErrorMessage = "Validade obrigatória")]

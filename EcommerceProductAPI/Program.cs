@@ -1,5 +1,5 @@
-using EcommerceProductAPI.Context;
-using EcommerceProductAPI.Repository;
+using EcommerceProductAPI.Infraestructure.Context;
+using EcommerceProductAPI.Infraestructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 

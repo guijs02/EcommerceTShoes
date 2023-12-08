@@ -1,6 +1,7 @@
-﻿using EcommerceWeb.Auth;
+﻿using EcommerceWeb.Services.AuthClient;
 using EcommerceWeb.Services.Interfaces;
 using EcommerceWeb.Services.Serialize;
+using EcommerceWeb.Utils;
 using LoginAPI.Dto;
 using System.Net;
 using System.Net.Http.Json;
@@ -11,8 +12,6 @@ namespace EcommerceWeb.Services
     {
         private readonly HttpClient _http;
         private readonly TokenAuthenticationProvider _tokenProvider;
-        private const string BASE_ADRESS = "https://localhost:5056";
-        private const string API = $"{BASE_ADRESS}/api/Usuario";
         private const string ERROR_API = "Erro ao realizar a requisição API";
 
         public UsuarioService(HttpClient http, TokenAuthenticationProvider tokenProvider)
@@ -23,7 +22,7 @@ namespace EcommerceWeb.Services
 
         public async Task<bool> Cadastro(CreateUsuarioDto dto)
         {
-            var response = await _http.PostAsJsonAsync($"{API}/cadastro", dto);
+            var response = await _http.PostAsJsonAsync($"{ServicesUrl.Usuario_API}/cadastro", dto);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -35,7 +34,7 @@ namespace EcommerceWeb.Services
 
         public async Task Login(LoginUsuarioDto dto)
         {
-            var response = await _http.PostAsJsonAsync($"{API}/login", dto);
+            var response = await _http.PostAsJsonAsync($"{ServicesUrl.Usuario_API}/login", dto);
 
             if (!response.IsSuccessStatusCode)
             {

@@ -1,0 +1,118 @@
+﻿@page "/details/productCart/{CurrentId:int}"
+
+@using EcommerceAPI.Services.Interfaces;
+@using EcommerceWeb.Dto;
+@using EcommerceWeb.Model;
+@using EcommerceWeb.Modals;
+
+@inject IProdutoService _service
+@inject ICarrinhoService _Carrinhoservice
+@inject NavigationManager _navigation
+
+@if (OnInitializeCompleted)
+{
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <br>
+    <br>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="@Produto.ImagemUrl" class="img-fluid" alt="Tênis">
+                </div>
+                <div class="col-md-6">
+                    <h1 class="mb-4">@Produto.Nome</h1>
+                    <p class="lead mb-4">Indicado para: todos que querem andar estilosos pela rua</p>
+                    <h4 class="mb-3">Descrição:</h4>
+                    <p>@Produto.Descricao</p>
+                    <h4 class="mb-3">Marca:</h4>
+                    <p>@Produto.Nome</p>
+                    <h4 class="mb-3">Garantia do fabricante:</h4>
+                    <p>2 anos de garantia</p>
+                    <h4 class="mb-3">Origem:</h4>
+                    <p>Nacional</p>
+                    <h4 class="mb-3">Altura do Cano:</h4>
+                    <p>Cano Baixo</p>
+                </div>
+            </div>
+            <EditForm EditContext="@editContext" Model="Produto">
+                <DataAnnotationsValidator />
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <p class="h3">@Produto.Preco.ToString("C")</p>
+                        <p class="text-muted">ou 10x de R$ @(Math.Round(Produto.Preco / 10, 2).ToString("C")) sem juros</p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="tamanho">Tamanho:</label>
+                        <InputSelect @bind-Value="@Produto.Tamanho">
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                        </InputSelect>
+                        @*  <ValidationMessage For="() => Produto.Tamanho"/> *@
+                        <p style="color:@SetColorMessage">@Mensagem</p>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" @onclick="@(async () => await EditProductCart())">@TextButtonAddCarrinho</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+
+    </body>
+
+    @if (VisualizarModalAddCart)
+    {
+        <ModalNotify carrinhoDeCompra="CarrinhoDeCompra"
+                     IsUpdate="true"
+                     Visible="@VisualizarModalAddCart"
+                     VisibleModalCallback="() => VisualizarModalAddCart = false">
+        </ModalNotify>
+
+    }
+       
+}
+
+@code {
+    private EditContext? editContext;
+    [Parameter]
+    public int CurrentId { get; set; }
+    public bool VisualizarModalAddCart { get; set; }
+    public ProdutoViewModel ProdutoViewModel { get; set; }
+    public ProdutoCarrinhoDto Produto { get; set; }
+    public string SetColorMessage { get; set; }
+    public bool OnInitializeCompleted { get; set; }
+    public string Mensagem { get; set; } = string.Empty;
+    public string TextButtonAddCarrinho { get; set; }
+    CarrinhoDeCompraViewModel? CarrinhoDeCompra { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        Produto = await _Carrinhoservice.GetByIdProdutoCarrinho(CurrentId);
+        TextButtonAddCarrinho = "Alterar Produto do Carrinho";
+
+        OnInitializeCompleted = true;
+    }
+    public async Task EditProductCart()
+    {
+        CarrinhoDeCompra = await _Carrinhoservice.EditCarrinho(Produto);
+        VisualizarModalAddCart = true;
+
+    }
+}
+
+<style>
+
+    .html {
+        height: 100vh;
+    }
+</style>

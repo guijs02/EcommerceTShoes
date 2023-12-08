@@ -2,13 +2,13 @@
 using EcommerceWeb.Dto;
 using EcommerceWeb.Model;
 using EcommerceWeb.Services.Serialize;
+using EcommerceWeb.Utils;
 
 namespace EcommerceAPI.Services
 {
     public class ProdutoService : IProdutoService
     {
         private readonly HttpClient _http;
-        private const string API = "https://localhost:7055/api/Produto";
         private const string ERROR_API = "Erro ao realizar a requisição API";
         public ProdutoService(HttpClient http)
         {
@@ -16,7 +16,7 @@ namespace EcommerceAPI.Services
         }
         public async Task<List<ProdutoDto>> GetAllProdutos()
         {
-            var response = await _http.GetAsync(API);
+            var response = await _http.GetAsync(ServicesUrl.Product_API);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -27,7 +27,7 @@ namespace EcommerceAPI.Services
         }
         public async Task<List<ProdutoDto>> GetProdutosByGenero(int idgenero)
         {
-            var response = await _http.GetAsync($"{API}/GetByGenero/{idgenero}");
+            var response = await _http.GetAsync($"{ServicesUrl.Product_API}/GetByGenero/{idgenero}");
 
             if (!response.IsSuccessStatusCode)
             {
@@ -38,7 +38,7 @@ namespace EcommerceAPI.Services
         }
         public async Task<ProdutoViewModel> GetProduto(int id)
         {
-            var response = await _http.GetAsync($"{API}/{id}");
+            var response = await _http.GetAsync($"{ServicesUrl.Product_API}/{id}");
 
             if (!response.IsSuccessStatusCode)
             {

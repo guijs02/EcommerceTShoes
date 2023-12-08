@@ -1,7 +1,9 @@
-using EcommerceCartAPI.Context;
-using EcommerceCartAPI.Interfaces;
-using EcommerceCartAPI.RabbitMQSender;
-using EcommerceCartAPI.Repository;
+using EcommerceCartAPI.Application.RabbitMQSender;
+using EcommerceCartAPI.Infraestructure.Context;
+using EcommerceCartAPI.Infraestructure.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +17,28 @@ builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services
+         .AddAuthentication(options =>
+         {
+             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 
+         })
+         .AddJwtBearer(options =>
+         {
+             options.TokenValidationParameters =
+                 new TokenValidationParameters
+                 {
+                     ValidateIssuerSigningKey = true,
+                     IssuerSigningKey = new SymmetricSecurityKey(
+                         Encoding.UTF8.GetBytes(builder.Configuration["TShoesSettings:SecretKey"])
+                     ),
+                     ValidateAudience = false,
+                     ValidateIssuer = false,
+                     ClockSkew = TimeSpan.Zero
+                 };
+         });
+
+builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,6 +56,9 @@ app.UseCors(c =>
     c.AllowAnyMethod();
     c.AllowAnyOrigin();
 });
+
+app.UseAuthentication();
+
 app.UseAuthorization();
 
 app.MapControllers();

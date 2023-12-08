@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Migrations\" />
+    <Folder Include="UI\Controllers\" />
+    <Folder Include="UI\" />
   </ItemGroup>
 
   <ItemGroup>

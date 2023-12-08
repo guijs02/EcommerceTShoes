@@ -5,7 +5,7 @@ namespace EcommerceAPI.Services.Interfaces
 {
     public interface ICarrinhoService
     {
-        Task<CarrinhoDeCompraViewModel> AddCart(ProdutoViewModel produto, string UserId = "");
+        Task<CarrinhoDeCompraViewModel> AddCart(ProdutoViewModel produto);
         Task<List<CarrinhoDeCompraViewModel>> GetAllCarrinho();
         Task<bool> DeleteItemCarrinho(int id);
         Task<CarrinhoDeCompraViewModel> EditCarrinho(ProdutoViewModel produto);

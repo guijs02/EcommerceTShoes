@@ -1,6 +1,7 @@
-using EcommerceOrderAPI.Context;
-using EcommerceOrderAPI.RabbitMQConsumer;
-using EcommerceOrderAPI.Repository;
+using EcommerceOrderAPI.Application.RabbitMQConsumer;
+using EcommerceOrderAPI.Application.RabbitMQSender;
+using EcommerceOrderAPI.Infraestructure.Context;
+using EcommerceOrderAPI.Infraestructure.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,7 +22,9 @@ dbcontext.UseSqlServer(connection);
 builder.Services.AddSingleton(new OrderRepository(dbcontext.Options));
 
 builder.Services.AddHostedService<RabbitMQCheckoutConsumer>();
+builder.Services.AddHostedService<RabbitMQPaymentConsumer>();
 
+builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
 
 var app = builder.Build();
 
