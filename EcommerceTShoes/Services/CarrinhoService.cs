@@ -1,17 +1,17 @@
 ﻿using EcommerceAPI.Services.Interfaces;
 using EcommerceWeb.Dto;
 using EcommerceWeb.Model;
+using EcommerceWeb.Services.Handle;
 using EcommerceWeb.Services.Serialize;
 using EcommerceWeb.Utils;
 using System.Net.Http.Json;
 
 namespace EcommerceWeb.Services
 {
-    public class CarrinhoService : ICarrinhoService
+    public class CarrinhoService : BaseService, ICarrinhoService
     {
         private readonly HttpClient _http;
         private readonly IProdutoService _produtoService;
-        private const string ERROR_API = "Erro ao realizar a requisição API";
         public CarrinhoService(HttpClient http, IProdutoService produtoService)
         {
             _http = http;
@@ -19,43 +19,55 @@ namespace EcommerceWeb.Services
         }
         public async Task<CarrinhoDeCompraViewModel> AddCart(ProdutoViewModel produto)
         {
-            var response = await _http.PostAsJsonAsync(ServicesUrl.Cart_API, produto);
+            var url = BuildUrl(ServicesUrl.Cart_API);
+
+            var response = await _http.PostAsJsonAsync(url, produto);
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
             return await SerializadorDeObjetos.Serializador<CarrinhoDeCompraViewModel>(response);
         }
         public async Task<List<CarrinhoDeCompraViewModel>> GetAllCarrinho()
         {
-            var response = await _http.GetAsync(ServicesUrl.Cart_API);
+            var url = BuildUrl(ServicesUrl.Cart_API);
+
+            var response = await _http.GetAsync(url);
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
 
             return await SerializadorDeObjetos.Serializador<List<CarrinhoDeCompraViewModel>>(response);
         }
         public async Task<CarrinhoDeCompraViewModel> EditCarrinho(ProdutoViewModel produto)
         {
-            var response = await _http.PutAsJsonAsync(ServicesUrl.Cart_API, produto);
+            var url = BuildUrl(ServicesUrl.Cart_API);
+
+            var response = await _http.PutAsJsonAsync(url, produto);
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
 
             return await SerializadorDeObjetos.Serializador<CarrinhoDeCompraViewModel>(response);
         }
         public async Task<bool> EditCarrinhoQuantidade(CarrinhoDeCompraViewModel carrinho)
         {
-            var response = await _http.PutAsJsonAsync($"{ServicesUrl.Cart_API}/editProductDetails", carrinho);
+            var url = BuildUrl(ServicesUrl.Cart_API, "/editProductDetails");
+
+            var response = await _http.PutAsJsonAsync(url, carrinho);
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
 
             return await SerializadorDeObjetos.Serializador<bool>(response);
@@ -64,22 +76,28 @@ namespace EcommerceWeb.Services
         {
             var produto = await _produtoService.GetProduto(id);
 
-            var response = await _http.GetAsync($"{ServicesUrl.Cart_API}/{produto?.Id}");
+            var url = BuildUrl(ServicesUrl.Cart_API, $"/{produto?.Id}");
+
+            var response = await _http.GetAsync(url);
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
 
             return await SerializadorDeObjetos.Serializador<ProdutoCarrinhoDto>(response);
         }
         public async Task<bool> DeleteItemCarrinho(int id)
         {
-            var response = await _http.DeleteAsync($"{ServicesUrl.Cart_API}/{id}");
+            var url = BuildUrl(ServicesUrl.Cart_API, $"/{id}");
+
+            var response = await _http.DeleteAsync(url);
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
 
             return await SerializadorDeObjetos.Serializador<bool>(response);
@@ -87,12 +105,14 @@ namespace EcommerceWeb.Services
 
         public async Task<bool> Checkout(OrderDetails orderDetails)
         {
+            var url = BuildUrl(ServicesUrl.Cart_API, "/checkout");
 
-            var response = await _http.PostAsJsonAsync($"{ServicesUrl.Cart_API}/checkout", orderDetails);
+            var response = await _http.PostAsJsonAsync(url, orderDetails);
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
 
             return await SerializadorDeObjetos.Serializador<bool>(response);

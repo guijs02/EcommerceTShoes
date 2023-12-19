@@ -31,6 +31,9 @@ builder.Services.AddIdentity<Usuario, IdentityRole>()
 IdentityJwtConfig.ConfigIdentityOptions(builder.Services);
 
 IdentityJwtConfig.ConfigJwtAuthentication(builder);
+
+IdentityJwtConfig.GoogleAuthentication(builder);
+
 builder.Services.AddHttpClient();
 builder.Services.AddCors();
 var app = builder.Build();

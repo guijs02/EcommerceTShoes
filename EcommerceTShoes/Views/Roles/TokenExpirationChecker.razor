@@ -1,0 +1,43 @@
+﻿@using EcommerceWeb.Services.AuthClient
+
+@inject AuthManager _authManager
+@inject NavigationManager _navigation
+
+@if (isTokenExpiration)
+{
+    <link href="animationModal.css" rel="stylesheet" />
+    <div class="modal" tabindex="-1" role="dialog" style="display: @display">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Aviso</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Sua sessão expirou. Por favor, faça login novamente.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" @onclick="@RedirectLogin" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    bool isTokenExpiration = false;
+    string display = "block";
+
+    protected override async Task OnInitializedAsync()
+    {
+        isTokenExpiration = await _authManager.IsTokenExpiration();
+    }
+    void RedirectLogin()
+    {
+        _navigation.NavigateTo("login");
+        FecharModal();
+    }
+    void FecharModal()
+    {
+        display = "none";
+    }
+}

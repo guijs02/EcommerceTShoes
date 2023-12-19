@@ -1,4 +1,5 @@
 using EcommerceProductAPI.Infraestructure.Repository;
+using ErrorMessagesApis;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceProductAPI.UI.Controllers
@@ -15,53 +16,53 @@ namespace EcommerceProductAPI.UI.Controllers
 
         [HttpGet("GetByGenero/{idgenero:int}")]
 
-        public async Task<IActionResult> GetProdutosByGenero(int idgenero)
+        public async Task<IActionResult> GetProdutosByGeneroAsync(int idgenero)
         {
             try
             {
-                var produtos = await _repo.GetProdutosByGenero(idgenero);
-                if (produtos is null)
-                    return NotFound();
+                var produtos = await _repo.GetProdutosByGeneroAsync(idgenero);
+                if (!produtos.Any())
+                    return NotFound(NotFoundErrorMessages.GeneroNull);
 
                 return Ok(produtos);
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, ex.Message.ToString());
             }
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllPrdutos()
+        public async Task<IActionResult> GetAllPrdutosAsync()
         {
             try
             {
-                var produtos = await _repo.GetAllProdutos();
-                if (produtos is null)
-                    return NotFound();
+                var produtos = await _repo.GetAllPrdutosAsync();
+                if (!produtos.Any())
+                    return NoContent();
 
                 return Ok(produtos);
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, ex.Message.ToString());
             }
         }
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetProduto(int id)
+        public async Task<IActionResult> GetProdutoAsync(int id)
         {
             try
             {
-                var produtos = await _repo.GetProduto(id);
+                var produtos = await _repo.GetProdutoAsync(id);
                 if (produtos is null)
-                    return NotFound();
+                    return NotFound(NotFoundErrorMessages.ProdutoNull);
 
                 return Ok(produtos);
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, ex.Message.ToString());
             }
         }
     }

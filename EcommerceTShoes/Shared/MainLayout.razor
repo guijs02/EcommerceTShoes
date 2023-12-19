@@ -1,11 +1,17 @@
-﻿@inherits LayoutComponentBase
+﻿@using EcommerceWeb.Views.Nav
+@using EcommerceWeb.Views.Roles
+@inherits LayoutComponentBase
 
-<NavMenu />
+<div class="content">
+    <NavTShoes />
+    @Body
+</div>
+<TokenExpirationChecker />
 
-@Body
+@code {
 
-@code{
-
-
-    
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
 }

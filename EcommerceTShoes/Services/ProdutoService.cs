@@ -1,26 +1,29 @@
 ﻿using EcommerceAPI.Services.Interfaces;
 using EcommerceWeb.Dto;
 using EcommerceWeb.Model;
+using EcommerceWeb.Services.Handle;
 using EcommerceWeb.Services.Serialize;
 using EcommerceWeb.Utils;
 
 namespace EcommerceAPI.Services
 {
-    public class ProdutoService : IProdutoService
+    public class ProdutoService : BaseService, IProdutoService
     {
         private readonly HttpClient _http;
-        private const string ERROR_API = "Erro ao realizar a requisição API";
-        public ProdutoService(HttpClient http)
+        private readonly IConfiguration _configuration;
+        public ProdutoService(HttpClient http, IConfiguration configuration)
         {
             _http = http;
+            _configuration = configuration;
         }
         public async Task<List<ProdutoDto>> GetAllProdutos()
         {
-            var response = await _http.GetAsync(ServicesUrl.Product_API);
+            var response = await _http.GetAsync($"{ServicesUrl.Product_API}");
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
             return await SerializadorDeObjetos.Serializador<List<ProdutoDto>>(response);
 
@@ -31,7 +34,8 @@ namespace EcommerceAPI.Services
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
             return await SerializadorDeObjetos.Serializador<List<ProdutoDto>>(response);
 
@@ -42,7 +46,8 @@ namespace EcommerceAPI.Services
 
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception(ERROR_API);
+                string erro = await TratarResponse(response);
+                throw new ApiException(erro);
             }
             return await SerializadorDeObjetos.Serializador<ProdutoViewModel>(response);
 

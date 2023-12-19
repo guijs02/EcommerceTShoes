@@ -1,4 +1,5 @@
 ﻿using EcommerceWeb.Services.AuthClient;
+using EcommerceWeb.Services.Handle;
 using EcommerceWeb.Services.Interfaces;
 using EcommerceWeb.Services.Serialize;
 using EcommerceWeb.Utils;
@@ -8,11 +9,11 @@ using System.Net.Http.Json;
 
 namespace EcommerceWeb.Services
 {
-    public class UsuarioService : IUsuarioService
+    public class UsuarioService : BaseService, IUsuarioService
     {
         private readonly HttpClient _http;
         private readonly TokenAuthenticationProvider _tokenProvider;
-        private const string ERROR_API = "Erro ao realizar a requisição API";
+     
 
         public UsuarioService(HttpClient http, TokenAuthenticationProvider tokenProvider)
         {
@@ -27,7 +28,7 @@ namespace EcommerceWeb.Services
             if (!response.IsSuccessStatusCode)
             {
                 string erro = await TratarResponse(response);
-                throw new Exception(erro);
+                throw new ApiException(erro);
             }
             return await SerializadorDeObjetos.Serializador<bool>(response);
         }
@@ -39,7 +40,7 @@ namespace EcommerceWeb.Services
             if (!response.IsSuccessStatusCode)
             {
                 string erro = await TratarResponse(response);
-                throw new Exception(erro);
+                throw new ApiException(erro);
             }
             var token = await response.Content.ReadAsStringAsync();
             await _tokenProvider.LoginTokenAction(token);
@@ -57,28 +58,6 @@ namespace EcommerceWeb.Services
                 throw;
             }
 
-        }
-
-        public async Task<string> TratarResponse(HttpResponseMessage responseMessage)
-        {
-            string response;
-            switch (responseMessage.StatusCode)
-            {
-                case HttpStatusCode.BadRequest:
-                    throw new Exception("Erro na requisição");
-                case HttpStatusCode.InternalServerError:
-                    {
-                        response = await responseMessage.Content.ReadAsStringAsync();
-                    }
-                    break;
-                default:
-                    {
-                        response = ERROR_API;
-                        break;
-                    }
-
-            }
-            return response;
         }
     }
 }

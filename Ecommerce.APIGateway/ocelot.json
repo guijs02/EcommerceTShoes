@@ -6,7 +6,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7055
+          "Port": 44352
         }
       ],
       "UpstreamPathTemplate": "/gateway/Produto",
@@ -18,7 +18,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7055
+          "Port": 44352
         }
       ],
       "UpstreamPathTemplate": "/gateway/Produto/GetByGenero/{idgenero}",
@@ -30,7 +30,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7055
+          "Port": 44352
         }
       ],
       "UpstreamPathTemplate": "/gateway/Produto/{id}",
@@ -129,11 +129,11 @@
           "Port": 5056
         }
       ],
-      "UpstreamPathTemplate": "/gateway/Carrinho/cadastro",
+      "UpstreamPathTemplate": "/gateway/Usuario/cadastro",
       "UpstreamHttpMethod": [ "Post" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Carrinho/login",
+      "DownstreamPathTemplate": "/api/Usuario/login",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -141,7 +141,7 @@
           "Port": 5056
         }
       ],
-      "UpstreamPathTemplate": "/gateway/Carrinho/login",
+      "UpstreamPathTemplate": "/gateway/Usuario/login",
       "UpstreamHttpMethod": [ "Post" ]
     }
   ],

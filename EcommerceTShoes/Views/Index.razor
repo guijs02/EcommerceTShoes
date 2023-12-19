@@ -1,8 +1,10 @@
 ﻿@page "/"
+@using BlazorBootstrap
 @using EcommerceAPI.Services.Interfaces;
 @using EcommerceWeb.Dto;
 @using EcommerceWeb.Interfaces
 @using EcommerceWeb.Model;
+@using EcommerceWeb.Views.Nav
 
 @inject IProdutoService _service
 @inject NavigationManager _navigation
@@ -39,13 +41,9 @@
         </div>
 
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - TShoes.Web
-        </div>
-    </footer>
 }
+
+
 <style>
     .card:hover {
         transform: translateY(-5px);
@@ -56,19 +54,21 @@
 
 @code {
     List<ProdutoDto> Produtos { get; set; }
-
+    [Inject] protected ToastService ToastService { get; set; }
     public bool OnInitializeCompleted { get; set; } = false;
 
     protected override async Task OnInitializedAsync()
     {
+
         Produtos = await _service.GetAllProdutos();
 
         OnInitializeCompleted = true;
+
     }
     public void GetProduto(int id)
     {
         _navigation.NavigateTo($"{_navigation.Uri}details/{id}");
-        
+
     }
     
 }

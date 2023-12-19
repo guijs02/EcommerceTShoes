@@ -4,8 +4,8 @@ namespace EcommerceProductAPI.Infraestructure.Repository
 {
     public interface IProdutoRepository
     {
-        Task<List<ProdutoDto>> GetProdutosByGenero(int idgenero);
-        Task<Produto> GetProduto(int id);
-        Task<List<ProdutoDto>> GetAllProdutos();
+        Task<List<ProdutoDto>> GetProdutosByGeneroAsync(int idgenero);
+        Task<Produto> GetProdutoAsync(int id);
+        Task<List<ProdutoDto>> GetAllPrdutosAsync();
     }
 }

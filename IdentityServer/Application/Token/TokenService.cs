@@ -12,9 +12,10 @@ namespace IdentityServerAPI.Application.Token
         {
             var claims = new Claim[]
             {
-                new Claim(ClaimTypes.Name, usuario.UserName),
-                new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
-                new Claim("loginTimeStmp", DateTime.UtcNow.ToString()),
+                new(ClaimTypes.Name, usuario.UserName),
+                new(ClaimTypes.NameIdentifier, usuario.Id),
+                new(ClaimTypes.Email, usuario.Email),
+                new("loginTimeStmp", DateTime.UtcNow.ToString()),
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TShoesSettings:SecretKey"]));

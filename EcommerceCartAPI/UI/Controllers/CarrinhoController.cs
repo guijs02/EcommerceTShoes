@@ -2,6 +2,7 @@
 using EcommerceCartAPI.Domain.Messages;
 using EcommerceCartAPI.Domain.Models;
 using EcommerceCartAPI.Infraestructure.Repository;
+using ErrorMessagesApis;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -13,6 +14,7 @@ namespace EcommerceCartAPI.UI.Controllers
     {
         private readonly ICarrinhoRepository _repo;
         private readonly IRabbitMQMessageSender _messageSender;
+
         public CarrinhoController(ICarrinhoRepository repo, IRabbitMQMessageSender messageSender)
         {
             _repo = repo;
@@ -20,33 +22,28 @@ namespace EcommerceCartAPI.UI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddCart(Produto produtoObj)
+        public async Task<IActionResult> AddCartAsync(Produto produtoObj)
         {
             try
             {
-                var UserId = GetUserIdAsync();
+                var UserId = GetUserById();
 
                 var produto = await _repo.AddCart(produtoObj, UserId);
-                if (produto is null)
-                    return NotFound();
 
                 return Ok(produto);
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, ex.Message.ToString());
             }
         }
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
             try
             {
-                var UserId = GetUserIdAsync();
-                var produtos = await _repo.GetAllCarrinho(UserId);
-
-                if (produtos is null)
-                    return NotFound();
+                var UserId = GetUserById();
+                var produtos = await _repo.GetAllCarrinhoAsync(UserId);
 
                 return Ok(produtos);
             }
@@ -57,98 +54,104 @@ namespace EcommerceCartAPI.UI.Controllers
         }
         [HttpPost]
         [Route("checkout")]
-        public async Task<IActionResult> Checkout(CheckoutMessage checkoutMessage)
+        public async Task<IActionResult> CheckoutAsync(CheckoutMessage checkoutMessage)
         {
             try
             {
-                if (checkoutMessage is null)
-                    return NotFound();
-
                 var result = checkoutMessage.Cart.Where(f => f.UserId is null).Any();
 
                 if (result)
                 {
-                    var userId = GetUserIdAsync();
+                    var userId = GetUserById();
                     checkoutMessage.Cart.ForEach(f => f.UserId = userId);
                 }
 
                 _messageSender.SendMessage(checkoutMessage, "checkoutqueue");
 
-                await _repo.ClearCart();
+                await _repo.ClearCartAsync();
 
-                return Ok(true);
+                return Accepted(true);
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, new { Message = ex.Message.ToString() });
             }
         }
         [HttpPut]
-        public async Task<IActionResult> EditCarrinho(Produto produto)
+        public async Task<IActionResult> EditCarrinhoAsync(Produto produto)
         {
             try
             {
-                var produtos = await _repo.EditCarrinho(produto);
+                var produtos = await _repo.EditCarrinhoAsync(produto);
                 if (produtos is null)
-                    return NotFound();
+                    return NotFound(NotFoundErrorMessages.ProdutoNull);
 
                 return Ok(produtos);
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, new { Message = ex.Message.ToString() });
             }
         }
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetByIdProdutoCarrinho(int id)
+        public async Task<IActionResult> GetByIdProdutoCarrinhoAsync(int id)
         {
             try
             {
-                var produtos = await _repo.GetByIdProdutoCarrinho(id);
+                var produtos = await _repo.GetByIdProdutoCarrinhoAsync(id);
                 if (produtos is null)
-                    return NotFound();
+                    return NotFound(NotFoundErrorMessages.ProdutoNull);
 
                 return Ok(produtos);
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, new { Message = ex.Message.ToString() });
             }
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteItemCarrinho(int id)
+        public async Task<IActionResult> DeleteItemCarrinhoAsync(int id)
         {
             try
             {
-                var apagado = await _repo.DeleteItemCarrinho(id);
+                var apagado = await _repo.DeleteItemCarrinhoAsync(id);
                 if (!apagado)
-                    return BadRequest();
+                    return NotFound(NotFoundErrorMessages.ProdutoNull);
 
                 return Ok(apagado);
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, new { Message = ex.Message.ToString() });
             }
         }
         [HttpPut]
         [Route("editProductDetails")]
-        public async Task<IActionResult> EditQuantidade(CarrinhoDeCompra carrinho)
+        public async Task<IActionResult> EditQuantidadeAsync(CarrinhoDeCompra carrinho)
         {
             try
             {
-                var userId = GetUserIdAsync();
-                var editou = await _repo.EditProdutoCarrinhoQuantidade(carrinho, userId);
+                bool result;
+                var userId = GetUserById();
 
-                return Ok(editou);
+                if (carrinho.Quantidade == 0)
+                {
+                    result = await _repo.DeleteItemCarrinhoAsync(carrinho.Id);
+                }
+                else
+                {
+                    result = await _repo.EditProdutoCarrinhoQuantidadeAsync(carrinho, userId);
+                }
+
+                return Ok(result);
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, new { Message = ex.Message.ToString() });
             }
         }
-        private string GetUserIdAsync()
+        private string GetUserById()
         {
             var UserId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 

@@ -29,7 +29,6 @@
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                            <!-- Image -->
                                             <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                                                 <img src="@item.ImagemUrl"
                                                      class="w-100 h-100" alt="Blue Jeans Jacket" />
@@ -37,35 +36,27 @@
                                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                                                 </a>
                                             </div>
-                                            <!-- Image -->
                                         </div>
 
                                         <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                            <!-- Data -->
                                             <p><strong>@item.Nome</strong></p>
                                             <p>@item.Descricao</p>
                                             <p>Quantidade: @item.Quantidade</p>
                                             <p>Tamanho: @item.Tamanho</p>
 
-                                            <!-- Data -->
                                         </div>
 
                                         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                            <!-- Quantity -->
-                                            <!-- Price -->
                                             <p class="text-start text-md-center">
                                                 <strong>@((item.Preco * item.Quantidade).ToString("C2")) </strong>
                                             </p>
-                                            <!-- Price -->
                                         </div>
                                     </div>
-                                    <!-- Single item -->
 
                                     <hr class="my-4" />
 
                                 </Virtualize>
 
-                                <!-- Single item -->
                             </div>
                         </div>
                         <Accordion>
@@ -95,7 +86,7 @@
                                 </Content>
                             </AccordionItem>
                         </Accordion>
-
+                     
                     </div>
                     <div class="col-md-4">
                         <div class="card mb-4">
@@ -175,7 +166,6 @@
         }
         catch (Exception e)
         {
-
             throw;
         }
 

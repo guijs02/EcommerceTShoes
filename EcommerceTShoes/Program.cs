@@ -14,6 +14,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 
 #region Services
+//builder.Configuration.AddJsonFile("appsettings.json",true,true);
 
 builder.Services.AddScoped<IProdutoService, ProdutoService>();
 builder.Services.AddScoped<ICarrinhoService, CarrinhoService>();
@@ -25,6 +26,7 @@ builder.Services.AddScoped<AuthenticationStateProvider, TokenAuthenticationProvi
 (
     provider => provider.GetRequiredService<TokenAuthenticationProvider>()
 );
+builder.Services.AddScoped<AuthManager>();
 builder.Services.AddAuthorizationCore();
 builder.Services.AddBlazorBootstrap();
 #endregion

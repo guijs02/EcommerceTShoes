@@ -12,20 +12,15 @@ namespace EcommerceProductAPI.Infraestructure.Repository
         {
             _db = db;
         }
-        public async Task<List<ProdutoDto>> GetProdutosByGenero(int idgenero)
+        public async Task<List<ProdutoDto>> GetProdutosByGeneroAsync(int idgenero)
         {
-            return idgenero switch
-            {
-                1 => await GetListByGenero(idgenero),
-                2 => await GetListByGenero(idgenero),
-                _ => throw new Exception("Não há esse genero no banco de dados")
-            };
+            return await GetListByGenero(idgenero);
         }
-        public async Task<Produto> GetProduto(int id)
+        public async Task<Produto> GetProdutoAsync(int id)
         {
             return await _db.Products.FirstOrDefaultAsync(f => f.Id == id);
         }
-        public async Task<List<ProdutoDto>> GetAllProdutos()
+        public async Task<List<ProdutoDto>> GetAllPrdutosAsync()
         {
             var query = (from p in _db.Products
                          select new ProdutoDto

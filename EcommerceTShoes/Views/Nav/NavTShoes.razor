@@ -69,11 +69,15 @@
 
     protected override async Task OnInitializedAsync()
     {
-        SetUserNameAuthenticated();
-
+        await SetUserNameAuthenticated();
     }
 
-    private async void SetUserNameAuthenticated()
+    protected override async Task OnParametersSetAsync()
+    {
+        await SetUserNameAuthenticated();
+    }
+
+    public async Task SetUserNameAuthenticated()
     {
         var authState = await authenticationState;
 
@@ -87,6 +91,5 @@
             Message = $"Olá, {user}";
 
         }
-        StateHasChanged();
     }
 }
