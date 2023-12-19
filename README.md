@@ -1,6 +1,8 @@
 ## Sobre o App TShoes
 Esta aplicação é um ECommerce de tenis para implementar os conhecimentos adquiridos em microsserviços e sistema de mensageria. O sistema é fragmentado em diversos serviços para realizar a pedido, pagamento, autenticação e inclusão de produtos no carrinho de compra.
 
+![appThoes](https://github.com/guijs02/EcommerceTShoes/blob/master/fotoEcommerce.png)
+
 ## 📁 Arquitetura
 - Microsserviços
 
