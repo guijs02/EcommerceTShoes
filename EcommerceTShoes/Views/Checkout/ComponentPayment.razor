@@ -139,14 +139,14 @@
     public bool Loading { get; set; }
     OrderDetails orderDetails { get; set; }
     public string ValorTotalView;
-    public decimal ValorTotal;
+
+    CarrinhoDeCompraViewModel viewModel = new();
 
     protected override async Task OnInitializedAsync()
     {
         orderDetails = new();
         ListCarrinho = await _cartService.GetAllCarrinho();
-        ValorTotal = ListCarrinho.Sum(s => s.Preco * s.Quantidade);
-        ValorTotalView = ValorTotal.ToString("C2");
+        ValorTotalView = viewModel.CalcularTotalCompra(ListCarrinho);
         await base.OnInitializedAsync();
     }
     public async Task Checkout(PaymentViewModel payment)
@@ -156,10 +156,9 @@
         {
             orderDetails.Cart = ListCarrinho;
             orderDetails.Payment = payment;
-            orderDetails.OrderSummary.ValorTotal = ValorTotal;
+            orderDetails.OrderSummary.ValorTotal = decimal.Parse(viewModel.CalcularTotalCompra(ListCarrinho).Replace("R$",string.Empty));
 
             await _cartService.Checkout(orderDetails);
-            //await ExibirSpinner();
             _navigation.NavigateTo("/paymentSucess");
             StateHasChanged();
 

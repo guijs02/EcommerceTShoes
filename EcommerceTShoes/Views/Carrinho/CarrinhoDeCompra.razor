@@ -150,7 +150,7 @@
 
 @code {
     public List<CarrinhoDeCompraViewModel> ListCarrinho { get; set; }
-
+    CarrinhoDeCompraViewModel viewModel { get; set; } = new();
     public bool OnInitializeCompleted { get; set; } = false;
     public bool IsUpdate { get; set; } = false;
     public string ValorTotal;
@@ -211,7 +211,7 @@
     }
     void CalcularValorTotal()
     {
-        ValorTotal = ListCarrinho.Sum(s => s.Preco * s.Quantidade).ToString("C2");
+        ValorTotal = viewModel.CalcularTotalCompra(ListCarrinho);
     }
     void GoCheckout()
     {

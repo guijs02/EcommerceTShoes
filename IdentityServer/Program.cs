@@ -17,7 +17,8 @@ builder.Services.AddSqlServer<SQLServerContext>(builder.Configuration["Connectio
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(Path.GetTempPath()));
+//builder.Services.AddDataProtection()
+//                .PersistKeysToFileSystem(new DirectoryInfo(Path.GetTempPath()));
 
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);
@@ -32,8 +33,6 @@ IdentityJwtConfig.ConfigIdentityOptions(builder.Services);
 
 IdentityJwtConfig.ConfigJwtAuthentication(builder);
 
-IdentityJwtConfig.GoogleAuthentication(builder);
-
 builder.Services.AddHttpClient();
 builder.Services.AddCors();
 var app = builder.Build();
@@ -41,8 +40,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

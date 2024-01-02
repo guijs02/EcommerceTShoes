@@ -43,8 +43,8 @@ namespace EcommerceCartAPI.Infraestructure.Repository
         }
         public async Task<bool> DeleteItemCarrinhoAsync(int id)
         {
-            var a = _db.Carrinho.Where(x => x.Id == id)
-                        .ExecuteDelete();
+            await _db.Carrinho.Where(x => x.Id == id)
+                        .ExecuteDeleteAsync();
             _db.SaveChanges();
             return true;
         }
@@ -68,7 +68,7 @@ namespace EcommerceCartAPI.Infraestructure.Repository
         }
         public async Task<bool> EditProdutoCarrinhoQuantidadeAsync(CarrinhoDeCompra carrinho, string userId)
         {
-            var carrinhoDb = await _db.Carrinho.FirstAsync(c => c.Id == carrinho.Id);
+            var carrinhoDb = await _db.Carrinho.FirstOrDefaultAsync(c => c.Id == carrinho.Id);
 
             if (carrinhoDb is null)
                 return false;
@@ -87,24 +87,7 @@ namespace EcommerceCartAPI.Infraestructure.Repository
                                          select carrinho
                                         ).FirstOrDefaultAsync();
 
-            if (produtoCarrinho is null)
-            {
-                return null;
-            }
-
-            var ProdutoCarrinho = new ProdutoCarrinhoDto
-            {
-                Id = produtoCarrinho.ProdutoId,
-                Descricao = produtoCarrinho.Descricao,
-                ImagemUrl = produtoCarrinho.ImagemUrl,
-                Nome = produtoCarrinho.Nome,
-                Preco = produtoCarrinho.Preco,
-                Tamanho = produtoCarrinho.Tamanho,
-
-            };
-
-
-            return ProdutoCarrinho;
+            return produtoCarrinho;
         }
 
         public async Task<bool> ClearCartAsync()

@@ -96,9 +96,6 @@ namespace EcommerceOrderAPI.Application.RabbitMQConsumer
             try
             {
                 _rabbitMQMessageSender.SendMessage(paymentVO, "orderpaymentprocessqueue");
-
-
-
             }
             catch (Exception)
             {

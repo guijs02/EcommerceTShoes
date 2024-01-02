@@ -49,7 +49,7 @@ namespace EcommerceCartAPI.UI.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                return StatusCode(500, new { Message = ex.Message.ToString() });
             }
         }
         [HttpPost]
@@ -143,6 +143,8 @@ namespace EcommerceCartAPI.UI.Controllers
                 {
                     result = await _repo.EditProdutoCarrinhoQuantidadeAsync(carrinho, userId);
                 }
+                if (!result)
+                    return NotFound();
 
                 return Ok(result);
             }
@@ -151,7 +153,7 @@ namespace EcommerceCartAPI.UI.Controllers
                 return StatusCode(500, new { Message = ex.Message.ToString() });
             }
         }
-        private string GetUserById()
+        private string? GetUserById()
         {
             var UserId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 

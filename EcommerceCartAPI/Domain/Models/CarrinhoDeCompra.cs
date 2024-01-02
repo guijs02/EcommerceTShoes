@@ -20,7 +20,7 @@ namespace EcommerceCartAPI.Domain.Models
         public string Tamanho { get; set; }
         [Required]
         public int Quantidade { get; set; } = 1;
-        [Required]
+        
         public string? UserId { get; set; }
     }
 }

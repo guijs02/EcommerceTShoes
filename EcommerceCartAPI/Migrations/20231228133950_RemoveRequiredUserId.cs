@@ -5,7 +5,7 @@
 namespace EcommerceCartAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class RemoveRequiredUserId : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,7 +23,7 @@ namespace EcommerceCartAPI.Migrations
                     ImagemUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Tamanho = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

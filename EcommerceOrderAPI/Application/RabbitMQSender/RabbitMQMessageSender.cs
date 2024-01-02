@@ -29,7 +29,7 @@ namespace EcommerceOrderAPI.Application.RabbitMQSender
                 using var channel = _connection.CreateModel();
                 channel.QueueDeclare(queueName, false, false, false, arguments: null);
                 byte[] body = GetMessageAsByteArray(message);
-                channel.BasicPublish(exchange: "", routingKey: queueName, basicProperties: null, body: body);
+                channel.BasicPublish(exchange: string.Empty, routingKey: queueName, basicProperties: null, body: body);
             }
 
         }

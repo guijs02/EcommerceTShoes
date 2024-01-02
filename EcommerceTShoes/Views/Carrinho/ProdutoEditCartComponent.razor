@@ -6,7 +6,7 @@
 @using EcommerceWeb.Modals;
 
 @inject IProdutoService _service
-@inject ICarrinhoService _Carrinhoservice
+@inject ICarrinhoService _carrinhoService
 @inject NavigationManager _navigation
 
 @if (OnInitializeCompleted)
@@ -86,7 +86,6 @@
     [Parameter]
     public int CurrentId { get; set; }
     public bool VisualizarModalAddCart { get; set; }
-    public ProdutoViewModel ProdutoViewModel { get; set; }
     public ProdutoCarrinhoDto Produto { get; set; }
     public string SetColorMessage { get; set; }
     public bool OnInitializeCompleted { get; set; }
@@ -97,14 +96,14 @@
     protected override async Task OnInitializedAsync()
     {
 
-        Produto = await _Carrinhoservice.GetByIdProdutoCarrinho(CurrentId);
+        Produto = await _carrinhoService.GetByIdProdutoCarrinho(CurrentId);
         TextButtonAddCarrinho = "Alterar Produto do Carrinho";
 
         OnInitializeCompleted = true;
     }
     public async Task EditProductCart()
     {
-        CarrinhoDeCompra = await _Carrinhoservice.EditCarrinho(Produto);
+        CarrinhoDeCompra = await _carrinhoService.EditCarrinho(Produto);
         VisualizarModalAddCart = true;
 
     }

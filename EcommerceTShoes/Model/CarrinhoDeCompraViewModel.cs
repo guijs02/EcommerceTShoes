@@ -12,5 +12,10 @@
         public string Tamanho { get; set; }
         public int Quantidade { get; set; } = 1;
         public string? UserId { get; set; }
+
+        public string CalcularTotalCompra(List<CarrinhoDeCompraViewModel> list)
+        {
+            return list.Sum(s => s.Preco * s.Quantidade).ToString("C2");
+        }
     }
 }

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EcommerceCartAPI.Migrations
 {
     [DbContext(typeof(SQLServerContext))]
-    [Migration("20231219200838_init")]
-    partial class init
+    [Migration("20231228133950_RemoveRequiredUserId")]
+    partial class RemoveRequiredUserId
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,7 +58,6 @@ namespace EcommerceCartAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
