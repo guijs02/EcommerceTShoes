@@ -131,7 +131,7 @@
                                         <div>
                                             <strong>Total da compra</strong>
                                         </div>
-                                        <span><strong>@ValorTotal</strong></span>
+                                        <span><strong>@viewModel.TotalCompraView</strong></span>
                                     </li>
                                 </ul>
 
@@ -211,7 +211,7 @@
     }
     void CalcularValorTotal()
     {
-        ValorTotal = viewModel.CalcularTotalCompra(ListCarrinho);
+        viewModel.ObterTotalCompra(ListCarrinho, true);
     }
     void GoCheckout()
     {

@@ -43,8 +43,9 @@ namespace EcommerceCartAPI.Infraestructure.Repository
         }
         public async Task<bool> DeleteItemCarrinhoAsync(int id)
         {
-            await _db.Carrinho.Where(x => x.Id == id)
+            var delete = await _db.Carrinho.Where(x => x.Id == id)
                         .ExecuteDeleteAsync();
+
             _db.SaveChanges();
             return true;
         }

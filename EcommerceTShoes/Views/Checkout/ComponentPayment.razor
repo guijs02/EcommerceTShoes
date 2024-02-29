@@ -103,7 +103,7 @@
                                         <div>
                                             <strong>Total:</strong>
                                         </div>
-                                        <span><strong>@ValorTotalView</strong></span>
+                                        <span><strong>@viewModel.TotalCompraView</strong></span>
                                     </li>
                                 </ul>
                             </div>
@@ -138,7 +138,6 @@
     public List<CarrinhoDeCompraViewModel> ListCarrinho { get; set; } = new();
     public bool Loading { get; set; }
     OrderDetails orderDetails { get; set; }
-    public string ValorTotalView;
 
     CarrinhoDeCompraViewModel viewModel = new();
 
@@ -146,7 +145,7 @@
     {
         orderDetails = new();
         ListCarrinho = await _cartService.GetAllCarrinho();
-        ValorTotalView = viewModel.CalcularTotalCompra(ListCarrinho);
+        viewModel.ObterTotalCompra(ListCarrinho,true);
         await base.OnInitializedAsync();
     }
     public async Task Checkout(PaymentViewModel payment)
@@ -156,7 +155,7 @@
         {
             orderDetails.Cart = ListCarrinho;
             orderDetails.Payment = payment;
-            orderDetails.OrderSummary.ValorTotal = decimal.Parse(viewModel.CalcularTotalCompra(ListCarrinho).Replace("R$",string.Empty));
+            orderDetails.OrderSummary.ValorTotal = (decimal)viewModel.ObterTotalCompra(ListCarrinho, false);
 
             await _cartService.Checkout(orderDetails);
             _navigation.NavigateTo("/paymentSucess");
