@@ -22,6 +22,7 @@ Esta aplicação é um ECommerce de tenis para implementar os conhecimentos adqu
 - RabbitMQ
 - SQL Server
 - API Gateway
+- Docker
 <br>
 
 ## 🛠 Funcionalidades
@@ -44,6 +45,7 @@ Esta aplicação é um ECommerce de tenis para implementar os conhecimentos adqu
 - Swagger
 - API REST
 - LINQ
+- Docker Compose
 
 
 
