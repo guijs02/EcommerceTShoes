@@ -2,11 +2,11 @@
   "Routes": [
     {
       "DownstreamPathTemplate": "/api/Produto",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 44352
+          "Host": "product-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Produto",
@@ -14,11 +14,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Produto/GetByGenero/{idgenero}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 44352
+          "Host": "product-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Produto/GetByGenero/{idgenero}",
@@ -26,11 +26,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Produto/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 44352
+          "Host": "product-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Produto/{id}",
@@ -38,11 +38,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Carrinho",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7211
+          "Host": "cart-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Carrinho",
@@ -50,11 +50,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Carrinho",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7211
+          "Host": "cart-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Carrinho",
@@ -62,11 +62,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Carrinho",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7211
+          "Host": "cart-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Carrinho",
@@ -74,11 +74,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Carrinho/editProductDetails",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7211
+          "Host": "cart-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Carrinho/editProductDetails",
@@ -86,11 +86,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Carrinho/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7211
+          "Host": "cart-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Carrinho/{id}",
@@ -98,11 +98,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Carrinho/{id}",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7211
+          "Host": "cart-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Carrinho/{id}",
@@ -110,11 +110,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Carrinho/checkout",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7211
+          "Host": "cart-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Carrinho/checkout",
@@ -122,11 +122,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Usuario/cadastro",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5056
+          "Host": "identity-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Usuario/cadastro",
@@ -134,11 +134,11 @@
     },
     {
       "DownstreamPathTemplate": "/api/Usuario/login",
-      "DownstreamScheme": "https",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5056
+          "Host": "identity-service",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/gateway/Usuario/login",
@@ -146,6 +146,6 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "https://localhost:44301"
+    "BaseUrl": "https://localhost:8080"
   }
 }

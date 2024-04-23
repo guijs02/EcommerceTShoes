@@ -21,7 +21,7 @@ namespace EcommerceOrderAPI.Application.RabbitMQConsumer
 
         public RabbitMQCheckoutConsumer(OrderRepository orderRepository, IRabbitMQMessageSender rabbitMQMessageSender)
         {
-            _hostname = "localhost";
+            _hostname = "rabbitmqTShoes";
             _password = "guest";
             _username = "guest";
 

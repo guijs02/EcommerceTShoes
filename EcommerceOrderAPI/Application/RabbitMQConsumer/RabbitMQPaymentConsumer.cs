@@ -18,7 +18,7 @@ namespace EcommerceOrderAPI.Application.RabbitMQConsumer
         {
             var factory = new ConnectionFactory
             {
-                HostName = "localhost",
+                HostName = "rabbitmqTShoes",
                 UserName = "guest",
                 Password = "guest",
             };

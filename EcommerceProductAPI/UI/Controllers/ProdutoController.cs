@@ -1,5 +1,5 @@
+using EcommerceProductAPI.Domain;
 using EcommerceProductAPI.Infraestructure.Repository;
-using ErrorMessagesApis;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceProductAPI.UI.Controllers

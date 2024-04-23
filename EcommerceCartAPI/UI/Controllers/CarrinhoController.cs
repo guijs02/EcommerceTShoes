@@ -2,7 +2,6 @@
 using EcommerceCartAPI.Domain.Messages;
 using EcommerceCartAPI.Domain.Models;
 using EcommerceCartAPI.Infraestructure.Repository;
-using ErrorMessagesApis;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 

@@ -1,10 +1,8 @@
-﻿using ErrorMessagesApis;
-
-namespace EcommerceCartAPI.Domain.Exception
+﻿namespace EcommerceCartAPI.Domain.Exception
 {
     public class ProductNotFoundInCartException : System.Exception
     {
-        public ProductNotFoundInCartException(string message = NotFoundErrorMessages.ProdutoNull) : base(message){ }
+        public ProductNotFoundInCartException(string message = NotFoundErrorMessages.ProdutoNull) : base(message) { }
 
     }
 }

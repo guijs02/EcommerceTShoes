@@ -18,7 +18,7 @@ namespace EcommerceAPI.Services
         }
         public async Task<List<ProdutoDto>> GetAllProdutos()
         {
-            var response = await _http.GetAsync($"{ServicesUrl.Product_API}");
+            var response = await _http.GetAsync(ServicesUrl.Product_API);
 
             if (!response.IsSuccessStatusCode)
             {

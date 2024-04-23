@@ -16,7 +16,7 @@ namespace EcommerceOrderAPI.Application.RabbitMQSender
 
         public RabbitMQMessageSender()
         {
-            _hostName = "localhost";
+            _hostName = "rabbitmqTShoes";
             _password = "guest";
             _userName = "guest";
             //_connection = "guest";

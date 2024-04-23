@@ -8,13 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-        <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />    
+        <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.0" />    
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\EcommercePaymentProcessor\EcommercePaymentProcessor.csproj" />
-    <ProjectReference Include="..\MessageBus\MessageBus.csproj" />
-  </ItemGroup>
 
 </Project>

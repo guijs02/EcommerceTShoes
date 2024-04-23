@@ -14,13 +14,11 @@ namespace EcommerceCartAPI.Application.RabbitMQSender
         private IConnection _connection;
         public RabbitMQMessageSender()
         {
-            _hostName = "localhost";
+            _hostName = "rabbitmqTShoes";
             _password = "guest";
             _username = "guest";
 
             CreateConnection();
-
-
         }
         public void SendMessage(BaseMessage baseMessage, string queueName)
         {
