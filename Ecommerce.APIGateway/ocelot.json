@@ -125,8 +125,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "identity-service",
-          "Port": 80
+          "Host": "identity-server",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/gateway/Usuario/cadastro",
@@ -137,8 +137,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "identity-service",
-          "Port": 80
+          "Host": "identity-server",
+          "Port": 8080
         }
       ],
       "UpstreamPathTemplate": "/gateway/Usuario/login",

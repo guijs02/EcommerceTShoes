@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FACF7BD5-ADA9-4EA5-AB2A-94A5BFBF9A90}|Solution Items{FACF7BD5-ADA9-4EA5-AB2A-94A5BFBF9A90}|C:\\Users\\user\\source\\repos\\EcommerceTShoes\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{FACF7BD5-ADA9-4EA5-AB2A-94A5BFBF9A90}|Solution Items{FACF7BD5-ADA9-4EA5-AB2A-94A5BFBF9A90}|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerceproductapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|solutionrelative:ecommerceproductapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A46FC7D-275C-46AF-A961-2E1189A6288E}|Ecommerce.APIGateway\\Ecommerce.APIGateway.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerce.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3A46FC7D-275C-46AF-A961-2E1189A6288E}|Ecommerce.APIGateway\\Ecommerce.APIGateway.csproj|solutionrelative:ecommerce.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\views\\categorias\\femininopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\views\\categorias\\femininopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A46FC7D-275C-46AF-A961-2E1189A6288E}|Ecommerce.APIGateway\\Ecommerce.APIGateway.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerce.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3A46FC7D-275C-46AF-A961-2E1189A6288E}|Ecommerce.APIGateway\\Ecommerce.APIGateway.csproj|solutionrelative:ecommerce.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\utils\\productapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -144,11 +140,11 @@
         },
         {
           "DockedWidth": 1193,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "ServicesUrl.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Utils\\ServicesUrl.cs",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Utils\\ServicesUrl.cs",
@@ -194,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "FemininoPage.razor",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Categorias\\FemininoPage.razor",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Categorias\\FemininoPage.razor",
@@ -202,37 +198,25 @@
               "RelativeToolTip": "EcommerceTShoes\\Views\\Categorias\\FemininoPage.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-18T19:11:43.904Z"
+              "WhenOpened": "2024-04-18T19:11:43.904Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\appsettings.json",
               "RelativeDocumentMoniker": "EcommerceProductAPI\\appsettings.json",
               "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\appsettings.json",
               "RelativeToolTip": "EcommerceProductAPI\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAYAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-04-02T16:45:42.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2024-04-18T18:55:42.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "BaseAPI.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Utils\\BaseAPI.cs",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Utils\\BaseAPI.cs",
@@ -244,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ProductAPI.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Utils\\ProductAPI.cs",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Utils\\ProductAPI.cs",
@@ -256,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Program.cs",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Program.cs",
@@ -268,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\Ecommerce.APIGateway\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Ecommerce.APIGateway\\Properties\\launchSettings.json",
@@ -280,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "EcommerceWeb",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\EcommerceWeb.csproj",
               "RelativeDocumentMoniker": "EcommerceTShoes\\EcommerceWeb.csproj",
@@ -291,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommercePaymentAPI\\appsettings.json",
               "RelativeDocumentMoniker": "EcommercePaymentAPI\\appsettings.json",
@@ -303,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Dockerfile",
               "RelativeDocumentMoniker": "EcommerceCartAPI\\Dockerfile",
@@ -315,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "ProdutoRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Infraestructure\\Repository\\ProdutoRepository.cs",
               "RelativeDocumentMoniker": "EcommerceProductAPI\\Infraestructure\\Repository\\ProdutoRepository.cs",
@@ -327,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "UsuarioService.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Services\\UsuarioService.cs",
@@ -339,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Dockerfile",
               "RelativeDocumentMoniker": "EcommerceProductAPI\\Dockerfile",
@@ -351,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "RabbitMQMessageSender.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
               "RelativeDocumentMoniker": "EcommerceCartAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
@@ -363,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "NotFoundErrorMessages.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Domain\\NotFoundErrorMessages.cs",
               "RelativeDocumentMoniker": "EcommerceProductAPI\\Domain\\NotFoundErrorMessages.cs",
@@ -375,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Program.cs",
               "RelativeDocumentMoniker": "EcommerceProductAPI\\Program.cs",
@@ -387,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "EcommerceProductAPI.csproj",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\EcommerceProductAPI.csproj",
               "RelativeDocumentMoniker": "EcommerceProductAPI\\EcommerceProductAPI.csproj",
@@ -399,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "ErrorMessagesApis.csproj",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\ErrorMessagesApis\\ErrorMessagesApis.csproj",
               "RelativeDocumentMoniker": "ErrorMessagesApis\\ErrorMessagesApis.csproj",
@@ -411,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "MessageBus.csproj",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\MessageBus\\MessageBus.csproj",
               "RelativeDocumentMoniker": "MessageBus\\MessageBus.csproj",
@@ -423,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 27,
               "Title": "EcommerceCartAPI.AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\obj\\Debug\\net7.0\\EcommerceCartAPI.AssemblyInfo.cs",
               "RelativeDocumentMoniker": "EcommerceCartAPI\\obj\\Debug\\net7.0\\EcommerceCartAPI.AssemblyInfo.cs",
@@ -435,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Shared\\MainLayout.razor",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Shared\\MainLayout.razor",
@@ -447,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "CarrinhoDeCompraViewModel.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Model\\CarrinhoDeCompraViewModel.cs",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Model\\CarrinhoDeCompraViewModel.cs",
@@ -459,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "ComponentPayment.razor",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Checkout\\ComponentPayment.razor",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Checkout\\ComponentPayment.razor",
@@ -471,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 24,
               "Title": "FormPayment.razor",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Checkout\\FormPayment.razor",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Checkout\\FormPayment.razor",
@@ -483,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "RabbitMQMessageSender.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommercePaymentAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
               "RelativeDocumentMoniker": "EcommercePaymentAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
@@ -495,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "CarrinhoDeCompra.razor",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Carrinho\\CarrinhoDeCompra.razor",
               "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Carrinho\\CarrinhoDeCompra.razor",
@@ -507,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 25,
               "Title": "UsuarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\IdentityServer\\Infraestructure\\Repository\\UsuarioRepository.cs",
               "RelativeDocumentMoniker": "IdentityServer\\Infraestructure\\Repository\\UsuarioRepository.cs",

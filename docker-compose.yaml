@@ -24,7 +24,7 @@ services:
       - 5672:5672
 
   ocelot:
-    image: api-gateway/app:1.0
+    image: guijs02/api-gateway:1.1
     container_name: ocelot
     networks:
       - tshoes-bridge
@@ -32,7 +32,7 @@ services:
       - 8080:80
 
   product:
-    image: product-service/app:1.0
+    image: guijs02/product-service:1.0
     container_name: product-service
     networks:
       - tshoes-bridge
@@ -40,7 +40,7 @@ services:
       - 3000:80
       
   cart:
-    image: cart-service/app:1.0
+    image: guijs02/cart-service:1.0
     container_name: cart-service
     networks:
       - tshoes-bridge
@@ -50,7 +50,7 @@ services:
       - rabbitmq
       
   order:
-    image: order-service/app:1.0
+    image: guijs02/order-service:1.0
     container_name: order-service
     networks:
       - tshoes-bridge
@@ -58,9 +58,11 @@ services:
       - 3002:80
     depends_on:
       - rabbitmq
+    restart: on-failure
+    
 
   payment:
-    image: payment-service/app:1.0
+    image: guijs02/payment-service:1.0
     container_name: payment-service
     networks:
       - tshoes-bridge
@@ -68,26 +70,23 @@ services:
       - 3003:80
     depends_on:
       - rabbitmq
+    restart: on-failure
 
   identity:
-    image: identity-server/app:1.0
+    image: guijs02/identity-server:1.0
     container_name: identity-server
     networks:
       - tshoes-bridge
-    environment:
-      - "ASPNETCORE_ENVIRONMENT=Development"
     ports:
-      - 3004:80
+      - 3004:8080
 
   web: 
-    image: tshoes-web/app:1.0
+    image: guijs02/tshoes-web:1.0
     container_name: tshoes-web    
     networks:
       - tshoes-bridge
     ports:
       - 5000:80
-    volumes:
-      - webvolume:/usr/share/nginx/html
 
 networks:
   tshoes-bridge:
@@ -95,4 +94,3 @@ networks:
 
 volumes:
   sqlvolume:
-  webvolume:

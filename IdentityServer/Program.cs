@@ -19,8 +19,6 @@ builder.Services.AddSqlServer<SQLServerContext>(builder.Configuration["Connectio
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDataProtection()
-               .PersistKeysToFileSystem(new DirectoryInfo(Path.GetTempPath()));
 
 // builder.Services.AddDataProtection()
 //     .UseCryptographicAlgorithms(
