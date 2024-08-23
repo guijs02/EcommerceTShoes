@@ -22,6 +22,7 @@ Esta aplicação é um ECommerce de tenis para implementar os conhecimentos adqu
 - RabbitMQ
 - SQL Server
 - API Gateway
+- Docker
 <br>
 
 ## 🛠 Funcionalidades
@@ -44,9 +45,5 @@ Esta aplicação é um ECommerce de tenis para implementar os conhecimentos adqu
 - Swagger
 - API REST
 - LINQ
+- Docker Compose
 
-
-
-## 🔎 Status do Projeto
-
-![Badge em Desenvolvimento](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green)
