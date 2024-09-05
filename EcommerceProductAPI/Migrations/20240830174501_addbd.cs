@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace IdentityServerAPI.Migrations
+namespace EcommerceProductAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class AddIdentityServer : Migration
+    public partial class addbd : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

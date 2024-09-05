@@ -23,11 +23,11 @@ namespace EcommerceWeb.Services.Handle
                 return uri;
 
             
-            var uriCompleted = new UriBuilder(ServicesUrl.Usuario_API)
+            var uriCompleted = new UriBuilder(uri)
             {
-                Path = $"{uri}"+path
+                Path = uri+path
             };
-
+            Console.WriteLine(uriCompleted.Path);
            return uriCompleted.Path;
            
         }

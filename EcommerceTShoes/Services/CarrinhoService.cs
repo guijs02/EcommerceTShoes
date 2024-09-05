@@ -60,9 +60,9 @@ namespace EcommerceWeb.Services
         }
         public async Task<bool> EditCarrinhoQuantidade(CarrinhoDeCompraViewModel carrinho)
         {
-            var url = BuildUrl(ServicesUrl.Cart_API, "/editProductDetails");
+            // var url = BuildUrl(ServicesUrl.Cart_API, "/editProductDetails");
 
-            var response = await _http.PutAsJsonAsync(url, carrinho);
+            var response = await _http.PutAsJsonAsync($"{ServicesUrl.Cart_API}/editProductDetails", carrinho);
 
             if (!response.IsSuccessStatusCode)
             {
@@ -76,9 +76,9 @@ namespace EcommerceWeb.Services
         {
             var produto = await _produtoService.GetProduto(id);
 
-            var url = BuildUrl(ServicesUrl.Cart_API, $"/{produto?.Id}");
+            // var url = BuildUrl(ServicesUrl.Cart_API, $"/{produto?.Id}");
 
-            var response = await _http.GetAsync(url);
+            var response = await _http.GetAsync($"{ServicesUrl.Cart_API}/{produto?.Id}");
 
             if (!response.IsSuccessStatusCode)
             {
@@ -90,9 +90,9 @@ namespace EcommerceWeb.Services
         }
         public async Task<bool> DeleteItemCarrinho(int id)
         {
-            var url = BuildUrl(ServicesUrl.Cart_API, $"/{id}");
-
-            var response = await _http.DeleteAsync(url);
+            //var url = BuildUrl(ServicesUrl.Cart_API, $"/{id}");
+            //Console.WriteLine(url);
+            var response = await _http.DeleteAsync($"{ServicesUrl.Cart_API}/{id}");
 
             if (!response.IsSuccessStatusCode)
             {
@@ -105,9 +105,9 @@ namespace EcommerceWeb.Services
 
         public async Task<bool> Checkout(OrderDetails orderDetails)
         {
-            var url = BuildUrl(ServicesUrl.Cart_API, "/checkout");
+            // var url = BuildUrl(ServicesUrl.Cart_API, "/checkout");
 
-            var response = await _http.PostAsJsonAsync(url, orderDetails);
+            var response = await _http.PostAsJsonAsync($"{ServicesUrl.Cart_API}/checkout", orderDetails);
 
             if (!response.IsSuccessStatusCode)
             {

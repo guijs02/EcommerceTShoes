@@ -47,3 +47,7 @@ Esta aplicação é um ECommerce de tenis para implementar os conhecimentos adqu
 - LINQ
 - Docker Compose
 
+
+## 🔎 Status do Projeto
+
+![Badge em Desenvolvimento](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green)

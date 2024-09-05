@@ -10,6 +10,7 @@ RUN dotnet restore
 COPY . ./
 RUN dotnet publish -c Release -o out
 
+EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app

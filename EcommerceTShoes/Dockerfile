@@ -4,17 +4,16 @@
 #For more information, please see https://aka.ms/containercompat
 
 
-FROM nginx AS base
+FROM nginx:1.8.1-alpine AS base
 EXPOSE 80
 
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /app
 COPY *.csproj ./
 RUN dotnet restore
 COPY . ./
 RUN dotnet publish -c Release -o out 
-
 
 FROM base as final
 WORKDIR /usr/share/nginx/html
