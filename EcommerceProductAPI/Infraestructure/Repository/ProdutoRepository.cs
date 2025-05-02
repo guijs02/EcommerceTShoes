@@ -22,7 +22,7 @@ namespace EcommerceProductAPI.Infraestructure.Repository
         }
         public async Task<List<ProdutoDto>> GetAllPrdutosAsync()
         {
-            var query = (from p in _db.Products
+            var query = from p in _db.Products
                          select new ProdutoDto
                          {
                              Id = p.Id,
@@ -30,7 +30,7 @@ namespace EcommerceProductAPI.Infraestructure.Repository
                              Nome = p.Nome,
                              Preco = p.Preco
 
-                         }).AsQueryable();
+                         };
 
             return await query.ToListAsync();
         }

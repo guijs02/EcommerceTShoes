@@ -86,7 +86,9 @@ namespace EcommerceCartAPI.Infraestructure.Repository
             var produtoCarrinho = await (from carrinho in _db.Carrinho
                                          where carrinho.ProdutoId == id
                                          select carrinho
-                                        ).FirstOrDefaultAsync();
+                                        )
+                                        .AsNoTracking()
+                                        .FirstOrDefaultAsync();
 
             return produtoCarrinho;
         }
@@ -104,16 +106,15 @@ namespace EcommerceCartAPI.Infraestructure.Repository
                                                                 c.ProdutoId == produto.Id &&
                                                                 c.Tamanho == produto.Tamanho)
                                                                .AsNoTracking();
-            if (produtosRepetidosNoCarrinho.Any())
-            {
-                var produtoJaInserido = produtosRepetidosNoCarrinho.First();
-                produtoJaInserido.Quantidade = produtosRepetidosNoCarrinho.First().Quantidade + 1;
+            if (!produtosRepetidosNoCarrinho.Any())
+                return null;
 
-                _db.Carrinho.Update(produtoJaInserido);
-                _db.SaveChanges();
-                return produtoJaInserido;
-            }
-            return null;
+            var produtoJaInserido = produtosRepetidosNoCarrinho.First();
+            produtoJaInserido.Quantidade = produtosRepetidosNoCarrinho.First().Quantidade + 1;
+
+            _db.Carrinho.Update(produtoJaInserido);
+            _db.SaveChanges();
+            return produtoJaInserido;
         }
     }
 }

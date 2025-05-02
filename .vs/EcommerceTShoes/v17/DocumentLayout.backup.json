@@ -1,0 +1,707 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8223FE7D-E2B8-4C67-9BEA-9D14B10C53F5}|IdentityServer\\IdentityServerAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\identityserver\\infraestructure\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8223FE7D-E2B8-4C67-9BEA-9D14B10C53F5}|IdentityServer\\IdentityServerAPI.csproj|solutionrelative:identityserver\\infraestructure\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D04EBC8F-3585-492B-8932-D1FC16DD7878}|EcommerceCartAPI\\EcommerceCartAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercecartapi\\domain\\models\\produtocarrinhodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D04EBC8F-3585-492B-8932-D1FC16DD7878}|EcommerceCartAPI\\EcommerceCartAPI.csproj|solutionrelative:ecommercecartapi\\domain\\models\\produtocarrinhodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D04EBC8F-3585-492B-8932-D1FC16DD7878}|EcommerceCartAPI\\EcommerceCartAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercecartapi\\infraestructure\\repository\\carrinhorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D04EBC8F-3585-492B-8932-D1FC16DD7878}|EcommerceCartAPI\\EcommerceCartAPI.csproj|solutionrelative:ecommercecartapi\\infraestructure\\repository\\carrinhorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D04EBC8F-3585-492B-8932-D1FC16DD7878}|EcommerceCartAPI\\EcommerceCartAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercecartapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D04EBC8F-3585-492B-8932-D1FC16DD7878}|EcommerceCartAPI\\EcommerceCartAPI.csproj|solutionrelative:ecommercecartapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerceproductapi\\infraestructure\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|solutionrelative:ecommerceproductapi\\infraestructure\\repository\\produtorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerceproductapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|solutionrelative:ecommerceproductapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerceproductapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|solutionrelative:ecommerceproductapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A46FC7D-275C-46AF-A961-2E1189A6288E}|Ecommerce.APIGateway\\Ecommerce.APIGateway.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerce.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3A46FC7D-275C-46AF-A961-2E1189A6288E}|Ecommerce.APIGateway\\Ecommerce.APIGateway.csproj|solutionrelative:ecommerce.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\views\\spinner.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\views\\spinner.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\views\\roles\\tokenexpirationchecker.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\views\\roles\\tokenexpirationchecker.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\views\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\views\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\model\\carrinhodecompraviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\model\\carrinhodecompraviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\modals\\modalnotify.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\modals\\modalnotify.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\interfaces\\ifiltroproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\interfaces\\ifiltroproduto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\dto\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\dto\\produtodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\dto\\produtocarrinhodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\dto\\produtocarrinhodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\dto\\loginusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\dto\\loginusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\dto\\createusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\dto\\createusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerceproductapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|solutionrelative:ecommerceproductapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\views\\categorias\\femininopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\views\\categorias\\femininopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\utils\\productapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\utils\\productapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\utils\\baseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\utils\\baseapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\utils\\servicesurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\utils\\servicesurl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A46FC7D-275C-46AF-A961-2E1189A6288E}|Ecommerce.APIGateway\\Ecommerce.APIGateway.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerce.apigateway\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3A46FC7D-275C-46AF-A961-2E1189A6288E}|Ecommerce.APIGateway\\Ecommerce.APIGateway.csproj|solutionrelative:ecommerce.apigateway\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\ecommerceweb.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\ecommerceweb.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258}|EcommercePaymentAPI\\EcommercePaymentAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercepaymentapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258}|EcommercePaymentAPI\\EcommercePaymentAPI.csproj|solutionrelative:ecommercepaymentapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D04EBC8F-3585-492B-8932-D1FC16DD7878}|EcommerceCartAPI\\EcommerceCartAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercecartapi\\application\\rabbitmqsender\\rabbitmqmessagesender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D04EBC8F-3585-492B-8932-D1FC16DD7878}|EcommerceCartAPI\\EcommerceCartAPI.csproj|solutionrelative:ecommercecartapi\\application\\rabbitmqsender\\rabbitmqmessagesender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7CE4537-5FBD-4C88-8447-4CEDACD9CC3E}|MessageBus\\MessageBus.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\messagebus\\messagebus.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E7CE4537-5FBD-4C88-8447-4CEDACD9CC3E}|MessageBus\\MessageBus.csproj|solutionrelative:messagebus\\messagebus.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerceproductapi\\domain\\notfounderrormessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|solutionrelative:ecommerceproductapi\\domain\\notfounderrormessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{216CDE00-FD99-473B-8AB0-3221E66F5AF6}|ErrorMessagesApis\\ErrorMessagesApis.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\errormessagesapis\\errormessagesapis.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{216CDE00-FD99-473B-8AB0-3221E66F5AF6}|ErrorMessagesApis\\ErrorMessagesApis.csproj|solutionrelative:errormessagesapis\\errormessagesapis.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommerceproductapi\\ecommerceproductapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{47D19DED-1CF4-4681-8DAA-CFC3BABA84F9}|EcommerceProductAPI\\EcommerceProductAPI.csproj|solutionrelative:ecommerceproductapi\\ecommerceproductapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\views\\checkout\\componentpayment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\views\\checkout\\componentpayment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\views\\carrinho\\carrinhodecompra.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\views\\carrinho\\carrinhodecompra.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercetshoes\\views\\checkout\\formpayment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E3972205-CC65-4D85-943D-9289A39AB1F0}|EcommerceTShoes\\EcommerceWeb.csproj|solutionrelative:ecommercetshoes\\views\\checkout\\formpayment.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258}|EcommercePaymentAPI\\EcommercePaymentAPI.csproj|c:\\users\\user\\source\\repos\\ecommercetshoes\\ecommercepaymentapi\\application\\rabbitmqsender\\rabbitmqmessagesender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEC6BBBC-C2DA-4562-9C4F-B842A7D9A258}|EcommercePaymentAPI\\EcommercePaymentAPI.csproj|solutionrelative:ecommercepaymentapi\\application\\rabbitmqsender\\rabbitmqmessagesender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\obj\\Debug\\net7.0\\EcommerceCartAPI.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EcommerceCartAPI\\obj\\Debug\\net7.0\\EcommerceCartAPI.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1193,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ServicesUrl.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Utils\\ServicesUrl.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Utils\\ServicesUrl.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Utils\\ServicesUrl.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Utils\\ServicesUrl.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T15:44:36.858Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ocelot.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\Ecommerce.APIGateway\\ocelot.json",
+              "RelativeDocumentMoniker": "Ecommerce.APIGateway\\ocelot.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\Ecommerce.APIGateway\\ocelot.json",
+              "RelativeToolTip": "Ecommerce.APIGateway\\ocelot.json",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAAI8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2023-12-29T00:21:20.949Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProdutoCarrinhoDto.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Domain\\Models\\ProdutoCarrinhoDto.cs",
+              "RelativeDocumentMoniker": "EcommerceCartAPI\\Domain\\Models\\ProdutoCarrinhoDto.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Domain\\Models\\ProdutoCarrinhoDto.cs",
+              "RelativeToolTip": "EcommerceCartAPI\\Domain\\Models\\ProdutoCarrinhoDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowA8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T22:43:47.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarrinhoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Infraestructure\\Repository\\CarrinhoRepository.cs",
+              "RelativeDocumentMoniker": "EcommerceCartAPI\\Infraestructure\\Repository\\CarrinhoRepository.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Infraestructure\\Repository\\CarrinhoRepository.cs",
+              "RelativeToolTip": "EcommerceCartAPI\\Infraestructure\\Repository\\CarrinhoRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T22:37:15.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Spinner.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Spinner.razor",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Spinner.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Spinner.razor",
+              "RelativeToolTip": "EcommerceTShoes\\Views\\Spinner.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-03T22:31:07.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TokenExpirationChecker.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Roles\\TokenExpirationChecker.razor",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Roles\\TokenExpirationChecker.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Roles\\TokenExpirationChecker.razor",
+              "RelativeToolTip": "EcommerceTShoes\\Views\\Roles\\TokenExpirationChecker.razor",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-03T22:30:49.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Index.razor",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Index.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Index.razor",
+              "RelativeToolTip": "EcommerceTShoes\\Views\\Index.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-03T22:30:11.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Dockerfile",
+              "RelativeDocumentMoniker": "EcommerceProductAPI\\Dockerfile",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Dockerfile",
+              "RelativeToolTip": "EcommerceProductAPI\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-03-28T13:23:00.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Program.cs",
+              "RelativeDocumentMoniker": "EcommerceProductAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Program.cs",
+              "RelativeToolTip": "EcommerceProductAPI\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T16:20:03.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\IdentityServer\\Infraestructure\\Repository\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "IdentityServer\\Infraestructure\\Repository\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\IdentityServer\\Infraestructure\\Repository\\UsuarioRepository.cs",
+              "RelativeToolTip": "IdentityServer\\Infraestructure\\Repository\\UsuarioRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwCcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-29T00:15:07.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CarrinhoDeCompraViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Model\\CarrinhoDeCompraViewModel.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Model\\CarrinhoDeCompraViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Model\\CarrinhoDeCompraViewModel.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Model\\CarrinhoDeCompraViewModel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-02T14:56:52.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProdutoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Infraestructure\\Repository\\ProdutoRepository.cs",
+              "RelativeDocumentMoniker": "EcommerceProductAPI\\Infraestructure\\Repository\\ProdutoRepository.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Infraestructure\\Repository\\ProdutoRepository.cs",
+              "RelativeToolTip": "EcommerceProductAPI\\Infraestructure\\Repository\\ProdutoRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA4wC0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T18:39:23.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Dockerfile",
+              "RelativeDocumentMoniker": "EcommerceCartAPI\\Dockerfile",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Dockerfile",
+              "RelativeToolTip": "EcommerceCartAPI\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-04T17:11:40.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ModalNotify.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Modals\\ModalNotify.razor",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Modals\\ModalNotify.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Modals\\ModalNotify.razor",
+              "RelativeToolTip": "EcommerceTShoes\\Modals\\ModalNotify.razor",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-03T22:25:53.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IFiltroProduto.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Interfaces\\IFiltroProduto.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Interfaces\\IFiltroProduto.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Interfaces\\IFiltroProduto.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Interfaces\\IFiltroProduto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T22:25:43.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProdutoDto.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Dto\\ProdutoDto.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Dto\\ProdutoDto.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Dto\\ProdutoDto.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Dto\\ProdutoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T22:25:34.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProdutoCarrinhoDto.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Dto\\ProdutoCarrinhoDto.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Dto\\ProdutoCarrinhoDto.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Dto\\ProdutoCarrinhoDto.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Dto\\ProdutoCarrinhoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T22:25:33.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LoginUsuarioDto.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Dto\\LoginUsuarioDto.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Dto\\LoginUsuarioDto.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Dto\\LoginUsuarioDto.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Dto\\LoginUsuarioDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T22:25:31.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Services\\UsuarioService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwCoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-29T00:18:50.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreateUsuarioDto.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Dto\\CreateUsuarioDto.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Dto\\CreateUsuarioDto.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Dto\\CreateUsuarioDto.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Dto\\CreateUsuarioDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T22:25:29.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FemininoPage.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Categorias\\FemininoPage.razor",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Categorias\\FemininoPage.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Categorias\\FemininoPage.razor",
+              "RelativeToolTip": "EcommerceTShoes\\Views\\Categorias\\FemininoPage.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-18T19:11:43.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "EcommerceProductAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\appsettings.json",
+              "RelativeToolTip": "EcommerceProductAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-02T16:45:42.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BaseAPI.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Utils\\BaseAPI.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Utils\\BaseAPI.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Utils\\BaseAPI.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Utils\\BaseAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T18:29:45.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ProductAPI.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Utils\\ProductAPI.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Utils\\ProductAPI.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Utils\\ProductAPI.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Utils\\ProductAPI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T18:28:50.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Program.cs",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Program.cs",
+              "RelativeToolTip": "EcommerceTShoes\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-18T18:27:09.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\Ecommerce.APIGateway\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Ecommerce.APIGateway\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\Ecommerce.APIGateway\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Ecommerce.APIGateway\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-18T17:17:56.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EcommerceWeb",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\EcommerceWeb.csproj",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\EcommerceWeb.csproj",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\EcommerceWeb.csproj",
+              "RelativeToolTip": "EcommerceTShoes\\EcommerceWeb.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-17T17:50:12.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommercePaymentAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "EcommercePaymentAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommercePaymentAPI\\appsettings.json",
+              "RelativeToolTip": "EcommercePaymentAPI\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-04T14:47:55.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "RabbitMQMessageSender.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
+              "RelativeDocumentMoniker": "EcommerceCartAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
+              "RelativeToolTip": "EcommerceCartAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T17:08:49.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "NotFoundErrorMessages.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Domain\\NotFoundErrorMessages.cs",
+              "RelativeDocumentMoniker": "EcommerceProductAPI\\Domain\\NotFoundErrorMessages.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\Domain\\NotFoundErrorMessages.cs",
+              "RelativeToolTip": "EcommerceProductAPI\\Domain\\NotFoundErrorMessages.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T13:35:44.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "EcommerceProductAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\EcommerceProductAPI.csproj",
+              "RelativeDocumentMoniker": "EcommerceProductAPI\\EcommerceProductAPI.csproj",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceProductAPI\\EcommerceProductAPI.csproj",
+              "RelativeToolTip": "EcommerceProductAPI\\EcommerceProductAPI.csproj",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-29T17:08:57.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ErrorMessagesApis.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\ErrorMessagesApis\\ErrorMessagesApis.csproj",
+              "RelativeDocumentMoniker": "ErrorMessagesApis\\ErrorMessagesApis.csproj",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\ErrorMessagesApis\\ErrorMessagesApis.csproj",
+              "RelativeToolTip": "ErrorMessagesApis\\ErrorMessagesApis.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-02T12:38:01.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "MessageBus.csproj",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\MessageBus\\MessageBus.csproj",
+              "RelativeDocumentMoniker": "MessageBus\\MessageBus.csproj",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\MessageBus\\MessageBus.csproj",
+              "RelativeToolTip": "MessageBus\\MessageBus.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-02T12:41:44.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "EcommerceCartAPI.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\obj\\Debug\\net7.0\\EcommerceCartAPI.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "EcommerceCartAPI\\obj\\Debug\\net7.0\\EcommerceCartAPI.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceCartAPI\\obj\\Debug\\net7.0\\EcommerceCartAPI.AssemblyInfo.cs",
+              "RelativeToolTip": "EcommerceCartAPI\\obj\\Debug\\net7.0\\EcommerceCartAPI.AssemblyInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T17:11:59.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Shared\\MainLayout.razor",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Shared\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Shared\\MainLayout.razor",
+              "RelativeToolTip": "EcommerceTShoes\\Shared\\MainLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-29T16:37:08.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ComponentPayment.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Checkout\\ComponentPayment.razor",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Checkout\\ComponentPayment.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Checkout\\ComponentPayment.razor",
+              "RelativeToolTip": "EcommerceTShoes\\Views\\Checkout\\ComponentPayment.razor",
+              "ViewState": "AQIAAH8AAAAAAAAAAAAWwJMAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-12-28T23:49:10.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "FormPayment.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Checkout\\FormPayment.razor",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Checkout\\FormPayment.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Checkout\\FormPayment.razor",
+              "RelativeToolTip": "EcommerceTShoes\\Views\\Checkout\\FormPayment.razor",
+              "ViewState": "AQIAAA8AAAAAAAAAAIBZwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-01-02T17:31:34.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "RabbitMQMessageSender.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommercePaymentAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
+              "RelativeDocumentMoniker": "EcommercePaymentAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommercePaymentAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
+              "RelativeToolTip": "EcommercePaymentAPI\\Application\\RabbitMQSender\\RabbitMQMessageSender.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-29T13:10:49.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CarrinhoDeCompra.razor",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Carrinho\\CarrinhoDeCompra.razor",
+              "RelativeDocumentMoniker": "EcommerceTShoes\\Views\\Carrinho\\CarrinhoDeCompra.razor",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\EcommerceTShoes\\EcommerceTShoes\\Views\\Carrinho\\CarrinhoDeCompra.razor",
+              "RelativeToolTip": "EcommerceTShoes\\Views\\Carrinho\\CarrinhoDeCompra.razor",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAkwKoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-01-02T17:31:39.318Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

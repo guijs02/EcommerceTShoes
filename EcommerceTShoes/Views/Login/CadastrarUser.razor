@@ -3,6 +3,7 @@
 @using EcommerceWeb.Services.Interfaces;
 
 @using LoginAPI.Dto;
+@using Microsoft.AspNetCore.Components.Forms;
 
 @inject IUsuarioService _service;
 @inject NavigationManager navigation
@@ -19,22 +20,22 @@
                         <h1 class="card-title text-center mb-4">Sign-In</h1>
                         <div class="mb-3">
                             <label class="form-label">Nome</label>
-                            <InputText type="text" ValueExpression="() => usuario.Username" @bind-value="usuario.Username" class="form-control form-control-sm" id="nome" placeholder="Digite seu nome" />
+                            <input type="text"  @bind-value="usuario.Username" class="form-control form-control-sm" id="nome" placeholder="Digite seu nome" />
                             <ValidationMessage For="() => usuario.Username"  class="validation-message"/>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <InputText type="email" ValueExpression="() => usuario.Email" class="form-control form-control-sm" @bind-value="usuario.Email" id="senha" placeholder="Digite seu email" />
+                            <input type="email"  class="form-control form-control-sm" @bind-value="usuario.Email" id="senha" placeholder="Digite seu email" />
                             <ValidationMessage For="() => usuario.Email" class="validation-message" />
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Senha</label>
-                            <InputText type="password" ValueExpression="() => usuario.Password" class="form-control form-control-sm" @bind-value="usuario.Password" id="senha" placeholder="Digite sua senha" />
+                            <input type="password" class="form-control form-control-sm" @bind-value="usuario.Password" id="senha" placeholder="Digite sua senha" />
                             <ValidationMessage For="() => usuario.Password"  class="validation-message"/>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Confirmar Senha</label>
-                            <InputText type="password" ValueExpression="() => usuario.PasswordConfirmation" class="form-control form-control-sm" id="confirmar_senha" @bind-value="usuario.PasswordConfirmation" placeholder="Confirme sua senha" />
+                            <input type="password" class="form-control form-control-sm" id="confirmar_senha" @bind-value="usuario.PasswordConfirmation" placeholder="Confirme sua senha" />
                             <ValidationMessage For="() => usuario.PasswordConfirmation"  class="validation-message"/>
                         </div>
                         <div class="d-grid">

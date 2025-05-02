@@ -1,7 +1,7 @@
 services:
   sqlserver:    
     image: mcr.microsoft.com/mssql/server:2019-latest
-    container_name: sqlserver
+    container_name: sqlserverTShoes
     networks:
       - tshoes-bridge
     ports:
@@ -80,7 +80,7 @@ services:
     networks:
       - tshoes-bridge
     ports:
-      - 3003:80
+      - 3003:8080
     depends_on:
       - rabbitmq
     restart: on-failure
